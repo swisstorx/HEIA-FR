@@ -1,0 +1,204 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[francais]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{titling}
+\usepackage{lastpage}
+
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage{ubuntu}
+\usepackage{listings}
+% \usepackage{minted} % Nécessite l'option ``-shell-escape'' dans le compillateur latex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DOCUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{mise_en_page}
+%\insertImage[position]{image_path}{scale}{Titre_figure}{label}
+% \ref{label}
+
+\begin{document}
+
+\pagestyle{empty} %No headings for the first pages.
+
+%% Title Page %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Bridging \& Spanning-Tree}
+\author{Josué \textsc{Tille}, Marc \textsc{Roten}}
+\def\branche{Réseaux IP}
+\def\subtitle{Rapport de travail pratique}
+
+\input{titlepage}
+
+%% Table des matières %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\cleardoublepage
+
+%% Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+
+\section{Introduction}
+Ce travail pratique a pour but de nous introduire aux services TCP/IP, plus particulièrement le protocole DNS, qui est omniprésent, dans notre vie de tous les jours. Effectivement c'est plus facile de se souvenir d'un nom de domaine comme tlabs.tic.heia-fr.ch plutôt que 160.98.31.32.
+
+\section{Configuration d'expérience}
+\begin{question}
+\item Documenter et valider le bon fonctionnement de votre maquette. Pour cela, utiliser les commandes "nslookup" et "ping" sur votre notebook.
+\end{question}
+
+Dans un premier temps il est nécessaire de vérifier une bonne configuration du réseau. Pour cela nous avons procédé à un ping du serveur DNS qui permet de valider que l'adressage IP et que les routes sont corrects :
+\begin{lstlisting}
+# ping 160.98.30.207               
+PING 160.98.30.207 (160.98.30.207) 56(84) bytes of data.
+64 bytes from 160.98.30.207: icmp_seq=1 ttl=64 time=0.888 ms
+64 bytes from 160.98.30.207: icmp_seq=2 ttl=64 time=0.963 ms
+64 bytes from 160.98.30.207: icmp_seq=3 ttl=64 time=0.868 ms
+64 bytes from 160.98.30.207: icmp_seq=4 ttl=64 time=0.959 ms
+\end{lstlisting}
+
+Suite à ce test nous avons pu vérifier le bon fonctionnement de notre serveur DNS. Pour cela nous avons utilisé la commande ``dig'' qui permet d'avoir plus d'informations que nslookup. Pour commencer nous avons testé la bonne résolution de ``ourpc.lte07.ch'' :
+
+\insertImage{./images_doc/1.png}{1}{Capture de la commande dig depuis une des machines clientes}{Dig1}
+
+On peut donc constater que dans la section ``ANSWER'' on à la réponse à notre question qui est ``160.98.31.170''.
+
+\begin{question}[resume]
+\item Décrivez les différents paramètres de configurstions utilisés dans db.pclte07.ch.zone et dans le db.30.98.160.in-addr.zone
+\end{question}
+
+\insertImage{./images_doc/2.png}{1}{Capture de la commande dig depuis une des machines clientes}{Dig1}
+
+Le fichier de configuration db.pclte07.ch.zone contient toutes les informations concernant le domaine lte07.ch. Le \texttt{ORIGIN} contiendra le nom de la zone en question puis le \texttt{TTL} contiendra la durée par défaut en secondes pendant laquelle les caches pourons considérer cette information comme valide. Par exemple si un contien une entrée DNS ayant un TTL de 60. Le cache devra, si il a des requête demandant ce nom de domaine, redemander ce nom toutes les 60 secondes.
+\newline
+Ensuite dans ce fichier nous aurons les entrée DNS suivantes:
+\begin{description}
+ \item[SOA (Start Of Authority)]
+ Cette entrée contiendra principalement des informations concernant le propriétaire de la zone et des informations utiles pour les serveur exclaves. Il y aura notament : le nom de la zone et l'adresse email de l'administrateur. Pour les serveur secondaires il y aura :
+ \begin{itemize}
+  \item Le numéro de série (permettant aux serveur de savoir si la zone à changé). Ce numéro devra être incrémenté à chaques modification dans la zone.
+  \item Les valeurs suivantes sont des surée en secondes indiquant aux serveur secondaire la durée de rafraichissement de la zone, les temps d'expiration, etc.
+ \end{itemize}
+ \item[NS] Ces 2 entrée contiendrons l'adresse des serveurs qui ont authorité pour la zone en question. On a donc ici notre serveur DNS \texttt{ourpc.lte07.ch.} et aussi le serveur \texttt{tlabs.tic.eia-fr.ch.} qui a aussi authorité pour la zone en question. Cela implique que un résolveur peut s'adresser à l'un ou l'autre des serveur pour connaitre des informations sur la zone.
+ \item[A] Cette entrée contiendra toujour une IPv4. Ici nous indiquons l'adresse ip de la machine ourpc.lte07.ch.
+ \item[CNAME] Cette entrée permet d'associer plusieurs noms DNS pour la même entrée A, AAAA, MX, etc. Dans ce cas cela l'entrée \texttt{www IN CNAME ourpc} implique que \texttt{www} est identique à \texttt{ourpc}.
+ \item[MX] Cette entrée sera utilisée uniquement pour la messagerie. Cela indique le nom de domaine du serveur mail associé à la zone en question.
+\end{description}
+
+Dans le fichier de zone db.30.98.160.in-addr.zone nous aurons les mêmes entrée SOA et NS que dans db.pclte07.ch.zone. Au lieux d'avoir  des entrée CNAME, A nous aurons des entrée PTR. Ce type d'entrée est en quelque sorte l'inverse de l'entrée A. Elle contiendra une partie d'adresse IP qui pointera vers un nom de domaine. 
+
+\begin{question}[resume]
+\item Quels sont les paramètres qu'il faut configurer au minimum lorsque vous voulez gérer et configurer un domaine.
+\end{question}
+%% Il faut que je fasse des essais .... (voir $ORIGIN, $TTL
+Les éléments minimum sont les suivants :
+\begin{description}
+ \item[SOA] Une zone a besoin d'un enregistrement SOA pour définir qui fait authorité sur la zone.
+ \item[NS] Il est obligatoir de définir à quel serveur s'adresse pour obtenir des information sur la zone.
+\end{description}
+
+\begin{question}[resume]
+\item Quel est l'organisme qui gère les domaines .ch ? Comment obtenez-vous cette information ?
+\end{question}
+C'est switch. Il existe plusieurs moyens d'obtenir cette information, notamment en cherchan sur internet. Ici nous allons utiliser la commande \texttt{whois} qui permet d'obtenir toutes les informations concernant le propriétaire de la zone en question :
+
+\insertImage{./images_doc/3.png}{1}{Retour de la commande whois}{whois1}
+
+Comme on peut le constater SWITCH est l'organisation qui gère Techniquement et Administrativement la zone .ch.
+
+\begin{question}[resume]
+\item A quoi sert le fichier /etc/bind/db.root ?
+\end{question}
+
+Ce fichier permet au resolveur DNS de connaitre l'adresse IP des serveurs Racines. Etant donné que la structure DNS est en arbre, pour commencer la résolution on doit savoir où atteindre la Racine de notre arbre. Ce Type de donnée est obligatoir pour tout résolveurs DNS, sinon aucune résolution sera possible.
+
+\section{Protocole DNS}
+\subsection{Analyse des protocoles observés}
+
+\begin{question}[resume]
+\item Quels sont les protocoles de couche 2,3 et 4 utilisés pour l'échange DNS ? Indiquez le champ dans chacune des couches qui vous permet de définir le protocole qui est transporté.
+\end{question}
+
+\insertImage{./images_doc/4.png}{0.5}{Catpure d'une requête DNS}{wireshark1}
+
+Comme on peut le constater dans l'illustration \ref{wireshark1} on peut voir que en couche 2 nous avons une trame de protocole Ethernet, ensuite nous avons en couche 3 le protocole IP qui est utilisé. En couche 4 nous aurons UDP qui est utilisé.
+
+\begin{question}[resume]
+\item Quels sont les interlocuteurs de votre notebook et de la machine Linux pour les dialogues DNS ? Quelles sont leurs adresses IP ? Combien de trames provenant et à destination de votre notebook avez-vous enregistrées ? Commentez !
+\end{question}
+
+
+
+\insertImage{./images_doc/5.png}{0.85}{Catpure de toutes les requetes effectuée lors de la consulation de la page ``www.admin.ch'' - En Bleu : Requetes PC <-> Résolveur DNS, En rose : Requetes  Résolveur DNS <-> serveur authoritaire pour .ch, En Vert :  Résolveur DNS <-> Serveur authoritaire pour admin.ch}{wireshark1}
+
+On peut remarquer que au début le notre PC enverra une requête au serveur DNS pour connaitre l'adresse ip pour le domaine www.admin.ch. Ensuite le serveur effecturera tout le processus de résolution avant d'envoyer finalement la réponse au client. Dans ce processus il contactera dans notre cas le serveur à l'adresse 194.0.1.40. Cette adresse ip correspond au serveur DNS de switch pour la zone .ch (vérifié avec la commande ``host -t PTR 194.0.1.40''). Lors de cette requete nous avons constaté que il envoie une première fois la requête en UDP puis ensuite il la renvoie en TCP (Requêtes en rose). Pour terminer il enverra plusieurs requete aux serveur serveur authoritaire de admin.ch (ip 212.193.72.85, 162.23.37.16).
+
+Nous avons constaté que dans ces requetes nous avons pas de communication avec les root serveur. Cela est probablement du au fait que l'adresse des serveur authoritaire pour .ch était déjà dans le cache de notre résolveur (malgèrs un restart du serveur avant la capture).
+
+\subsection{Analyse des échanges DNS}
+\begin{question}[resume]
+\item Quels sont les types de message DNS observés ?
+\end{question}
+
+Nous avons observé 2 types de messages DNS. Les requetes et les reponses. Nous avons aussi observé l'utilisations de 2 protocoles de transport soit UDP et TCP pour le DNS.
+
+\insertImage{./images_doc/6.png}{0.85}{Observation 2 requetes DNS avec les 2 protocoles de transport}{wireshark1}
+
+
+\begin{question}[resume]
+\item Dessinez les échanges observés entre le client, le serveur DNS et Internet en fonction du temps, commentez!
+\end{question}
+
+\insertImage{./images_doc/7.png}{0.6}{Digramme en flèches de la requête DNS www.admin.ch depuis notre notebook.}{wireshark1}
+
+\begin{question}[resume]
+\item Où se trouve l'information demandée ? Quelles sont les réponses du serveur DNS ?
+\end{question}
+
+%% Sais pas trop quoi dire
+
+\begin{question}[resume]
+\item Quels sont les types de message DNS observés ?
+\end{question}
+
+Ici étant donné que nous voulons savoir quel est le nom de domaine lié à 160.98.30.207 il s'agit d'une requete DNS inverse. Les types de message serons très semblables aux précédentes : Une requete et une réponse. Seule différence si on analyse la requête DNS on peut observer que la question est l'enregistrement PTR de 170.30.98.160.in-addr.arpa au lieux d'un enregistrement A.
+
+\insertImage{./images_doc/8.png}{0.8}{Vue détaillé de la requête et de la réponse}{dnsquery1}
+
+\begin{question}[resume]
+\item Où se trouve l'information demandée ? Quelles sont les réponses du serveur DNS ?
+\end{question}
+
+Le serveur n'aura pas besoin de faire de résolution vers un autre serveur étant donné qu'il possède le fichier de zone pour la zone en question. Il s'agit du fichier de zone db.30.98.160.in-addr.zone. Il répondra directement avec le contenu de ce fichier soit l'entrée suivante :
+
+\texttt{170 IN PTR ourpc.lte07.ch.}
+
+\begin{question}[resume]
+\item Dessiner le diagramme en flèches des échanges observés.
+\end{question}
+
+\insertImage{./images_doc/9.png}{0.45}{Graphe des flux lord de la résolution DNS de www.tic.ac.uk}{dnsquery1}
+
+\begin{question}[resume]
+\item Combien de requêtes effecture votre serveur DNS pour résoudre la requête ci -dessus?
+\end{question}
+
+On peut observer que le serveur effectue 4 requete sur 2 serveurs différents
+
+\section{Conclusion}
+
+
+% \begin{thebibliography}{9}
+% 	 \bibitem{STPWiki}
+% 			Wikipédia,
+% 			Spanning Tree Protocol,\\
+% 			\footnotesize{https://fr.wikipedia.org/wiki/Spanning\_Tree\_ProtocolMode\_des\_ports\_sur\_les\_commutateurs\_en\_STP}\\[3cm]
+% \end{thebibliography}
+
+\begin{center}
+Josué Tille  \hspace{7cm} Marc Roten
+\end{center}
+
+\end{document}

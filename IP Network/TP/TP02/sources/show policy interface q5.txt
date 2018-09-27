@@ -1,0 +1,48 @@
+RO-EXT#show policy-map interface s0/2/0
+ Serial0/2/0
+
+  Service-policy output: labo_QoS
+
+    queue stats for all priority classes:
+      Queueing
+      priority level 1
+      queue limit 64 packets
+      (queue depth/total drops/no-buffer drops) 0/0/0
+      (pkts output/bytes output) 342/31448
+
+    queue stats for all priority classes:
+      Queueing
+      priority level 2
+      queue limit 64 packets
+      (queue depth/total drops/no-buffer drops) 0/0/0
+      (pkts output/bytes output) 0/0
+
+    Class-map: high (match-all)
+      342 packets, 31448 bytes
+      30 second offered rate 0000 bps, drop rate 0000 bps
+      Match: access-group 101
+      Priority: Strict, b/w exceed drops: 0
+
+      Priority Level: 1
+
+    Class-map: medium (match-all)
+      0 packets, 0 bytes
+      30 second offered rate 0000 bps
+      Match: access-group 103
+
+    Class-map: low (match-all)
+      0 packets, 0 bytes
+      30 second offered rate 0000 bps, drop rate 0000 bps
+      Match: access-group 102
+      Priority: Strict, b/w exceed drops: 0
+
+      Priority Level: 2
+
+    Class-map: class-default (match-any)
+      323538 packets, 420934505 bytes
+      30 second offered rate 10328000 bps, drop rate 9576000 bps
+      Match: any
+
+      queue limit 64 packets
+      (queue depth/total drops/no-buffer drops) 64/274757/0
+      (pkts output/bytes output) 48781/55159340

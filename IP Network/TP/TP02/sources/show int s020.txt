@@ -1,0 +1,25 @@
+RO-EXT#show interfaces s0/2/0
+Serial0/2/0 is up, line protocol is up
+  Hardware is WIC MBRD Serial
+  Internet address is 160.98.40.114/28
+  MTU 1500 bytes, BW 1544 Kbit/sec, DLY 20000 usec,
+     reliability 255/255, txload 2/255, rxload 1/255
+  Encapsulation HDLC, loopback not set
+  Keepalive set (10 sec)
+  Last input 00:00:00, output 00:00:00, output hang never
+  Last clearing of "show interface" counters 01:23:38
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 19933
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  30 second input rate 0 bits/sec, 0 packets/sec
+  30 second output rate 16000 bits/sec, 2 packets/sec
+     20149 packets input, 2085164 bytes, 0 no buffer
+     Received 451 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     27321 packets output, 20242928 bytes, 0 underruns
+     0 output errors, 0 collisions, 10 interface resets
+     1 unknown protocol drops
+     0 output buffer failures, 0 output buffers swapped out
+     41 carrier transitions
+     DCD=up  DSR=up  DTR=up  RTS=up  CTS=up
