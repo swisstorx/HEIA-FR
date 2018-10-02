@@ -1,0 +1,22 @@
+; Haute ecole d'ingenierie et d'architecture de Fribourg
+; Reseaux IP
+; ---------------------------------------------------------------------------------
+; TP DNS - Filename= 30.98.160.in-addr.zone
+; ---------------------------------------------------------------------------------
+; (c) F. Buntschu
+;
+; Version 1.4
+; ---------------------------------------------------------------------------------
+$TTL 86400
+@ IN SOA ourpc.lte07.ch. root.lte07.ch. (
+	2015111701
+	3600
+	900
+	604800
+	86400 )
+; Descriptions of names servers for this domain
+	IN NS ourpc.lte07.ch.
+	IN NS tlabs.tic.eia-fr.ch.
+; List of known hosts in this domain
+170 IN PTR ourpc.lte07.ch.
+

@@ -1,0 +1,1207 @@
+<html>
+<head>
+<center>
+<h1>
+<FONT FACE="Courier">bash</FONT> Introduction and Exercises
+</center>
+</h1>
+</head>
+<br>
+<br>
+<body>
+<p><HR><p>
+
+<h3>
+Introduction to <FONT FACE="Courier">bash</FONT>
+</h3>
+<FONT FACE="Courier">bash</FONT> is an sh-compatible command language interpreter that executes commands read from the standard input or from a file. <FONT FACE="Courier">bash</FONT> also incorporates useful features from the Korn and C shells (ksh and csh).
+  <ul>
+  <li> Compound commands
+      <ul>
+      <li> Loops: <a href="#forloops" class="">for</a>, <a href="#whileloops" class="">while</a>, <a href="#untilloops" class="">until</a>
+      <li> Conditional statements:  <a href="#ifclause" class="">if</a>, select, case
+      </ul>
+  <li> File operations
+      <ul>
+      <li> <a href="#fileopcondexpr" class="">Conditional expressions</a>
+      <li> <a href="#fileopreadwrite" class="">Reading and writing to files</a>
+      </ul>
+  <li> <a href="#expansion" class="">Expansion and its uses</a>
+  <li> <a href="#commandlineargs" class="">Command line arguments</a>
+  <li> <a href="#fileopspawn" class="">A script which writes new scripts to spawn your jobs</a> (potentially useful!)
+  <li> String operations
+      <ul>
+      <li> <a href="#stringopcond" class="">String conditional expressions</a>
+      <li> Uses of parameter expansion: <a href="#stringsel" class="">substring selection</a>, <a href="#stringrem" class="">substring removal</a>, <a href="#stringsub" class="">string substitution</s>
+      <li> <a href="#stringpat" class="">String pattern matching</a>
+      <li> <a href="#othercommands" class="">Other commands</a>
+      </ul>
+  <li> <a href="#functions" class="">Functions</a>
+  <li> <a href="#externalcommands" class="">External commands</a>
+
+
+  </ul>
+
+
+Typing <FONT FACE="Courier">man bash</FONT> gives a lot of extra information.
+
+
+<P style="page-break-before: always">
+<p><HR><p>
+<h3>
+White Spaces and New Lines
+</h3>
+<ul>
+<li> White spaces and new lines are very important in shell programming.
+<li> In many languages, white spaces are ignored i.e. the compiler or interpreter simply 
+skips over them.
+<li> This is not so in shell programming. Try taking some white spaces out of the following
+examples and see what happens!
+</ul>
+
+
+<p><HR><p>
+<h3>
+<a name="forloops"></a>
+Compound commands: Loops: <FONT FACE="Courier">for</FONT>
+</h3>
+
+ex2.sh: A program to demonstrate a type 1 for loop:
+<table width="100%" class="ex" cellspacing="0" border="1" bgcolor="#C0C0C0">
+<tr>
+<td>
+<pre>
+#!/bin/bash
+#
+# A program to demonstrate the use of a type 1 for loop.
+# 
+word="a b c"
+i=0
+
+# Read each character from $word and and asign
+# it to $name
+for name in $word; do
+
+  # Use 'let' to increment i.
+  let i++
+
+  # Print the value of $name
+  echo $name
+
+done
+
+echo "Looped $i times."
+</pre>
+</td>
+</tr>
+</table><br>
+
+
+ex3.sh: A program to demonstrate a type 2 for loop:
+<table width="100%" class="ex" cellspacing="0" border="1" bgcolor="#C0C0C0"><tr><td><pre>
+#!/bin/bash
+#
+# A program to demonstrate the use of a type 2 for loop.
+#
+
+# Loop from 0 to 9.
+for((i=0; i<10; i++)) ; do
+
+  # Append the string form of i to the
+  # end of the string j
+  j=$j$i
+
+done
+
+echo $j
+</pre></td></tr></table><br>
+
+<P style="page-break-before: always">
+<p><HR><p>
+<h3>
+<a name="whileloops"></a>
+<a name="untilloops"></a>
+Compound commands: Loops: <FONT FACE="Courier"> while,until</FONT>
+</h3>
+ex4.sh: A program to demonstrate <FONT FACE="Courier">while</FONT> and 
+<FONT FACE="Courier">until</FONT> loops:
+<table width="100%" class="ex" cellspacing="0" border="1" bgcolor="#C0C0C0"><tr><td><pre>
+#!/bin/bash
+#
+# A program to demonstrate while and until loops
+#
+nloops=3
+i=0
+
+echo "while loop"
+while [[ $i<$nloops ]]; do
+    echo $i
+    let i++
+done
+
+echo
+echo "until loop"
+i=0
+until [[ $i>$nloops ]]; do
+    echo $i
+    let i++
+done
+</pre></td></tr></table><br>
+
+<p><HR><p>
+<h3>
+<a name="ifclause"></a>
+Compound commands: Conditional statements: <FONT FACE="Courier">if</FONT>
+</h3>
+ex5.sh: A program to demonstrate <FONT FACE="Courier">if,elif,else</FONT> conditional statements:
+<table width="100%" class="ex" cellspacing="0" border="1" bgcolor="#C0C0C0"><tr><td><pre>
+#!/bin/bash
+#
+# A program to demonstrate if, elif, and else conditional statements
+#
+
+for ((i=0;i<3;i++)) do
+    if [[ $i == 1 ]]; then
+        echo "Turnip"
+    elif [[ $i == 2 ]]; then
+        echo "Potato"
+    else
+        echo "Carrot"
+    fi
+done
+</pre></td></tr></table><br>
+
+<P style="page-break-before: always">
+<p><HR><p>
+<h3>
+<a name="fileopcondexpr"></a>
+File operations: Conditional expressions
+</h3>
+<ul>
+<li> Before running this exercise, do the following:
+<pre>
+bash-2.05b$ touch test
+bash-2.05b$ mkdir test_dir
+bash-2.05b$ ln -s test test_link
+bash-2.05b$ ls -l
+</pre>
+<li> This creates the following files and links:
+<pre>
+-rw-r--r--    1 chrisc   atlas           0 Feb 19 16:16 test
+drwxr-xr-x    2 chrisc   atlas        4096 Feb 19 16:16 test_dir
+lrwxrwxrwx    1 chrisc   atlas           4 Feb 19 16:17 test_link -> test
+</pr>
+</ul>
+
+
+ex6.sh: A program that uses conditional expressions to test for the presence of a file:
+<table width="100%" class="ex" cellspacing="0" border="1" bgcolor="#C0C0C0"><tr><td><pre>
+#!/bin/bash
+#
+# A program to that uses conditional expressions to test for
+# the presence of a file.
+#
+
+files="test test_dir test_link"
+
+# Try replacing $files with `ls`.  This will cause the ls command to be run
+# and the output to be used for the tests.
+
+for file in $files; do
+  if [[ -a $file ]]; then
+    echo "File $file Exists"
+  fi
+
+  if [[ -f $file ]]; then
+    echo "File $file is a regular file"
+  fi
+
+  if [[ -d $file ]]; then
+    echo "File $file is a directory"
+  fi
+
+  if [[ -h $file ]]; then
+    echo "File $file is a symbolic link"
+  fi
+done
+</pre></td></tr></table><br>
+
+<P style="page-break-before: always">
+A table showing the meanings of the options -a, -f, -d and -h:
+
+<TABLE
+BORDER="1"
+CLASS="CALSTABLE"
+><THEAD
+><TR
+><TH
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Usage</TH
+><TH
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Result</TH
+></TR
+></THEAD
+><TBODY
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>[ <TT
+CLASS="option"
+>-a</TT
+> <TT
+CLASS="filename"
+>FILE</TT
+> ]</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>True if <TT
+CLASS="filename"
+>FILE</TT
+> exists.</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>[ <TT
+CLASS="option"
+>-b</TT
+> <TT
+CLASS="filename"
+>FILE</TT
+> ]</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>True if <TT
+CLASS="filename"
+>FILE</TT
+> exists and is a block-special file.</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>[ <TT
+CLASS="option"
+>-c</TT
+> <TT
+CLASS="filename"
+>FILE</TT
+> ]</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>True if <TT
+CLASS="filename"
+>FILE</TT
+> exists and is a character-special file.</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>[ <TT
+CLASS="option"
+>-d</TT
+> <TT
+CLASS="filename"
+>FILE</TT
+> ]</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>True if <TT
+CLASS="filename"
+>FILE</TT
+> exists and is a directory.</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>[ <TT
+CLASS="option"
+>-e</TT
+> <TT
+CLASS="filename"
+>FILE</TT
+> ]</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>True if <TT
+CLASS="filename"
+>FILE</TT
+> exists.</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>[ <TT
+CLASS="option"
+>-f</TT
+> <TT
+CLASS="filename"
+>FILE</TT
+> ]</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>True if <TT
+CLASS="filename"
+>FILE</TT
+> exists and is a regular file.</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>[ <TT
+CLASS="option"
+>-g</TT
+> <TT
+CLASS="filename"
+>FILE</TT
+> ]</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>True if <TT
+CLASS="filename"
+>FILE</TT
+> exists and its SGID bit is set.</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>[ <TT
+CLASS="option"
+>-h</TT
+> <TT
+CLASS="filename"
+>FILE</TT
+> ]</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>True if <TT
+CLASS="filename"
+>FILE</TT
+> exists and is a symbolic link.</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>[ <TT
+CLASS="option"
+>-k</TT
+> <TT
+CLASS="filename"
+>FILE</TT
+> ]</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>True if <TT
+CLASS="filename"
+>FILE</TT
+> exists and its sticky bit is set.</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>[ <TT
+CLASS="option"
+>-p</TT
+> <TT
+CLASS="filename"
+>FILE</TT
+> ]</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>True if <TT
+CLASS="filename"
+>FILE</TT
+> exists and is a named pipe (FIFO).</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>[ <TT
+CLASS="option"
+>-r</TT
+> <TT
+CLASS="filename"
+>FILE</TT
+> ]</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>True if <TT
+CLASS="filename"
+>FILE</TT
+> exists and is readable.</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>[ <TT
+CLASS="option"
+>-s</TT
+> <TT
+CLASS="filename"
+>FILE</TT
+> ]</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>True if <TT
+CLASS="filename"
+>FILE</TT
+> exists and has a size greater than zero.</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>[ <TT
+CLASS="option"
+>-t</TT
+> <TT
+CLASS="filename"
+>FD</TT
+> ]</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>True if file descriptor <TT
+CLASS="filename"
+>FD</TT
+> is open and refers to a terminal.</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>[ <TT
+CLASS="option"
+>-u</TT
+> <TT
+CLASS="filename"
+>FILE</TT
+> ]</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>True if <TT
+CLASS="filename"
+>FILE</TT
+> exists and its SUID (set user ID) bit is set.</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>[ <TT
+CLASS="option"
+>-w</TT
+> <TT
+CLASS="filename"
+>FILE</TT
+> ]</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>True if <TT
+CLASS="filename"
+>FILE</TT
+> True if FILE exists and is writable.</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>[ <TT
+CLASS="option"
+>-x</TT
+> <TT
+CLASS="filename"
+>FILE</TT
+> ]</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>True if <TT
+CLASS="filename"
+>FILE</TT
+> exists and is executable.</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>[ <TT
+CLASS="option"
+>-O</TT
+> <TT
+CLASS="filename"
+>FILE</TT
+> ]</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>True if <TT
+CLASS="filename"
+>FILE</TT
+> exists and is owned by the effective user ID.</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>[ <TT
+CLASS="option"
+>-G</TT
+> <TT
+CLASS="filename"
+>FILE</TT
+> ]</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>True if <TT
+CLASS="filename"
+>FILE</TT
+> exists and is owned by the effective group ID.</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>[ <TT
+CLASS="option"
+>-L</TT
+> <TT
+CLASS="filename"
+>FILE</TT
+> ]</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>True if <TT
+CLASS="filename"
+>FILE</TT
+> exists and is a symbolic link.</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>[ <TT
+CLASS="option"
+>-N</TT
+> <TT
+CLASS="filename"
+>FILE</TT
+> ]</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>True if <TT
+CLASS="filename"
+>FILE</TT
+> exists and has been modified since it was last read.</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>[ <TT
+CLASS="option"
+>-S</TT
+> <TT
+CLASS="filename"
+>FILE</TT
+> ]</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>True if <TT
+CLASS="filename"
+>FILE</TT
+> exists and is a socket.</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>[ <TT
+CLASS="filename"
+>FILE1</TT
+> <TT
+CLASS="option"
+>-nt</TT
+> <TT
+CLASS="filename"
+>FILE2</TT
+> ]</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>True if <TT
+CLASS="filename"
+>FILE1</TT
+> has been changed more recently than <TT
+CLASS="filename"
+>FILE2</TT
+>, or if <TT
+CLASS="filename"
+>FILE1</TT
+> exists and <TT
+CLASS="filename"
+>FILE2</TT
+> does not.</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>[ <TT
+CLASS="filename"
+>FILE1</TT
+> <TT
+CLASS="option"
+>-ot</TT
+> <TT
+CLASS="filename"
+>FILE2</TT
+> ]</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>True if <TT CLASS="filename">FILE1</TT> is older than 
+<TTCLASS="filename">FILE2</TT>, or is 
+<TT CLASS="filename">FILE2</TT> exists and <TTCLASS="filename">FILE1</TT> does not.</TD>
+</TR>
+</TBODY>
+</TABLE>
+
+
+<P style="page-break-before: always">
+<p><HR><p>
+<h3>
+<a name="fileopreadwrite"></a>
+File operations: Reading and writing to files
+</h3>
+ex7.sh: A program to demonstrate file i/o using output redirection:
+<table width="100%" class="ex" cellspacing="0" border="1" bgcolor="#C0C0C0"><tr><td><pre>
+#!/bin/bash
+#
+#
+# A program to demonstrate file i/o using output redirection.
+#
+words="electron muon tau"
+outputfile="test.out"
+
+# Remove the output file if it already exists
+rm -f $outputfile
+
+# Fill the output file with the words
+for name in $words; do
+  echo $name >> $outputfile
+done
+
+# Use cat to print the contents of the output file
+echo "cat $outputfile:"
+cat $outputfile
+
+echo
+echo "Reading the words back in."
+for name in $(<$outputfile); do
+  str="$str$name, "
+done
+echo $str
+</pre></td></tr></table><br>
+
+
+<P style="page-break-before: always">
+<p><HR><p>
+<h3>
+<a name="expansion"></a>
+Expansion and its uses
+</h3>
+ex8.sh: A program to demonstrate brace and tilde expansion:
+<table width="100%" class="ex" cellspacing="0" border="1" bgcolor="#C0C0C0"><tr><td><pre>
+#!/bin/bash
+#
+# A program to demonstrate brace and tilde expansion.
+#
+
+echo "Brace expansion - 1{2,3,4}5:"
+echo 1{2,3,4}5
+
+echo "Tilde Expansion HOME - ~:"
+echo ~
+
+echo "Tilde Expansion PWD - ~+:"
+echo ~+
+
+echo "Tilde Expansion chrisc's HOME:"
+echo ~chrisc/
+</pre></td></tr></table><br>
+
+ex9.sh: A program to demonstrate arithmetic expansion:
+<table width="100%" class="ex" cellspacing="0" border="1" bgcolor="#C0C0C0"><tr><td><pre>
+#!/bin/bash
+#
+# A program to demonstrate arithmetic expansion
+
+i=1
+j=4
+
+i=$((++i*j))
+
+echo $i
+</pre></td></tr></table><br>
+<ul>
+<li> The basic form is $((<i>expression</i>))
+<li> This provides the functionality of let i.e. + - * / **
+<li> For more complex operations e.g. sine, sqrt etc. use perl
+
+</ul>
+
+
+<P style="page-break-before: always">
+<p><HR><p>
+<h3>
+<a name="commandlineargs"></a>
+Command line arguments
+</h3>
+ex10.sh: A program to illustrate how command line arguments can be read:
+<table width="100%" class="ex" cellspacing="0" border="1" bgcolor="#C0C0C0"><tr><td><pre>
+#!/bin/bash
+#
+# A simple program to illustrating how command line arguments can be read
+# inside a shell program.
+#
+echo "The number of arguments following the command = $#";
+
+for arg in $* ; do
+    str="$str $arg"
+done
+
+echo "$0"
+echo "$0$str"
+</pre></td></tr></table><br>
+
+<ul>
+<li> Input arguments can be accessed directly using <FONT FACE="Courier">$n</FONT>
+where <FONT FACE="Courier">n</FONT> is the number of the argument e.g. <br>
+<FONT FACE="Courier">echo "The first argument is $1"</FONT>
+<li> The zeroth argument is the script which was called.
+<li> Be careful to check the value is defined before using it. 
+
+</ul>
+
+
+<P style="page-break-before: always">
+<p><HR><p>
+<h3>
+<a name="fileopspawn"></a>
+A script which writes new scripts to spawn your jobs
+</h3>
+
+ex11.sh: A program to write a number of <FONT FACE="Courier">job-n.sh</FONT> files and submit them in the background on your machine.
+<table width="100%" class="ex" cellspacing="0" border="1" bgcolor="#C0C0C0"><tr><td><pre>
+#!/bin/bash
+#
+# A program to read in a command line argument and produce
+# the corresponding number of new jobs, then run them.
+#
+
+if [ $# -ne 1 ]
+  then
+   echo "Give:1. Number of jobs to spawn"
+   exit 1
+fi
+
+# run over the jobs
+#===============================
+TopFile=$1
+File=1
+while [ $File -le $TopFile ]
+do
+echo "preparing File " $File
+JobName=job-$File
+LogName=log-$File
+
+#Write these lines out to a job file
+#===================================
+cat >$JobName.sh << ENDOFMYFILE
+#! /bin/sh
+#this will be written to many job files!
+echo "I am job $File, and I could do something more than just this!"
+ENDOFMYFILE
+
+#make job file executable
+chmod u+x $JobName.sh
+
+#Now, run all the jobs we just created in the background with '&'
+#NB: good idea to keep this commented out until you're sure
+#    the job-X.sh files are right!
+#=====================================================
+echo "About to submit $JobName.sh in the background"
+./$JobName.sh  > $LogName.log &
+
+
+#increment $File, and repeat for new file.
+#=========================================
+let File=$File+1
+echo "END-OF-JOB-CREATE"
+done
+</pre></td></tr></table><br>
+
+
+<ul>
+<li>The output will be stored in individual <FONT FACE="Courier">log-n.log</FONT> files.
+<li>It might be a good idea to comment out the line 
+"<FONT FACE="Courier">./$JobName.sh  > $LogName.log &</FONT>"
+with a "#" until you are sure the <FONT FACE="Courier">job-n.sh</FONT> files look right.
+<li>Once you have run the program e.g. with "<FONT FACE="Courier">./ex11.sh 10</FONT>", look at the <FONT FACE="Courier">job-n.sh</FONT>
+and <FONT FACE="Courier">log-n.log</FONT> files.
+<li>Something like this might be useful to you in your studies..
+</ul>
+
+
+
+
+
+<P style="page-break-before: always">
+<p><HR><p>
+<h3>
+<a name="stringopcond"></a>
+String operations: conditional expressions
+</h3>
+ex12.sh: A program to demonstrate the use of conditional string operators:
+<table width="100%" class="ex" cellspacing="0" border="1" bgcolor="#C0C0C0"><tr><td><pre>
+#!/bin/bash
+#
+# A program to demonstrate the use of conditional string operators.
+#
+
+if [[ -n $CHECK_ME ]]; then
+  echo "CHECK_ME = $CHECK_ME"
+else
+  echo "CHECK_ME is unset."
+fi
+</pre></td></tr></table><br>
+<ul>
+<li> To test the example program, try setting and unsetting the CHECK_ME
+environmental variable:
+<pre>
+bash-2.05b$ export CHECK_ME=1
+bash-2.05b$ unset CHECK_ME
+</pre>
+<li> Run the script before and after the environmental variable is set.
+</ul>
+
+
+A summary of the most useful conditional string operators:
+<TABLE
+BORDER="1"
+CLASS="CALSTABLE">
+<THEAD>
+<TR>
+<TH ALIGN="LEFT" VALIGN="MIDDLE">Usage
+</TH>
+<TH ALIGN="LEFT" VALIGN="MIDDLE">Result
+</TH>
+</TR>
+</THEAD>
+<TBODY>
+
+<TR>
+<TD ALIGN="LEFT" VALIGN="MIDDLE">
+[ <TT CLASS="option">-z</TT> 
+<TT CLASS="filename">STRING</TT> ]
+</TD>
+<TD ALIGN="LEFT" VALIGN="MIDDLE">
+True if the length of <TT CLASS="filename">STRING</TT> is zero.
+</TD>
+</TR>
+
+<TR>
+<TD ALIGN="LEFT" VALIGN="MIDDLE">
+[ <TT CLASS="option">-n</TT>
+<TT CLASS="filename">STRING</TT> ]
+</TD>
+<TD ALIGN="LEFT" VALIGN="MIDDLE">
+True if the length of <TT CLASS="filename">STRING</TT> is non-zero.
+</TD>
+</TR>
+
+<TR>
+<TD ALIGN="LEFT" VALIGN="MIDDLE">
+[ <TT CLASS="str1">STRING1</TT>
+== <TT CLASS="str2">STRING2</TT> 
+]
+</TD>
+<TD ALIGN="LEFT" VALIGN="MIDDLE">
+True if <TT CLASS="str1">STRING1</TT> equals <TT CLASS="str2">STRING2</TT>.
+</TD>
+</TR>
+
+
+<TR>
+<TD ALIGN="LEFT" VALIGN="MIDDLE">
+[ <TT CLASS="str1">STRING1</TT>
+!= <TT CLASS="str2">STRING2</TT>
+]
+</TD>
+<TD ALIGN="LEFT" VALIGN="MIDDLE">
+True if <TT CLASS="str1">STRING1</TT> not equal to <TT CLASS="str2">STRING2</TT>.
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+
+
+
+
+<P style="page-break-before: always">
+<p><HR><p>
+<h3>
+String Operations: Parameter expansion
+</h3>
+
+<ul>
+<li>The basic form of parameter expansion is ${<i>parameter</i>} - note curly braces.
+<li>The value of <i>parameter</i> is substituted.
+</ul>
+
+
+<a name="stringsel"></a>
+ex13.sh: Substring selection:
+<table width="100%" class="ex" cellspacing="0" border="1" bgcolor="#C0C0C0"><tr><td><pre>
+#!/bin/bash
+# A script demonstrating substring selection via Parameter Expansion
+#
+
+somestring=abcdef
+
+echo ${somestring}
+echo "length = ${#somestring}"
+
+i=2
+echo "After $i characters ${somestring:$i}"
+echo "Before $i characters ${somestring: -$i}"
+
+j=2
+echo "From char $i for length $j ${somestring:$i:$j}"
+</pre></td></tr></table><br>
+
+<a name="stringrem"></a>
+ex14.sh: Substring removal:
+<table width="100%" class="ex" cellspacing="0" border="1" bgcolor="#C0C0C0"><tr><td><pre>
+#!/bin/bash
+#
+# A script to remove part of a string using Parameter Expansion.
+#
+
+parameter="filename.dat"
+lastword=".dat"
+firstword="file"
+
+
+remainder1=${parameter%$lastword}
+remainder2=${parameter#$firstword}
+
+
+echo "parameter=$parameter"
+echo "firstword=$firstword"
+echo "lastword=$lastword"
+echo "remainder1=$remainder1"
+echo "remainder2=$remainder2"
+</pre></td></tr></table><br>
+
+<a name="stringsub"></a>
+ex15.sh: String substitution:
+<table width="100%" class="ex" cellspacing="0" border="1" bgcolor="#C0C0C0"><tr><td><pre>
+#!/bin/bash
+#
+# A script to replace part of a string using Parameter Expansion
+#
+
+parameter="filename.dat"
+pattern=".dat"
+string=".root"
+
+new_filename=${parameter/$pattern/$string}
+
+echo "parameter=$parameter pattern=$pattern string=$string"
+echo "new_filename=$new_filename"
+</pre></td></tr></table><br>
+
+
+
+<a name="stringpat"></a>
+ex16.sh: String pattern matching:
+<table width="100%" class="ex" cellspacing="0" border="1" bgcolor="#C0C0C0"><tr><td><pre>
+#!/bin/bash
+#
+# A script demonstrating string pattern matching.
+# Note the escaped (\) double quotes in the echo statement.
+#  this means the quotes will be printed as quotes, and not treated as the
+#  end of the echo statement.
+
+filename1="string"
+filename2="xyzstringxyz"
+
+match="xyzstring"
+
+if [[ "$filename2" == *"$filename1"* ]]; then
+  echo "*\"$filename1\"* matches \"$filename2\" "
+fi
+
+if [[ "$filename2" == "$match"* ]]; then
+  echo "\"$match\"* matches \"$filename2\""
+fi
+</pre></td></tr></table><br>
+
+
+
+<P style="page-break-before: always">
+<p><HR><p>
+<h3>
+<a name="othercommands"></a>
+String operations: Other commands
+</h3>
+
+A range of commands outside the bash language can be used to operate on strings.
+<ul>
+<li><FONT FACE="Courier">expr</FONT> - Provides many string operations together with logic and numeric functions
+(type <FONT FACE="Courier">man expr</FONT> or <FONT FACE="Courier">info expr</FONT> for more details).
+<li><FONT FACE="Courier">sed</FONT> - Stream editor used to perform operations on text, e.g.
+<pre>
+bash-2.05b$ echo "abcdefg" | sed 's/abc/zzz/g'
+zzzdefg
+</pre>
+<li><FONT FACE="Courier">awk</FONT> - Is the interpreter used for the AWK Programming Language
+</ul>
+
+
+<p><HR><p>
+<h3>
+<a name="functions"></a>
+Functions
+</h3>
+
+ex17.sh: A script demonstrating functions:
+<table width="100%" class="ex" cellspacing="0" border="1" bgcolor="#C0C0C0"><tr><td><pre>
+#!/bin/bash
+#
+# A script demonstrating functions
+
+#------------ a function called usage()------------------
+usage() {
+echo "Usage: No parameters given!"
+exit 1
+}
+#------------------ end function ------------------------
+
+# Check at least one argument is given
+if [[ -z $1 ]]; then
+  usage
+fi
+
+echo "we have at least one argument"
+exit 0
+</pre></td></tr></table><br>
+<ul>
+<li>If no parameters are given, call the function 
+<FONT FACE="Courier">usage()</FONT>
+
+</ul>
+
+
+
+<P style="page-break-before: always">
+<p><HR><p>
+<h3>
+<a name="externalcommands"></a>
+External commands
+</h3>
+
+ex18.sh: Executing external commands:
+<table width="100%" class="ex" cellspacing="0" border="1" bgcolor="#C0C0C0"><tr><td><pre>
+#!/bin/bash
+#
+# A script demonstrating external commands
+
+#run the command with '$()'
+#
+badresult=$(./ex17.sh)
+
+#entirely equivalent.. run with ``
+#
+goodresult=`./ex17.sh something`
+
+echo "\"./ex17.sh\"           gave:      $badresult"
+echo "\"./ex17.sh something\" gave:      $goodresult"
+</pre></td></tr></table><br>
+
+<ul>
+<li>In one line of a script, you sometimes need to evaluate an external command, for example 
+the variable <FONT FACE="Courier">badresult</FONT> is set to the output of <FONT FACE="Courier">./ex17.sh</FONT>
+<li>Note there are two ways to run an external command. Either with <FONT FACE="Courier">$(command)</FONT> or
+with `backquotes` e.g. <FONT FACE="Courier">`command`</FONT>
+</ul>
+
+
+
+
+
+<p><HR><p>
+
+<TABLE WIDTH=100%>
+<TR>
+<TD>
+
+<A HREF="shellintro.html">
+<IMG SRC="../images/left30.gif" WIDTH=30 HEIGHT=30 ALT="Back Arrow" BORDER="0"></A>
+</TD>
+
+<TD>
+<A HREF="../overview.html">
+<IMG SRC="../images/up30.gif" WIDTH=30 HEIGHT=30 ALT="Up Arrow" BORDER="0"></A>
+</TD>
+
+<TD>
+<A HREF="../perl/perl.html">
+<IMG SRC="../images/right30.gif" WIDTH=30 HEIGHT=30 ALT="Forward Arrow" BORDER="0"></A>
+</TD>
+     
+<TD ALIGN="RIGHT">
+page maintained by <A HREF="mailto:c.collins-tooth@physics.gla.ac.uk">Chris
+Collins-Tooth</A></p>
+</TD>
+</TR>
+</TABLE>
+
+
+
+</body>
+</html>

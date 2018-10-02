@@ -1,0 +1,23 @@
+Ports 
+	1) Disable
+	2) Blocking <------------------------.
+	3) listening	si port bloquant  ---|
+	4) learning
+	5) forwarding
+
+
+
+
+BPDU
+	1) BID==>Priorité,ID
+	2) cost
+	3) Root Bridge ID
+
+
+Spanning tree
+	1) Election du bridge racine (root bridge)
+		->BID le plus petit
+	2) Election des ports racines (root ports)
+	3) Election des ports désignés
+		->BID le plus petit
+	4) Bloquer les ports qui ne sont pas RP ou DP

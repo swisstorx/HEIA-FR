@@ -1,0 +1,142 @@
+<html>
+<head>
+<center>
+<h1>
+Introduction to Shells
+</center>
+</h1>
+</head>
+<br>
+<body>
+<p><HR><p>
+<h3>
+Starting a Shell
+</h3>
+<ul>
+<li>Each user has a default shell, defined in a <FONT FACE="Courier">/etc/passwd</FONT> file. 
+<li>See what shell you are in:<br>
+
+<pre>
+bash-2.05b$ echo $SHELL
+/bin/bash
+</pre>
+
+<li>You can start another shell from the default shell by simply typing the name of the shell, then get back to where you were by typing exit:
+<pre>
+bash-2.05b$ dash
+$ exit
+bash-2.05b$
+</pre>
+
+<li>Files you create can be run using a specified shell by creating a PATH to the shell at the top of the file, e.g.:<br>
+(instead of 'pico', you can use your own favorite editor, e.g. emacs, vi etc.)
+<pre>
+bash-2.05b$ pico my.sh   
+#!/bin/csh
+#apart from the first line ('shebang line'), comments are signified by hashes
+#
+#note: the setenv command does not exist in bash or zsh. This means
+#the 'shebang line' has specified the csh interpreter
+#
+setenv dummyvariable "323"
+echo "I just set dummyvariable to $dummyvariable"
+</pre>
+<li>The line <FONT FACE="Courier">#!/bin/csh</FONT> is often called the "shebang" line. 
+
+
+<li>There are a number of different shells. The main ones found on modern LINUX/UNIX systems are <FONT FACE="Courier">tcsh</FONT> and <FONT 
+FACE="Courier">bash</FONT>
+<li>The ubuntu cluster has <FONT FACE="Courier">bash</FONT> and <FONT FACE="Courier">dash</FONT> but does not have <FONT FACE="Courier">tcsh</FONT> or <FONT 
+FACE="Courier">csh</FONT>.
+
+<li>From now on in this course,  <FONT FACE="Courier">bash</FONT> and perl are used.
+   <ul>
+   <li><FONT FACE="Courier">bash</FONT>: provides easy access to LINUX commands.
+   <li>perl: provides access to LINUX commands, has extra functionality and allows easy string manipulation. (It is also the language that many web scripts are written in.)
+   </ul>
+
+</ul>
+
+<P style="page-break-before: always">
+<p><HR><p>
+<h3>
+A Basic Shell Program
+</h3>
+<ul>
+<li>First, use an editor like (pico, emacs or vi) to create a file containing the text in the grey box:<br>
+
+ex1.sh: My first shell script:
+<table width="100%" class="ex" cellspacing="0" border="1" bgcolor="#C0C0C0">
+<tr>
+<td>
+<pre>
+
+#!/bin/bash
+#
+# C Collins-Tooth
+# A basic script to print one line to the standard output.
+#
+echo "this is my first script - HELLO WORLD!"
+</pre>
+</td>
+</tr>
+</table>
+
+<li>Save the file as ex1.sh
+
+<li>The file does not *need* to have a specific file extension. (For the examples
+given in ths course, <FONT FACE="Courier">bash</FONT>
+scripts are <FONT FACE="Courier">.sh</FONT> and <FONT FACE="Courier">perl</FONT> scripts are 
+
+<FONT FACE="Courier">.pl</FONT>.</li>
+<li>Then, make the file executable</li>
+<pre>
+bash-2.05b$ chmod u+x ex1.sh
+</pre>
+
+<li>Finally, run the script:
+<pre>
+bash-2.05b$ ./ex1.sh
+this is my first script - HELLO WORLD!
+bash-2.05b$
+</pre>
+</ul>
+
+
+<p><HR><p>
+
+
+
+
+
+<TABLE WIDTH=100%>
+<TR>
+<TD>
+
+<A HREF="../overview.html">
+<IMG SRC="../images/left30.gif" WIDTH=30 HEIGHT=30 ALT="Back Arrow" BORDER="0"></A>
+</TD>
+                                                                                                                          
+
+
+<TD>
+<A HREF="../overview.html">
+
+<IMG SRC="../images/up30.gif" WIDTH=30 HEIGHT=30 ALT="Up Arrow" BORDER="0"></A>
+</TD>
+
+<TD>
+<A HREF="bash.html">
+<IMG SRC="../images/right30.gif" WIDTH=30 HEIGHT=30 ALT="Forward Arrow" BORDER="0"></A>
+</TD>
+     
+<TD ALIGN="RIGHT">
+page maintained by <A HREF="mailto:c.collins-tooth@physics.gla.ac.uk">Chris
+Collins-Tooth</A></p>
+</TD>
+</TR>
+</TABLE>
+
+
+</body>
+</html>

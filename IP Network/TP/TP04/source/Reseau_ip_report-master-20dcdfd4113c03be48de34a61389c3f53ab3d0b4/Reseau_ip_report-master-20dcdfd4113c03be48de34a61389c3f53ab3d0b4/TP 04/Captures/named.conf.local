@@ -1,0 +1,45 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+// include "/etc/bind/zones.rfc1918"//
+
+// db.lte07.ch.zone
+// db.30.98.160.in-addr.zone
+
+// Haute ecole d'ingenierie et d'architecture de Fribourg
+// Reseaux IP
+// ---------------------------------------------------------------------------------
+// TP DNS - Filename= /etc/bind/named.conf.local
+// ---------------------------------------------------------------------------------
+// (c) F.Buntschu
+// Version 1.4
+// ---------------------------------------------------------------------------------
+//
+// Do any local configuration here
+//
+// Consider adding the 1918 zones here, if they are not used in your organization
+// include "/etc/bind/zones.rfc1918"//
+// A ajouter / completer pour le TP
+// **********************************
+zone "lte07.ch." IN {
+        type master;
+        file "/etc/bind/db.lte07.ch.zone";
+        allow-update {
+                none;
+        };
+        notify yes;
+};
+
+zone "30.98.160.in-addr.arpa." IN {
+        type master;
+        file "/etc/bind/db.30.98.160.in-addr.zone";
+        allow-update { none; };
+};
+
+
+
+
+

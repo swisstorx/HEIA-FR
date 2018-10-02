@@ -1,0 +1,9 @@
+Extended IP access list 101
+    10 permit udp host 192.168.31.32 host 192.168.41.114
+    20 permit ospf any any (45 matches)
+Extended IP access list 102
+    10 permit tcp host 192.168.31.32 eq www host 192.168.41.114
+Extended IP access list 103
+    10 permit ip host 160.98.30.188 host 192.168.41.114
+Extended IP access list 104
+    10 permit ip any any

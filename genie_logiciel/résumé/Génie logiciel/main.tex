@@ -1,0 +1,199 @@
+\input{../Commands.tex}
+
+\title{Résumé système numérique} 
+\author{\textsl{Marc} \textsc{Roten}}
+\date{}
+
+\begin{document}
+    \begin{titlepage}
+        \begin{center}
+            \includegraphics[scale=.4]{Img/heia-fr-logo.png}\\[1.3cm]
+            
+            \rule{\linewidth}{0.3mm} \\[0.3cm]
+            {\huge \bfseries Système numérique\\[0.5cm]} 
+           % {\Large Effet photoélectrique}\\[0.2cm]
+            {\Large  Résumé }
+            \rule{\linewidth}{0.3mm} \\[0.8cm]
+            \noindent
+            \begin{minipage}[t]{0.4\textwidth}
+                \begin{flushleft} \large
+                    \emph{Auteurs :}\\
+                    \theauthor
+                \end{flushleft}
+            \end{minipage}
+            \begin{minipage}[t]{0.4\textwidth} 
+                \begin{flushright} \large
+                    \emph{Professeur:}\\
+                    \textsl{Daniel} \textsc{ Oberson}\\ 
+                \end{flushright} 
+                \vfill
+            \end{minipage}\\[1.3cm]
+            \includegraphics[scale=0.7]{Img/title.jpg}\\[1.5cm]
+            \vspace*{1\baselineskip}
+            \today \\[0.7cm]
+        \end{center}
+    \end{titlepage}
+    \tableofcontents
+    \clearpage
+% \insertImage{Img/photo.PNG}{0.8}{Schéma explicatif}{}
+
+% \section{voici comment faire un chapitre}
+
+%     \subsection{Voici comment faire un sous chapitre}
+
+% \section{des commandes}
+%     \subsection{commande cisco}
+    
+%     \begin{cisco}[une commande sympa type cisco]
+%       un texte lambda
+%     \end{cisco}
+    
+%     \subsection{commande cisco allégée}
+    
+%     \begin{cisco}
+%       un texte lambda
+%     \end{cisco}
+    
+    
+%     \subsection{commande pour mettre une image}
+    
+%     % \insertImage{Img/1.PNG}{echelle pour l'image (source = 1)}{texte dessous l'image}{référence vers l'objet
+%     \insertImage{Img/1.JPG}{0.6}{voici une image}{myImg}
+
+\section{Chapter 1 : Introduction au VHDL}
+
+\subsection{Procédure}
+\insertImage{Img/0.JPG}{0.6}{procédure}{}
+
+\subsection{Signaux types et opérateurs}
+\insertImage{Img/1.JPG}{0.8}{Rappel des différents états, types et opérteurs}{}
+
+\subsection{Std logic vector}
+
+\insertImage{Img/2.JPG}{0.8}{STD LOGIC VECTOR}{}
+
+Il est possible de ne pas définir la taille d'un vecteur. Nous
+parlons alors de vecteur !!!!! non-contraint !!!!!. Il s'agit d'une application
+particulière pour les descriptions réutilisables.
+
+\subsubsection{Les non-contraint}
+
+On peut réaliser des vecteur non-contraint, pour la réutilisabilité du code, mais lors de l'instanciation, il faut rajouter les dites-contraintes. Dans un FPGA, en VHDL, TOUT EST DETERMINISTE.
+
+\subsection{Ordre des opérateurs}
+\insertImage{Img/4.JPG}{0.6}{ordre de précédence}{}
+\newpage
+Exemples ci-dessous:
+
+$$ A <="10111"$$
+$$ A ~ ssl ~  1 ->"01110"$$
+$$ A  ~ sra ~  2 -> "11101"$$
+$$ A  ~ rol ~  3 -> "11101"$$
+ 
+ \subsection{Rappel structure du code}   
+   \insertImage{Img/5.JPG}{0.6}{Structure du code}{}
+   
+ \subsection{Description d'un composant, Entity}
+   \insertImage{Img/6.JPG}{0.6}{Description d'un conposant}{}
+\subsection{Rappel le la syntaxe pour l'architecture}
+
+\insertImage{Img/7.JPG}{0.6}{architecture}{1}
+
+\subsubsection{Zone de Déclaration}
+\insertImage{Img/8.JPG}{0.6}{zone de déclaration}{1}
+
+\subsubsection{Zone de code}
+\insertImage{Img/9.JPG}{0.6}{Zone de code}{1}
+
+
+\newpage
+\subsection{Conception avec le VHDL}
+
+$$IL~FAUT~PENSER~CIRCUIT$$
+$$Faire~des~descriptions~SIMPLES~et~LISIBLE$$
+
+=====================================
+
+=====================================
+
+Rajouter du texte de la page 23
+
+=====================================
+
+=====================================
+
+done jusqu'à la page 23
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Portabilité}
+
+\insertImage{Img/10.JPG}{0.6}{Zone de code}{1}
+
+\subsection{Outils d'instructions concurrentes.}
+
+\insertImage{Img/11.JPG}{0.6}{Zone de code}{1}
+
+\subsubsection{Affectation}
+
+\insertImage{Img/12.JPG}{0.6}{Zone de code}{1}
+
+
+En simulation, on peut affecter le meme signal à plusieurs circuit. La synthèse nous laisse uniquement faire 1 Signal sur 1 circuit
+
+\subsubsection{Affectation avec condition}
+L'avantage de cette méthode est qu'elle ne crée aucun latch, et en VHDL, il ne faut aucun latch.
+
+\insertImage{Img/13.JPG}{0.6}{Zone de code}{1}
+
+\subsubsection{Affectation de séléction}
+
+\insertImage{Img/14.JPG}{0.6}{Zone de code}{1}
+
+\subsection{Instanciation d'un composant}
+\subsubsection{Methode Schroeter}
+\insertImage{Img/15.JPG}{0.6}{Zone de code}{1}
+\insertImage{Img/16.JPG}{0.6}{Lien avec une bibliothèque}{1}
+
+\subsubsection{Méthode Etudiand}
+
+\insertImage{Img/17.JPG}{0.6}{Lien avec une bibliothèque}{1}
+
+
+\subsection{Process}
+
+\insertImage{Img/18.JPG}{0.6}{Lien avec une bibliothèque}{1}
+\textbf{Un seul bit d un std logic vector bouge, et on réveille toute la liste de sensibilité}
+
+$$se rendort lorsque toutes les instructions
+séquentielles (avant le end process / wait)
+ont été évaluées.$$
+
+\subsubsection{Déclaration à l'intérieur}
+
+$$interdit d'avoir une variable sans valeur, leur donner une valeur initiale$$
+
+\insertImage{Img/19.JPG}{0.6}{Lien avec une bibliothèque}{1}
+
+
+\subsection{Instructions Séquentielles}
+
+\insertImage{Img/20.JPG}{0.6}{}{1}
+
+
+\subsection{Types supplémentaires et conversion}
+\textbf{le languqge est fortement typé}
+
+\insertImage{Img/21.JPG}{0.6}{}{1}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

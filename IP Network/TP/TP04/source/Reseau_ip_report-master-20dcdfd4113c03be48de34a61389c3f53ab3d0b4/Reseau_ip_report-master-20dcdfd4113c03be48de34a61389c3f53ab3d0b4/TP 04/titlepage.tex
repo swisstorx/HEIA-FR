@@ -1,0 +1,23 @@
+\newgeometry{left=1cm,right=1cm,top=1cm,bottom=1cm}% établie la géométrie pour la page de garde
+
+\begin{titlepage}
+
+\center
+
+\includegraphics[scale=1.45]{images/effect.png}\\
+\includegraphics[scale=0.8]{images/heia_logo.png}\\[3.5cm]
+
+\textsc{\LARGE \branche{}}\\[1cm]
+\textsc{\LARGE \subtitle{}}\\[2cm]
+
+{ \huge \bfseries \thetitle }\\[2cm]
+
+\Large \emph{Auteur:}\\
+\theauthor\\[1cm]
+
+{\large \today} % Date, change the \today to a set date if you want to be precise
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+\newpage{\aftergroup\restoregeometry} % Rétablie la géométrie par défaut
