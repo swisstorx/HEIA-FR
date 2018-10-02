@@ -1,5 +1,0 @@
-dns and ip.addr==160.98.30.207 and ip.addr==160.98.31.181
-
-dns and ip.addr==160.98.30.207 and dns.qry.name contains "admin.ch"
-
-dns and ip.addr==160.98.30.207 and dns.qry.name contains "www.tic.co.uk"

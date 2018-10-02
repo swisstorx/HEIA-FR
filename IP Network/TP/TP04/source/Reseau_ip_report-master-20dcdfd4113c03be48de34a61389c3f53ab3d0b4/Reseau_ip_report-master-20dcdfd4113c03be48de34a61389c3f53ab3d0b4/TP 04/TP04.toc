@@ -1,7 +1,0 @@
-\select@language {french}
-\contentsline {section}{\numberline {1}Introduction}{2}
-\contentsline {section}{\numberline {2}Configuration d'exp\IeC {\'e}rience}{2}
-\contentsline {section}{\numberline {3}Protocole DNS}{6}
-\contentsline {subsection}{\numberline {3.1}Analyse des protocoles observ\IeC {\'e}s}{6}
-\contentsline {subsection}{\numberline {3.2}Analyse des \IeC {\'e}changes DNS}{8}
-\contentsline {section}{\numberline {4}Conclusion}{9}
