@@ -1,0 +1,12 @@
+\babel@toc {french}{}
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {section}{\numberline {2}Travail \IeC {\`a} r\IeC {\'e}aliser}{2}
+\contentsline {subsection}{\numberline {2.1}Signal d'entr\IeC {\'e}e point \IeC {\`a} point}{2}
+\contentsline {subsection}{\numberline {2.2}G\IeC {\'e}n\IeC {\'e}rer des s\IeC {\'e}ries}{3}
+\contentsline {subsection}{\numberline {2.3}Repr\IeC {\'e}sentation fr\IeC {\'e}quentielle}{4}
+\contentsline {subsection}{\numberline {2.4}Analyse fr\IeC {\'e}quentielle}{4}
+\contentsline {section}{\numberline {3}Travail optionnel}{5}
+\contentsline {subsection}{\numberline {3.1}Fonction g\IeC {\'e}n\IeC {\'e}ration automatique de signal}{5}
+\contentsline {subsection}{\numberline {3.2}Recr\IeC {\'e}e le signal avec ses 3 fondamentales}{5}
+\contentsline {subsection}{\numberline {3.3}Manipulation FFT piano et/ou guitare}{5}
+\contentsline {section}{\numberline {4}Conclusion}{5}
