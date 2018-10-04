@@ -201,6 +201,44 @@ $$interdit d'avoir une variable sans valeur, leur donner une valeur initiale$$
 
 \subsubsection{Mémoire}
 \insertImage{Img/26.JPG}{0.6}{}{1}
+Data est toujours une constantge de type signal. On fait des opérations à l'intérieur des process sur des unsigned.
+
+$$Pas~ besoin~ de~ else$$
+$$la ~valeur~ du vsignal~ Datamem~ est~ implicitement~ conservée~ si~ le~ signal~ n'est ~pas~ affecte$$
+
+
+
+
+\newpage
+\subsection{IMPORTANT}
+\subsubsection{Signal}
+\textbf{Un signal c'est un fil, AUCUNE MEMOIRE}
+
+\subsubsection{Un combinatoire}
+\textbf{SI LA SORTIE CHANGE IMMEDIATEMENT}
+
+affecter un signal combinatoire à un circuit combinatoire par l'opérateur "<=" lien définitif \textbf{comme si on soudait le signal à un composant}
+
+\textbf{Si un élément de la liste de sensibilité change, INSTANTANEMENT la sortie change}
+
+\subsubsection{Mémoire}
+\textbf{LA SORTIE CHANGE AU COUP DE CLOCK}
+
+Une mémoire change au \textbf{flanc actif d'horloge}. Dans une mémoire, on stocke une valeur et lorsque flan actif d'horloge, mise a jour de la sortie.
+
+\subsubsection{Longue mémoire}
+\textbf{CHANGE AU COUP DE CLOCK AVEC CONDITION FIXEE}
+
+Dans la partie rising edge, on va mettre un If et si la condition choisie est respectée on affecte une nouvelle valeur.
+
+\subsubsection{RTL}
+
+[Combinatoire]==>[Mémoire]==>[Combinatoire]==>[Mémoire]
+
+
+
+
+
 
 ----------------------------------------------
 
@@ -212,6 +250,77 @@ $$interdit d'avoir une variable sans valeur, leur donner une valeur initiale$$
 ----------------------------------------------
 
 ----------------------------------------------
+
+\subsection{Exercices}
+
+\insertImage{Img/27.JPG}{0.6}{Question}{1}
+\insertImage{Img/28.JPG}{0.8}{réponse}{1}
+\insertImage{Img/29.JPG}{0.6}{réponse}{1}
+
+
+
+
+\newpage
+\section{Chapter 2 Conception hiérarchique}
+%SN1-CH7_NS_2018
+\begin{cisco}[Système de plus en plus complexe]
+1) Pour répondre à la complexité qui augmente,on applique une technique de travail universelle:
+
+Diviser pour rêgner = réduire la complexité en plusieurs sous-problèmes
+
+2) Un système numérique sera découpé en plusieurs composants qui interagissent/communiquent.
+
+Forme de découpage la plus fréquente: HIERARCHIQUE
+\end{cisco}
+
+\subsection{Concept de découpage hiérarchique}
+ \insertImage{Img/30.JPG}{0.8}{découpage hiérarchique}{1}
+ 
+\subsection{Communication}
+ \insertImage{Img/31.JPG}{0.8}{Type de communication}{1}
+ 
+ % résumé complet jusquà la page 4 SN1-CH7_NS_2018
+ 
+ \subsection{A COMPLETER}
+ 
+ 
+
+
+
+
+
+
+
+\newpage
+\section{Types, Opérateurs et Conversions}
+%SN1-CH2_NS_2018
+
+
+
+VHDL est un langage \textbf{typé} où il est obligatoire de spécifier le type des \textbf{objets} utilisés.
+
+\insertImage{Img/32.JPG}{0.8}{Les sous-types}{1}
+
+%finit jusquà la page 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
