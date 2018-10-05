@@ -1,0 +1,4 @@
+INPUT += ./domain2/doc/dox.h
+@INCLUDE = ./domain2/compo1/doc/dox
+@INCLUDE = ./domain2/compo2/doc/dox
+

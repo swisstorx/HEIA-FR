@@ -61,5 +61,5 @@ $(OBJDIR):
 -include $(OBJS:.o=.d)
 
 clean:
-	$(DEL) $(MYLIB) *.o *.a *.d *~
-	$(RMDIR) $(OBJDIR)
+	-$(DEL) $(MYLIB) *.o *.a *.d *~
+	-$(RMDIR) $(OBJDIR)

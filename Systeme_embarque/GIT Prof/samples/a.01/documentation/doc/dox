@@ -1,0 +1,23 @@
+################################################################################
+# This file contains specific configuration to generate projet documentation
+# with doxygen
+# Author: Daniel Gachet, January 2014
+#-------------------------------------------------------------------------------
+#
+# HOW THE DOC CREATION WORKS
+# --------------------------
+#
+# First, you should add doc comments to your files. For an exhaustive list of
+# available tags, see the doxygen manual, which can be found here:
+#    http://www.stack.nl/~dimitri/doxygen/manual.html
+#
+# To create the docs, just type: $ make dox
+#
+# The output files are stored in: ./doc/html
+# To view HTML output, open: ./doc/html/index.html
+#
+################################################################################
+
+INPUT += ./doc/dox.h
+@INCLUDE = ./infra/doc/dox
+@INCLUDE = ./domain2/doc/dox

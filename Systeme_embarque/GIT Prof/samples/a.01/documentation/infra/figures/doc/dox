@@ -1,0 +1,8 @@
+INPUT += ./infra/figures/doc/dox.h
+INPUT += ./infra/figures/figure.h
+INPUT += ./infra/figures/circle.h
+INPUT += ./infra/figures/square.h
+INPUT += ./infra/figures/triangle.h
+INPUT += ./infra/figures/trapeze.h 
+INPUT += ./infra/figures/group.h
+

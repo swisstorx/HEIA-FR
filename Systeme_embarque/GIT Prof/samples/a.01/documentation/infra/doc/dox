@@ -1,0 +1,4 @@
+INPUT += ./infra/doc/dox.h
+@INCLUDE = ./infra/figures/doc/dox
+@INCLUDE = ./infra/math/doc/dox
+

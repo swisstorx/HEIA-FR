@@ -1,0 +1,3 @@
+INPUT += ./infra/math/doc/dox.h
+INPUT += ./infra/math/mymathlib.h
+
