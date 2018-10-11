@@ -146,6 +146,10 @@ sound(piano.music,piano.Fs+440);
 %déclaration des variables
 %signal x1
 % x1=(1/x)*sin(2*pi*x*2*t);
-x1=optionelle1(200);
+x1=optionelle1(250);
+plot(x1/(1e6));
+grid on
+
+
 
 

@@ -97,14 +97,13 @@ En vous appuyant sur la documentation en annexe, calculez dans Matlab la FFT des
 
 Déterminez depuis le résultat des calculs des FFT, les amplitudes et les phases des composantes fréquentielles $x_1 (t) et x_2 (t)$.
 
-\insertImage{Img/q3.JPG}{0.7}{Représentation fréquentielle}{q3}
+\insertImage{Img/q3.JPG}{0.65}{Représentation fréquentielle}{q3}
 La formule de ces représentation fréquentielle sont: 
 $$x1=sin(2*pi*f*t)+\frac{1}{3}*sin(2*pi*3*f*t)+\frac{1}{5}*sin(2*pi*5*f*t)+\frac{1}{7}*sin(2*pi*7*f*t)+\frac{1}{9}*sin(2*pi*9*f*t)$$
 
 $$x2=cos(2*pi*f*t)+\frac{1}{3}^2*cos(2*pi*3*f*t)+\frac{1}{5}^2*cos(2*pi*5*f*t)+\frac{1}{7}^2*cos(2*pi*7*f*t)+\frac{1}{9}^2*cos(2*pi*9*f*t)$$
 
 On constate donc qu'on a dans chacune de nos signaux X1 et X2, on a respectivement 4 et 5 éléments. On constate en figure \ref{q3} que le signal X1 produit 4 pics, et X2 produit 5 pics.
-
 
 
 \subsection{Analyse fréquentielle}
@@ -120,19 +119,20 @@ Ces notes sont-elles différentes? Le son entendu est-il différent? Qu'en concl
 
 \newpage
 \section{Travail optionnel}
-en faire au moins un
 \subsection{Fonction génération automatique de signal}
 \includegraphics[scale=.8]{Img/o1.JPG}
 
+Dans cet exemple on peut passer par exemple 200 en argument et obtenir un beau signal carré.
+
+
+En donnant 200 en paramètre à notre fonction, on obtient le résultat suivant.
+\insertImage{Img/q4.jpg}{0.5}{Résultat obtenu}{q4}
+
+En comparant la figure \ref{q2} et la figure \ref{q4}, on remarque que dans la figure \ref{q4} le signal est beaucoup plus propre, car il a plus d'éléments dans sa série, il en dispose de 200 contre 4 pour le premier 
 
 
 \section{Conclusion}
 Par ce travail j'ai pu m'entraîner sur l'outil Matlab. Apprendre de nouvelles fonctions de génération de fréquence. 
 
-L'analyse fréquentielle et les séries sont un bon rappel des connaissances acquises durant l'apprentissage durant la maturité et des connaissances acquises durant la première année.
-
-
-
-
-
+L'analyse fréquentielle et les séries sont un bon rappel des connaissances acquises durant l'apprentissage et durant la maturité et des connaissances acquises durant la première année.Ce rapport sera aussi utile comme base pour les prochains TP Matlab.s
 \end{document}
