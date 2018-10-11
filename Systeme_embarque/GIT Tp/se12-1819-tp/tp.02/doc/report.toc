@@ -1,1 +1,11 @@
 \select@language {french}
+\contentsline {section}{\numberline {1}Pourrait-on se passer des fichiers d'ent\IeC {\^e}te (header files) en C ?}{2}
+\contentsline {section}{\numberline {2}\#pragma once}{2}
+\contentsline {section}{\numberline {3}Que faut-il placer dans un fichier d'ent\IeC {\^e}te ?}{2}
+\contentsline {section}{\numberline {4}Quelle est l'utilit\IeC {\'e} des mots-clef extern et static ?}{2}
+\contentsline {section}{\numberline {5}Comment faut-il proc\IeC {\'e}der pour d\IeC {\'e}finir une constante en C ?}{2}
+\contentsline {section}{\numberline {6}Quelle(s) diff\IeC {\'e}rence(s) existe-t-il entre les instructions}{2}
+\contentsline {section}{\numberline {7}Comment peut-on d\IeC {\'e}finir une \IeC {\'e}num\IeC {\'e}ration en C ? Quelle est son utilit\IeC {\'e} ?}{3}
+\contentsline {section}{\numberline {8}Quelle(s) diff\IeC {\'e}rence(s) existe-t-il entre une structure en C struct S\{\} et une classe en Java class C\{\} ?}{3}
+\contentsline {section}{\numberline {9}Comment faut-il proc\IeC {\'e}der pour d\IeC {\'e}finir un tableau en C ? Peut-on lui donner des valeurs initiales lors de sa d\IeC {\'e}finition ?}{3}
+\contentsline {section}{\numberline {10}Comment faut-il proc\IeC {\'e}der pour obtenir le nombre d'\IeC {\'e}l\IeC {\'e}ments contenus dans un tableau ?}{3}

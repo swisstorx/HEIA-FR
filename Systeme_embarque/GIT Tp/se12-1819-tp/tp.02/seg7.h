@@ -13,7 +13,7 @@
 #endif /* SEG7_H_ */
 
 
-void init_7seg();
+void seg_init();
 
-void set_number(int number);
+void set_number(int numberDIG1,int numberDIG2);
 

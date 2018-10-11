@@ -46,6 +46,9 @@
 #define SEGE		(1<<23)
 #define SEGF		(1<<26)
 #define SEGG		(1<<27)
+#define S1			(1<<15)
+#define S2			(1<<16)
+#define S3			(1<<17)
 
 // macro to compute number of elements of an array
 #define ARRAY_SIZE(x) (sizeof(x) / sizeof(x[0]))

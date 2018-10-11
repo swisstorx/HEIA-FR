@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.25)  4 OCT 2018 11:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.25)  11 OCT 2018 10:36
 entering extended mode
 **./main.tex
 (main.tex
@@ -2238,22 +2238,27 @@ File: Img/32.JPG Graphic file (type jpg)
 <use Img/32.JPG>
 Package pdftex.def Info: Img/32.JPG  used on input line 302.
 (pdftex.def)             Requested size: 430.60934pt x 174.05048pt.
+<Img/33.JPG, id=157, 569.87906pt x 336.50719pt>
+File: Img/33.JPG Graphic file (type jpg)
+<use Img/33.JPG>
+Package pdftex.def Info: Img/33.JPG  used on input line 311.
+(pdftex.def)             Requested size: 455.90385pt x 269.2061pt.
  
 AED: lastpage setting LastPage
 File: Img/heia-fr-logo.png Graphic file (type png)
 <use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 332.
+Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 337.
 (pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
-[22 <./Img/32.JPG>] (main.aux)
+[22 <./Img/32.JPG> <./Img/33.JPG>] (main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 32565 strings out of 492976
- 666450 string characters out of 3127194
+ 32570 strings out of 492976
+ 666515 string characters out of 3127194
  771764 words of memory out of 3000000
- 35842 multiletter control sequences out of 15000+200000
+ 35846 multiletter control sequences out of 15000+200000
  584345 words of font info for 54 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  65i,17n,101p,10403b,1955s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2272,9 +2277,9 @@ ype1/public/lm/lmro12.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/font
 s/type1/public/lm/lmsy10.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/f
 onts/type1/public/lm/lmsy8.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9
 /fonts/type1/public/lm/lmtt8.pfb>
-Output written on main.pdf (23 pages, 2536635 bytes).
+Output written on main.pdf (23 pages, 2614562 bytes).
 PDF statistics:
- 197 PDF objects out of 1000 (max. 8388607)
+ 198 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 327 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 332 words of extra memory for PDF output out of 10000 (max. 10000000)
 

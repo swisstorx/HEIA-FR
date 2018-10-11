@@ -14,4 +14,4 @@
 
 void leds_init();
 
-bool set_state_by_led(int pin_led);
+void set_state_by_led(int pin_led,bool state);

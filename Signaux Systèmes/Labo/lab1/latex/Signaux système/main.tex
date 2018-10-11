@@ -97,6 +97,16 @@ En vous appuyant sur la documentation en annexe, calculez dans Matlab la FFT des
 
 Déterminez depuis le résultat des calculs des FFT, les amplitudes et les phases des composantes fréquentielles $x_1 (t) et x_2 (t)$.
 
+\insertImage{Img/q3.JPG}{0.7}{Représentation fréquentielle}{q3}
+La formule de ces représentation fréquentielle sont: 
+$$x1=sin(2*pi*f*t)+\frac{1}{3}*sin(2*pi*3*f*t)+\frac{1}{5}*sin(2*pi*5*f*t)+\frac{1}{7}*sin(2*pi*7*f*t)+\frac{1}{9}*sin(2*pi*9*f*t)$$
+
+$$x2=cos(2*pi*f*t)+\frac{1}{3}^2*cos(2*pi*3*f*t)+\frac{1}{5}^2*cos(2*pi*5*f*t)+\frac{1}{7}^2*cos(2*pi*7*f*t)+\frac{1}{9}^2*cos(2*pi*9*f*t)$$
+
+On constate donc qu'on a dans chacune de nos signaux X1 et X2, on a respectivement 4 et 5 éléments. On constate en figure \ref{q3} que le signal X1 produit 4 pics, et X2 produit 5 pics.
+
+
+
 \subsection{Analyse fréquentielle}
 Utilisez alors la fonction sound() de Matlab pour écouter la note de piano et la note de guitare enregistrées. Puis, en faisant une analyse fréquentielle par la FFT comme précédemment, déterminez la fréquence des notes enregistrées dans ces deux fichiers. 
 
@@ -115,11 +125,6 @@ en faire au moins un
 \includegraphics[scale=.8]{Img/o1.JPG}
 
 
-\subsection{Recrée le signal avec ses 3 fondamentales}
-\includegraphics[scale=.8]{Img/o2.JPG}
-
-\subsection{Manipulation FFT piano et/ou guitare}
-\includegraphics[scale=.8]{Img/o3.JPG}
 
 \section{Conclusion}
 Par ce travail j'ai pu m'entraîner sur l'outil Matlab. Apprendre de nouvelles fonctions de génération de fréquence. 
