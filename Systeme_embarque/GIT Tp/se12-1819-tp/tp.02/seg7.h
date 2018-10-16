@@ -15,5 +15,5 @@
 
 void seg_init();
 
-void set_number(int numberDIG1,int numberDIG2);
+void set_number(int number);
 

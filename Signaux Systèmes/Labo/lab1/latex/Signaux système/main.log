@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.25)  11 OCT 2018 16:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.25)  16 OCT 2018 15:40
 entering extended mode
 **./main.tex
 (main.tex
@@ -1812,12 +1812,7 @@ Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 93.
 File: Img/q3.JPG Graphic file (type jpg)
 <use Img/q3.JPG>
 Package pdftex.def Info: Img/q3.JPG  used on input line 100.
-(pdftex.def)             Requested size: 527.16325pt x 384.28113pt.
-
-Overfull \hbox (55.13202pt too wide) in paragraph at lines 100--100
- [] 
- []
-
+(pdftex.def)             Requested size: 446.06787pt x 325.16582pt.
 
 Overfull \hbox (51.44263pt too wide) detected at line 102
 \OML/lmm/m/it/12 x\OT1/lmr/m/n/12 1 = \OML/lmm/m/it/12 sin\OT1/lmr/m/n/12 (2 \O
@@ -1858,36 +1853,46 @@ n/12  \OT1/lmr/m/n/12 9 \OMS/lmsy/m/n/12  \OML/lmm/m/it/12 f \OMS/lmsy/m/n/12
 
 File: Img/heia-fr-logo.png Graphic file (type png)
 <use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 107.
+Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 111.
 (pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
 [4 <./Img/q3.JPG>]
+<Img/spectre.JPG, id=75, 1104.37593pt x 578.91281pt>
+File: Img/spectre.JPG Graphic file (type jpg)
+<use Img/spectre.JPG>
+Package pdftex.def Info: Img/spectre.JPG  used on input line 116.
+(pdftex.def)             Requested size: 530.09442pt x 277.87498pt.
+
+Overfull \hbox (58.06319pt too wide) in paragraph at lines 116--116
+ [] 
+ []
+
 File: Img/heia-fr-logo.png Graphic file (type png)
 <use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 120.
+Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 124.
 (pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
- [5]
-<Img/o1.JPG, id=78, 537.50812pt x 36.88782pt>
+[5 <./Img/spectre.JPG>]
+<Img/o1.JPG, id=79, 537.50812pt x 36.88782pt>
 File: Img/o1.JPG Graphic file (type jpg)
 <use Img/o1.JPG>
-Package pdftex.def Info: Img/o1.JPG  used on input line 123.
+Package pdftex.def Info: Img/o1.JPG  used on input line 127.
 (pdftex.def)             Requested size: 430.00708pt x 29.51027pt.
-<Img/q4.jpg, id=79, 562.1pt x 421.575pt>
+<Img/q4.jpg, id=80, 562.1pt x 421.575pt>
 File: Img/q4.jpg Graphic file (type jpg)
 <use Img/q4.jpg>
-Package pdftex.def Info: Img/q4.jpg  used on input line 129.
+Package pdftex.def Info: Img/q4.jpg  used on input line 133.
 (pdftex.def)             Requested size: 281.04932pt x 210.78697pt.
  
 AED: lastpage setting LastPage
 File: Img/heia-fr-logo.png Graphic file (type png)
 <use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 138.
+Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 141.
 (pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
 [6 <./Img/o1.JPG> <./Img/q4.jpg>] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 31887 strings out of 492976
- 657133 string characters out of 3127194
- 724347 words of memory out of 3000000
- 35230 multiletter control sequences out of 15000+200000
+ 31893 strings out of 492976
+ 657232 string characters out of 3127194
+ 724355 words of memory out of 3000000
+ 35235 multiletter control sequences out of 15000+200000
  583706 words of font info for 52 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  65i,16n,101p,10403b,423s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1905,9 +1910,9 @@ AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/Marc
 /AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Users/M
 arc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmro12.pfb><C:/User
 s/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb>
-Output written on main.pdf (7 pages, 531497 bytes).
+Output written on main.pdf (7 pages, 631497 bytes).
 PDF statistics:
- 118 PDF objects out of 1000 (max. 8388607)
+ 119 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 197 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 202 words of extra memory for PDF output out of 10000 (max. 10000000)
 

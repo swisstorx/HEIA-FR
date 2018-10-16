@@ -40,11 +40,12 @@
 Oui il est possible de se passer des fichiers d'entête, il suffirait de mettre les signatures dans les fichiers source tout en haut
 
 \section{\#pragma once}
-Il permet d'éviter un import multiple de header files et peut être accompagné des commandes preprocessor \texttt{\#ifndef symbol \#define}
+Sur de ça? ==> Il permet d'éviter un import multiple de header files et peut être accompagné des commandes preprocessor \texttt{\#ifndef symbol \#define}
 
+Cela permet de vérifier si le fichier n'a pas déja été importé. Si tel est le cas, une erreur sera générée.
 
 \section{Que faut-il placer dans un fichier d'entête ?}
-Il faut placer la signature des méthodes qui sont utilisées dans le fichier source
+Il faut placer la signature des méthodes avec les bons types de retour pour les méthodes qui sont utilisées dans le fichier source (.c)
 
 \section{Quelle est l'utilité des mots-clef extern et static ?}
 Le mot-clé \texttt{extern} permet de déclarer une variable à l'extérieur d'un fichier source pour qu'elle soit accessible par les autres fichiers sources\\
@@ -61,15 +62,25 @@ Le mot-clé \texttt{extern} permet de déclarer une variable à l'extérieur d'u
    \item   \#define MAX 10
    \item const int MAX=10
 \end{enumerate}
-La première est une commande preprocesseur et donc partout où l'on va utiliser MAX il sera remplacé par 10 et l'autre est une variable qui est constante donc elle a un type 
+La première est une commande,  preprocesseur et donc partout où l'on va utiliser MAX il sera remplacé par 10, mais ne possède pas de type, donc peu importe que l'on utilise MAX pour un int, un double un long, il sera remplacé dans tous les cas par 10.
+
+Et l'autre est une variable qui est constante donc elle a un type.  
 
 
 \section{Comment peut-on définir une énumération en C ? Quelle est son utilité ?}
-\texttt{enum colors \{RED, YELLOW, BLUE\}} et permet d'initialiser une séquence de constantes qui pourra être utilisé plus tard
+\texttt{enum colors \{RED, YELLOW, BLUE\}} et permet d'initialiser une séquence de constantes qui pourra être utilisé plus tard. Dans notre travail pratique on réalise un enum sur les différents états avec notre encodeur, et on passe via nos méthodes au travers de notre énum pour incrémenter ou décrémenter notre compteur.\\
+
+On peut aussi rajouter que:
+\begin{itemize}
+   \item un Enum est un bon moyen d'avoir un code parlant sans avoir à recourir à des commentaires longs et fastidieux.
+   \item Une économie non négligeable d'espace mémoire, très important en système embarqué.
+   \item C'est aussi une garantie d'avoir des sorties stables si on alterne parmis des états connus d'une FSM (Finite State Machine)\\
+\end{itemize}
+
 
 \section{Quelle(s) différence(s) existe-t-il entre une structure en C struct S\{\} et une classe en Java class C\{\} ?}
-\texttt{struct S\{\}} permet de définir une structure par exemple un tableau avec plusieurs champ et chaque champ a un nom\\
-\texttt{class C\{\}} permet de déclarer une class
+\texttt{struct S\{\}} permet de définir une structure par exemple un tableau avec plusieurs champ et chaque champ a un nom, ou on peut représenter un \\
+\texttt{class C\{\}} permet de déclarer une class, il n'existe pas de class en C, l'équivalent est \texttt{struct} et il n'y a pas de différence entre une \texttt{struct} et une class excepté la notion d'objet en Java qu'il n'y a pas en C
 
 \section{Comment faut-il procéder pour définir un tableau en C ? Peut-on lui donner des valeurs initiales lors de sa définition ?}
 \texttt{int array\_declaration[10];} et avec l'affectation \texttt{int array\_declaration[]=\{10,9,8,7\};}

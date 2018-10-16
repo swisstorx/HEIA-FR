@@ -31,6 +31,7 @@ void buttons_init() {
 }
 
 uint32_t get_states_buttons() {
+
 	return am335x_gpio_get_states(GPIO1);
 }
 

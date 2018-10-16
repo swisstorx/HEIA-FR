@@ -58,20 +58,28 @@ void initialize() {
 }
 
 void start_counter() {
-	struct personne {
-		char c;
-		char a;
-		char b;
-	} pers_a = { 'a', 'b', 'c' };
+	int actual_number = 1;
+	enum wheel_direction wheel_dir=get_wheel_direction();
 
-
-	 personne pers_b= { 'a', 'b', 'c' };
 	while (true) {
+		wheel_dir=get_wheel_direction();
+		set_number(actual_number);
+
+
 		uint32_t button_state = get_states_buttons();
-		if (get_wheel_direction() == WHEEL_LEFT) {
+		if (wheel_dir == WHEEL_LEFT) {
+			if (actual_number > -99) {
+				actual_number -= 1;
+			} else {
+				actual_number = -99;
+			}
 
-		} else if (get_wheel_direction() == WHEEL_RIGHT) {
-
+		} else if (wheel_dir == WHEEL_RIGHT) {
+			if (actual_number < 99) {
+				actual_number += 1;
+			} else {
+				actual_number = 99;
+			}
 		} else if ((button_state & S2) == 0 || (button_state & S3) == 0) {
 			break;
 		}
@@ -87,7 +95,7 @@ void start_snake() {
 		if (get_wheel_direction() == WHEEL_LEFT) {
 
 		} else if (get_wheel_direction() == WHEEL_RIGHT) {
-
+			printf("%c\n", 'r');
 		} else if ((button_state & S1) == 0 || (button_state & S3) == 0) {
 			break;
 		}
@@ -97,11 +105,12 @@ void start_snake() {
 }
 
 int main() {
+
 	initialize();
 
 	while (true) {
 		uint32_t button_state = get_states_buttons();
-		set_number(1, 0);
+
 		if ((button_state & S1) == 0) {
 			set_state_by_led(LED1, true);
 			set_state_by_led(LED2, false);

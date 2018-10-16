@@ -157,6 +157,7 @@ int main()
 
 	// main loop
 	while(true) {
+
 		const uint32_t* lut = &msg[0];
 		while(true) {
 			long leds = *lut++;

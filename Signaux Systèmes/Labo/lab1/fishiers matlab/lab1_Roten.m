@@ -127,18 +127,48 @@ hold on
 %%
 %point 3.4
 
-% t = (0:5e-6:5);   
-% plot(t, analyseFrequentielle(250)), grid on
-
 guitare = load('guitare.mat');
 piano = load('piano.mat');
-% sound(guitare.music,guitare.Fs+440);
-sound(piano.music,piano.Fs+440);
+subplot(2,2,1);
+plot(piano.music,'r');
+ylabel('spectre Piano');
+xlabel('t[s]');
+
+subplot(2,2,2);
+plot(guitare.music,'b');
+ylabel('spectre Guitare');
+xlabel('t[s]');
+
+load('piano.mat');
+sound(music);
+piano=music;
+
+load('guitare.mat');
+sound(music);
+guitare=music;
+
+N=length(music);
+fe=Fs;
+fftpiano=fftshift(1/N*fft(piano));
+fftguitare=fftshift(1/N*fft(guitare));
 
 
+abscisse=(-1/2*fe+fe/N:fe/N:1/2*fe)-1/2*fe/N;
+
+subplot(2,2,4);
+plot(abscisse,abs(fftpiano));
+xlim([-4000 4000])
+ylim([0 0.06])
+
+ylabel('Harmonique Guitare');
 
 
+subplot(2,2,3);
+plot(abscisse,abs(fftguitare));
+xlim([-4000 4000])
+ylim([0 0.06])
 
+ylabel('Harmonique Piano');
 
 %%
 %point 3.5.1

@@ -46,6 +46,11 @@ static const struct gpio_init_DIG {
 
 } gpio_init_DIG[] = { { 2 }, { 3 } };
 
+struct digit {
+	int d1;
+	int d2;
+};
+
 void seg_init() {
 
 	am335x_gpio_init(GPIO0);
@@ -72,8 +77,6 @@ void seg_init() {
 
 }
 
-
-
 static void delay(int value) {
 	while (value > 0)
 		value--;
@@ -81,14 +84,20 @@ static void delay(int value) {
 
 static void select_display(int disp_number, bool turn_on) {
 
-		am335x_gpio_change_state(GPIO2, disp_number, false);
-
-
-
+	am335x_gpio_change_state(GPIO2, disp_number, turn_on);
 
 }
 
-void set_number(int numberDIG1,int numberDIG2) {
+static struct digit split_number(int number) {
+
+
+	struct digit digit_to_print = { number / 10, number % 10 };
+
+	return digit_to_print;
+}
+
+void set_number(int number) {
+
 
 	// decoder table
 	static const uint32_t array_digits[] = {
@@ -103,6 +112,32 @@ void set_number(int numberDIG1,int numberDIG2) {
 			SEGA | SEGB | SEGC | SEGD | SEGE | SEGF | SEGG,        // 8
 			SEGA | SEGB | SEGC | SEGD | SEGF | SEGG,        // 9
 			0 };
+	struct digit number_splitted = split_number(number);
+	am335x_gpio_change_states(GPIO0,array_digits[8],false);
+	am335x_gpio_change_state(GPIO2,DIG1,false);
+	am335x_gpio_change_state(GPIO2,DIG2,false);
+
+
+	printf("%d second: %\d\n",number_splitted.d1,number_splitted.d2);
+
+	if(number < 10){
+			number_splitted.d1=0;
+		}
+
+	if(number < 0)
+		am335x_gpio_change_states(GPIO2,DP1,false);
+
+	uint32_t digit1 = array_digits[number_splitted.d1];
+	uint32_t digit2 = array_digits[number_splitted.d2];
+
+
+	am335x_gpio_change_state(GPIO2,DIG1,true);
+	am335x_gpio_change_state(GPIO2,DIG2,true);
+
+
+
+	am335x_gpio_change_states(GPIO0,digit1,true);
+	am335x_gpio_change_states(GPIO0,digit2,true);
 
 }
 

@@ -33,8 +33,8 @@ void wheel_init() {
 	am335x_gpio_init(GPIO1);
 	am335x_gpio_init(GPIO2);
 
-	am335x_gpio_setup_pin_in(GPIO1, CHB, AM335X_GPIO_PULL_NONE, false);
-	am335x_gpio_setup_pin_in(GPIO2, CHA, AM335X_GPIO_PULL_NONE, false);
+	am335x_gpio_setup_pin_in(GPIO1, CHB, AM335X_GPIO_PULL_NONE, true);
+	am335x_gpio_setup_pin_in(GPIO2, CHA, AM335X_GPIO_PULL_NONE, true);
 
 	former_state = get_encoder_state();
 
@@ -43,7 +43,6 @@ void wheel_init() {
 enum wheel_direction get_wheel_direction() {
 	int state = get_encoder_state();
 
-	printf("encode %d", get_encoder_state());
 	//controle si la direction à changé depuis le dernier contrôle
 	enum wheel_direction direction = transitions[former_state][state];
 
