@@ -1,0 +1,17 @@
+Affichez tous les mots français de dix lettres comportant au moins cinq fois la lettre s et trois fois la lettre i.
+ 	zcat francais.txt.gz | egrep '^.{10}$'| egrep '(s.*){5}' | egrep '(i.*){3}'
+Cherchez un mot français avec une même lettre qui se répète au moins 3 fois.
+
+	zcat francais.txt.gz | egrep '(.)\1{2}'
+
+Cherchez un mot allemand de douze lettres avec une même lettre qui se répète au moins 3 fois et cette lettre ne dois pas être parmi {e, f, i, l, m, n, p, r, s et t}.
+
+	zcat german.txt.gz | egrep '^.{12}$' | egrep -i '([^efilmnprst])\1{2}'
+
+Affichez la liste des mots allemand commençant par un w et qui utilise neuf fois la même lettre.
+
+	zcat german.txt.gz | egrep '^w' | egrep '(.).*(\1.*){8}
+
+Cherchez les mots français le plus court avec cinq fois la même lettre.
+
+	zcat francais.txt.gz | egrep '(.)(.*\1){4}' | while read line; do count=$(echo $line | wc -c); echo $count $line; done | sort -n | head -10

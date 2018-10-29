@@ -10,6 +10,12 @@ app_*
 9?_*
 build
 tp
+*.log
+*.aux
+*.swo
+*.synctex.gz
+*.toc
+
 # Prerequisites
 *.d
 
@@ -63,3 +69,4 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+/.metadata/

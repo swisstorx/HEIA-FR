@@ -3,8 +3,9 @@
  *
  *  Created on: Oct 1, 2018
  *      Author: sven
+ *      Modified: Marc
  */
-
+#pragma once
 #ifndef SEG7_H_
 #define SEG7_H_
 

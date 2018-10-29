@@ -1,3 +1,11 @@
+/*
+ * wheel.c
+ *
+ *  Created on: Oct 1, 2018
+ *      Author: sven
+ *      Modified : Marc
+ *
+ */
 #include <stdio.h>
 #include <am335x_gpio.h>
 

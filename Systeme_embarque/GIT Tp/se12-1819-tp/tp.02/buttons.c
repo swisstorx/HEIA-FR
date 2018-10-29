@@ -3,6 +3,7 @@
  *
  *  Created on: Oct 1, 2018
  *      Author: sven
+ *      Modified: Marc
  */
 
 #include <am335x_gpio.h>

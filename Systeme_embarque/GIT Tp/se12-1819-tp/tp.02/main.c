@@ -15,9 +15,9 @@
  *
  * Project:		HEIA-FR / Embedded Systems 2 Laboratory
  *
- * Abstract:	TODO
+ * Abstract:	On this project we will start using the differents tools on our BeagleBone like the
+ * rotative encoder and the double seven digits and also the 3 button selector.
  *
- * Purpose:		TODO
  *
  * Author: 		Marc Roten / Sven Rouvinez
  * Date: 		2018-10-01
@@ -26,19 +26,14 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include <am335x_gpio.h>
 #include "wheel.h"
 #include "serpent.h"
 #include "seg7.h"
 #include "buttons.h"
-#include "counter.h"
 #include "leds.h"
 
 // -- constants & variable declaration ---------------------------------------
 
-// delays
-#define DELAY_ON	0x06ffff
-#define DELAY_OFF	0x00ffff
 
 #define S1			(1<<15)
 #define S2			(1<<16)
@@ -47,10 +42,17 @@
 #define LED2		(13)
 #define LED3		(14)
 
+
+
 // macro to compute number of elements of an array
 #define ARRAY_SIZE(x) (sizeof(x) / sizeof(x[0]))
 
+static int actual_number = 0;
+static int snakeState = 0;
+
 void initialize() {
+	actual_number = 0;
+
 	buttons_init();
 	leds_init();
 	wheel_init();
@@ -58,13 +60,14 @@ void initialize() {
 }
 
 void start_counter() {
-	int actual_number = 1;
-	enum wheel_direction wheel_dir=get_wheel_direction();
+
+
+	enum wheel_direction wheel_dir = get_wheel_direction();
 
 	while (true) {
-		wheel_dir=get_wheel_direction();
-		set_number(actual_number);
 
+		wheel_dir = get_wheel_direction();
+		set_number(actual_number);
 
 		uint32_t button_state = get_states_buttons();
 		if (wheel_dir == WHEEL_LEFT) {
@@ -80,6 +83,7 @@ void start_counter() {
 			} else {
 				actual_number = 99;
 			}
+
 		} else if ((button_state & S2) == 0 || (button_state & S3) == 0) {
 			break;
 		}
@@ -89,18 +93,49 @@ void start_counter() {
 }
 
 void start_snake() {
+	seg_init();
+
+	enum wheel_direction wheel_dir = get_wheel_direction();
+	bool value_change=false;
+	uint32_t path_length=get_size_path();
 
 	while (true) {
+		wheel_dir = get_wheel_direction();
 		uint32_t button_state = get_states_buttons();
-		if (get_wheel_direction() == WHEEL_LEFT) {
+		value_change=false;
 
-		} else if (get_wheel_direction() == WHEEL_RIGHT) {
-			printf("%c\n", 'r');
+
+		if (wheel_dir == WHEEL_LEFT) {
+			value_change=true;
+			if (snakeState == -1) {
+
+				snakeState = 6;
+			} else {
+				snakeState -= 1;
+			}
+		} else if (wheel_dir == WHEEL_RIGHT) {
+			value_change=true;
+			if ((uint32_t)snakeState == path_length) {
+
+				snakeState = 0;
+			} else {
+				snakeState += 1;
+			}
 		} else if ((button_state & S1) == 0 || (button_state & S3) == 0) {
+
 			break;
 		}
-
+		displaySnake(snakeState,value_change);
 	}
+}
+
+void reset_functions() {
+	initialize();
+
+	while (!(get_states_buttons() & S3))
+		set_state_by_led(LED3, true);
+
+	set_state_by_led(LED3, false);
 
 }
 
@@ -121,10 +156,11 @@ int main() {
 			set_state_by_led(LED1, false);
 			set_state_by_led(LED2, true);
 			set_state_by_led(LED3, false);
+			start_snake();
 		} else if ((button_state & S3) == 0) {
 			set_state_by_led(LED1, false);
 			set_state_by_led(LED2, false);
-			set_state_by_led(LED3, true);
+			reset_functions();
 
 		}
 	}

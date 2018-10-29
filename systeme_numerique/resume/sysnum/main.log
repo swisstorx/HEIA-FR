@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.25)  11 OCT 2018 10:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.25)  26 OCT 2018 10:00
 entering extended mode
 **./main.tex
 (main.tex
@@ -1684,6 +1684,9 @@ LaTeX Warning: Label `1' multiply defined.
 
 LaTeX Warning: Label `1' multiply defined.
 
+
+LaTeX Warning: Label `1' multiply defined.
+
 )
 \openout1 = `main.aux'.
 
@@ -2247,7 +2250,7 @@ Package pdftex.def Info: Img/33.JPG  used on input line 311.
 AED: lastpage setting LastPage
 File: Img/heia-fr-logo.png Graphic file (type png)
 <use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 337.
+Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 341.
 (pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
 [22 <./Img/32.JPG> <./Img/33.JPG>] (main.aux)
 
@@ -2277,7 +2280,7 @@ ype1/public/lm/lmro12.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/font
 s/type1/public/lm/lmsy10.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/f
 onts/type1/public/lm/lmsy8.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9
 /fonts/type1/public/lm/lmtt8.pfb>
-Output written on main.pdf (23 pages, 2614562 bytes).
+Output written on main.pdf (23 pages, 2614458 bytes).
 PDF statistics:
  198 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
