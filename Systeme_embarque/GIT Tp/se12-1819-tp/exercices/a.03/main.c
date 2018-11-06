@@ -1,23 +1,50 @@
-/*
- * main.c
- *
- *  Created on: Oct 10, 2018
- *      Author: sven
+/**
+ * Programmation C: Basics
+ * solution to exercice 3
  */
+
 #include <stdio.h>
+#include <stdbool.h>
 
-char* open(char* argv[]){
-	char* param[]={"open",argv[0],argv[1],argv[2]};
+static char str1[] = "open	arg1   arg2 arg3";
+static char str2[] = "closse	    param1     param2	  ";
+static char str3[] = "   read p1";
+static char str4[] = "write a1	   a2	a3   \t	  a4		     ";
 
-	return *param;
+void tokenize (char str[])
+{
+	char* argv[20];
+	int   argc = 0;
+
+	printf("  line	   = \"%s\"\n", str);
+	int i = 0;
+	while (1) {
+		while ((str[i] <= ' ') && (str[i] != '\0')) i++;
+		if (str[i] == '\0') break;
+
+		argv[argc] = &str[i];
+		argc++;
+
+		while (str[i] > ' ') i++;
+		if (str[i] == '\0') break;
+
+		str[i] = '\0';
+		i++;
+	}
+
+	printf("  token[%d] = ", argc);
+	for (int i = 0; i < argc; i++) printf("\"%s\" ", argv[i]);
+	printf("\n\n");
 }
 
+int main()
+{
+	tokenize (str1);
+	tokenize (str2);
+	tokenize (str3);
+	tokenize (str4);
 
-int main(int argc,char* argv[]){
-
-	printf("%s %s %s \n",argv[1],argv[2],argv[3]);
-
-
-return 0;
+	return 0;
 }
+	
 

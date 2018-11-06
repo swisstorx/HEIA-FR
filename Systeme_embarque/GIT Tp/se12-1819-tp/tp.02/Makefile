@@ -1,6 +1,25 @@
-EXEC=app
-SRCS=$(wildcard *.c) 
-ASRC=$(wildcard *.S)
+PROJECT_ROOT = $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
-# Include the standard makefile for the embedded systems 1 & 2 labs 
-include $(LMIBASE)/bbb/make/bbb.mk
+OBJS = tp.02.o
+
+ifeq ($(BUILD_MODE),debug)
+	CFLAGS += -g
+else ifeq ($(BUILD_MODE),run)
+	CFLAGS += -O2
+else
+	$(error Build mode $(BUILD_MODE) not supported by this Makefile)
+endif
+
+all:	tp.02
+
+tp.02:	$(OBJS)
+	$(CXX) -o $@ $^
+
+%.o:	$(PROJECT_ROOT)%.cpp
+	$(CXX) -c $(CFLAGS) $(CXXFLAGS) $(CPPFLAGS) -o $@ $<
+
+%.o:	$(PROJECT_ROOT)%.c
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $<
+
+clean:
+	rm -fr tp.02 $(OBJS)

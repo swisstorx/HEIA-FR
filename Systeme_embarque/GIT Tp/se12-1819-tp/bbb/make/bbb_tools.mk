@@ -7,6 +7,9 @@ DIRSEP=/
 LIBGCCPATH=$(dir $(shell $(CC) -print-libgcc-file-name))
 endif
 
+
+
+
 ifeq ($(TARGET),HOST)
 	CC=gcc
 	LD=gcc

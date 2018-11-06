@@ -34,15 +34,12 @@
 
 // -- constants & variable declaration ---------------------------------------
 
-
 #define S1			(1<<15)
 #define S2			(1<<16)
 #define S3			(1<<17)
 #define LED1 	 	(12)
 #define LED2		(13)
 #define LED3		(14)
-
-
 
 // macro to compute number of elements of an array
 #define ARRAY_SIZE(x) (sizeof(x) / sizeof(x[0]))
@@ -60,7 +57,6 @@ void initialize() {
 }
 
 void start_counter() {
-
 
 	enum wheel_direction wheel_dir = get_wheel_direction();
 
@@ -96,17 +92,16 @@ void start_snake() {
 	seg_init();
 
 	enum wheel_direction wheel_dir = get_wheel_direction();
-	bool value_change=false;
-	uint32_t path_length=get_size_path();
+	bool value_change = false;
+	uint32_t path_length = get_size_path();
 
 	while (true) {
 		wheel_dir = get_wheel_direction();
 		uint32_t button_state = get_states_buttons();
-		value_change=false;
-
+		value_change = false;
 
 		if (wheel_dir == WHEEL_LEFT) {
-			value_change=true;
+			value_change = true;
 			if (snakeState == -1) {
 
 				snakeState = 6;
@@ -114,8 +109,8 @@ void start_snake() {
 				snakeState -= 1;
 			}
 		} else if (wheel_dir == WHEEL_RIGHT) {
-			value_change=true;
-			if ((uint32_t)snakeState == path_length) {
+			value_change = true;
+			if ((uint32_t) snakeState == path_length) {
 
 				snakeState = 0;
 			} else {
@@ -125,7 +120,7 @@ void start_snake() {
 
 			break;
 		}
-		displaySnake(snakeState,value_change);
+		displaySnake(snakeState, value_change);
 	}
 }
 

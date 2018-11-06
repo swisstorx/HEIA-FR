@@ -129,7 +129,7 @@ L'encodeur ne connait que 2 états stables, soit les 2 ports A et B à 1 (on), s
     * ouvrir _`Properties`_ de votre projet
     * aller   _`C/C++ General`_  --> _`Paths and Symbols`_
     * ouvrir _`Includes`_ --> _`GNU C`_
-    * ajouter _`/home/lmi/workspace/se12/bbb/source`_
+    * ajouter _`/home/lmi/workspace/se12/tp/bbb/source`_
     
 
 ## Conditions 
@@ -139,4 +139,4 @@ L'encodeur ne connait que 2 états stables, soit les 2 ports A et B à 1 (on), s
         * rapport: _.../tp/tp.02/doc/report.pdf_
 
 * Delai
-    * Le journal et le code doivent être rendus au plus tard 13 jours après le TP à 23h59
+    * Le journal et le code doivent être rendus au plus tard 20 jours après le TP à 23h59

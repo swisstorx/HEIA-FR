@@ -29,12 +29,37 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdint.h>
+#include <string.h>
+#include <fcntl.h>
 
 #include "am335x_clock.h"
 #include "am335x_console.h"
 
+#define ARRAY_SIZE(x) (sizeof(x)/sizeof(x[0]))
 
-int _read(int file __attribute__((unused)), char *ptr, int len __attribute__((unused))) {
+enum f_modes {UNUSED, NONBLOCK, BLOCK};
+static enum f_modes f_mode[10] = {
+	[0] = BLOCK,
+	[1] = BLOCK,
+	[2] = BLOCK,
+};
+
+int _open (const char *name, int flags, int mode) 
+{
+	(void)mode;
+	if (strcmp(name, "/dev/console")!=0) return -1;
+	unsigned i = 0;
+	while ((i < ARRAY_SIZE(f_mode)) && (f_mode[i] != UNUSED)) i++;
+	if (i < ARRAY_SIZE(f_mode)) {
+		f_mode[i] = (flags & O_NONBLOCK) != 0 ? NONBLOCK : BLOCK;
+		return i;
+	} 
+	return -1;
+}
+
+int _read(int file, char *ptr, int len __attribute__((unused))) {
+	if ((unsigned)file > ARRAY_SIZE(f_mode)) return -1;
+	if ((f_mode[file] == NONBLOCK) & !am335x_console_tstc()) return -1;
 	*ptr = am335x_console_getc();
 	return 1;
 }
@@ -61,8 +86,10 @@ int _fstat(int file __attribute__((unused)), struct stat *st) {
 	return 0;
 }
 
-int _close(int file __attribute__((unused))) {
-	return -1;
+int _close(int file) {
+	if ((unsigned)file > ARRAY_SIZE(f_mode)) return -1;
+	f_mode[file] = UNUSED;
+	return 0;
 }
 
 #if 0
