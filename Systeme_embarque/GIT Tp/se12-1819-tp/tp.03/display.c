@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * display.c
  *
@@ -63,3 +64,81 @@ void display_circle(uint32_t x0, uint32_t y0, uint32_t r, uint32_t color){
     }
 }
 
+=======
+/**
+ * Copyright 2018 University of Applied Sciences Western Switzerland / Fribourg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * Project:		HEIA-FR / Embedded Systems TODO Laboratory
+ *
+ * Abstract:	TODO
+ *
+ * Author: 		Marc Roten / Sven Rouvinez
+ * Date: 		Nov 5, 2018
+ */
+
+#include <am335x_i2c.h>
+#include <stdio.h>
+#include <math.h>
+
+#include "oled.h"
+#include "display.h"
+
+#define SCREEN_WIDTH 96
+#define SCREEN_HEIGHT 96
+#define BLACK 0
+
+void display_init() {
+	oled_init();
+	display_clear();
+}
+
+void display_clear() {
+	oled_init();
+
+	oled_memory_size(0, SCREEN_WIDTH - 1, 0, SCREEN_WIDTH - 1);
+
+	for (unsigned int y = 0; y < SCREEN_HEIGHT; y++) {
+		for (unsigned int x = 0; x < SCREEN_HEIGHT; x++) {
+			oled_color(BLACK);
+		}
+	}
+}
+
+void display_circle(uint32_t x0, uint32_t y0, uint32_t r, uint32_t color) {
+	for (int i = -r; i <= (int) r; i++) {
+		int a = sqrt(r * r - i * i);
+
+		oled_memory_size(y0 - a, y0 + a, SCREEN_WIDTH - 1 - (x0 + i),
+		SCREEN_HEIGHT - 1 - (y0 + i));
+		for (unsigned int j = 2 * a; j > 0; j--) {
+			oled_color(color);
+		}
+	}
+
+}
+
+void display_rectangle(uint32_t x1, uint32_t x2, uint32_t y1, uint32_t y2,uint32_t color) {
+	oled_memory_size(x1, x2, y1, y2);
+
+	for (unsigned i = x1; i < x2; i++) {
+		for (unsigned j = y1; j < y2; j++) {
+
+			oled_color(color);
+		}
+	}
+}
+
+
+>>>>>>> 48e57dca9bc9d3a42e0766d1d0aacaa2665bddf9

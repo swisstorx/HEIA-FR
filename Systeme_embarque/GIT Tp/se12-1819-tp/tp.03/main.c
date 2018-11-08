@@ -32,7 +32,33 @@
 
 
 
+#include "thermo.h"
+#include "display.h"
+
 int main() {
+//address 0x48, register 0
+/*
+ * thermo.h
+ * display.h
+ * shell.h
+ * cli.h --> get tokenize
+ */
+
+	printf("START\n");
+
+	thermo_init();
+	uint8_t data[2];
+	read_thermo(data);
+	printf("%d\n",data[0]);
+
+display_init();
+
+
+display_circle(10,10,10,0xf800);
+display_circle(10,10,5,0x58ff);
+display_rectangle(5,20,0,80,0xffff);
+display_rectangle(5,10,0,data[0],0xf800);
+
 
 	display_init();
 	display_swissFlag();

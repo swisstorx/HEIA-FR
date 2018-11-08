@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+
+
 static char str1[] = "open	arg1   arg2 arg3";
 static char str2[] = "closse	    param1     param2	  ";
 static char str3[] = "   read p1";
