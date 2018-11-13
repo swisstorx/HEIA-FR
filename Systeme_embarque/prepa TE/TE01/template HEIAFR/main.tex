@@ -1,0 +1,247 @@
+\input{../Commands.tex}
+
+\title{nom de projet} 
+\author{\textsl{Prénom 1} \textsc{Nom 1}\\
+\textsl{Prénom 2} \textsc{nom 2}}
+\date{}
+
+\begin{document}
+    \begin{titlepage}
+        \begin{center}
+            \includegraphics[scale=.4]{Img/heia-fr-logo.png}\\[1.3cm]
+            
+            \rule{\linewidth}{0.3mm} \\[0.3cm]
+            {\huge \bfseries Branche\\[0.5cm]} 
+           % {\Large Effet photoélectrique}\\[0.2cm]
+            {\Large  Sujet du cours // labo }
+            \rule{\linewidth}{0.3mm} \\[0.8cm]
+            \noindent
+            \begin{minipage}[t]{0.4\textwidth}
+                \begin{flushleft} \large
+                    \emph{Auteur(s) :}\\
+                    \theauthor
+                \end{flushleft}
+            \end{minipage}
+            \begin{minipage}[t]{0.4\textwidth} 
+                \begin{flushright} \large
+                    \emph{Professeur:}\\
+                    \textsl{Prénom} \textsc{Nom}\\ 
+                \end{flushright} 
+                \vfill
+            \end{minipage}\\[1.3cm]
+            \includegraphics[scale=0.6]{Img/1.JPG}\\[1.5cm]
+            \vspace*{1\baselineskip}
+            \today \\[0.7cm]
+        \end{center}
+    \end{titlepage}
+    \tableofcontents
+    \clearpage
+% \insertImage{Img/photo.PNG}{0.8}{Schéma explicatif}{EPschemaexpli}
+%
+%\section{voici comment faire un chapitre}
+%
+%    \subsection{Voici comment faire un sous chapitre}
+%
+%\section{des commandes}
+%    \subsection{commande cisco}
+%    
+%    \begin{cisco}[une commande sympa type cisco]
+%       un texte lambda
+%    \end{cisco}
+%    
+%    \subsection{commande cisco allégée}
+%    
+%    \begin{cisco}
+%       un texte lambda
+%   \end{cisco}
+%    
+%    
+%   \subsection{commande pour mettre une image}
+%    
+%    % \insertImage{Img/1.PNG}{echelle pour l'image (source = 1)}{texte dessous l'image}{référence vers l'objet
+%    \insertImage{Img/1.JPG}{0.6}{voici une image}{myImg}
+
+
+\section{Conception Header File}
+
+\subsection{Pragma once}
+
+Il permet d’éviter un import multiple de header files en incluant une fois uniquement les
+fichiers dans la compilation et peut être accompagné des commandes preprocessor ifndef
+symbol define
+
+\subsection{ifndef}
+
+Cette commande sert à éviter les boucles d'appel (si la classe A appelle la B et la B appelle la A)
+\subsection{Exemple}
+\begin{lstlisting}
+    #pragma once
+    #ifndef SERPENTINE_H
+    #define SERPENTINE_H
+    
+    extern void serpentine_init();
+    
+    extern void serpentine_process();
+    
+    extern void serpentine_reset();
+    
+    #endif
+\end{lstlisting}
+
+%fait%fait%fait%fait%fait
+
+%fait%fait%fait%fait%fait
+
+%fait%fait%fait%fait%fait
+
+%fait%fait%fait%fait%fait
+\section{Appel fonction C}
+
+
+
+
+
+
+
+
+\section{Décrire le passage d’arguments par valeur et par référence lors d’appel de
+fonctions en C}
+
+\subsection{passage d'arguments par valeur}
+
+Dans ce cas, on passe une valeur à notre fonction, une copie locale que l'on donne à notre fonction, pour effectuer différents traitements.
+
+\begin{itemize}
+    \item Le sous-programme reçoit une copie de la donnée
+    \item Il peut la lire et la modifier sans que la donnée originale ne soit altérée
+    \item Il existe deux positions mémoires distinctes
+    \item La modification de l'une des positions n'a aucune conséquence sur l'autre position.   
+\end{itemize}
+
+\textbf{Exemple: } $int fnct1 (int a, char c)$
+
+Mais cette methode a quelques inconvénients, on ne peut pas retourner plusieurs éléments. c'est pourquoi en C on peut procéder au passage par référence.
+
+
+\subsection{passage d'arguments par référence lors d’appel de fonctions en C}
+
+Pour cette methode on donne l'adresse de notre variable en paramètre de notre fonction. on dit que l'on crée un pointeur qui pointe sur l'adresse de notre variable
+
+\begin{itemize}
+    \item Le sous-programme reçoit l'adresse de la donnée
+    \item Cette donnée est ainsi partagée entre la fonction appelante et la fonction appelée
+    \item La donnée ne se situe que dans une seule position mémoire
+    \item La modification du paramètre par la fonction appelée est visible par la fonction appelante
+\end{itemize}
+
+\textbf{Exemple: } $int fnct2 (char* s, int* b);$
+
+%fait%fait%fait%fait%fait
+
+%fait%fait%fait%fait%fait
+
+%fait%fait%fait%fait%fait
+
+%fait%fait%fait%fait%fait
+
+\section{Différencier les fonctions globales des fonctions locales dans une application codée
+en C}
+
+Les variables globales sont définies à l'extérieur de la fonction. Même si elles sont à l'extérieur de notre fonction elles sont quand même accessibles.
+
+Les variables définies à l'intérieur de notre fonction ne sont pas accessibles à l'extérieur.
+
+Mais cependant, on peut modifier une variables se trouvant à l'extérieur de notre fonction via l'utilisation de pointeurs. Il faut toutefois que le pointeur nous soie donné en paramètre de notre fonction.
+
+\subsection{Tips}
+
+Il est déconseillé de laisser l'accès à ces variables à nos fonctions. celà a pour effet de crée des effets de bords non voulus.
+
+
+%fait%fait%fait%fait%fait
+
+%fait%fait%fait%fait%fait
+
+%fait%fait%fait%fait%fait
+
+%fait%fait%fait%fait%fait
+
+\section{Différencier les variables globales des variables locales et des variables
+rémanentes dans une application codée en C}
+
+wallah c'est pareil que le point précédent.
+
+
+
+
+
+
+
+
+
+
+
+\section{Manipuler correctement les types complexes (énumérations, tableaux, structures,
+unions, …) de C}
+
+
+
+
+
+
+
+
+
+
+
+\section{Concevoir une interface C permettant d’accéder aux registres d’un périphérique}
+    
+
+
+
+
+
+
+
+
+\section{Manipuler correctement les pointeurs en C}
+
+
+
+
+
+
+\section{Allouer et restituer correctement des objets dynamiques en C}
+ 
+
+
+
+
+
+
+\section{décrire et utiliser les conversions des types en C}
+
+
+
+
+
+\section{Manipuler correctement les pointeurs de fonction en C}
+
+
+
+
+
+
+
+\section{Expliquer les conditions pour qu’une fonction C soit réentrante}
+
+\begin{itemize}
+    \item Ne doit pas utiliser de données statiques (globales) non-constantes
+    \item Ne doit retourner l’adresse de données statiques (globales) non-constantes
+    \item Ne doit traiter que des données fournies par le programme appelant
+    \item Ne doit pas modifier son propre code
+    \item Ne doit pas appeler des sous-programmes non-réentrants
+\end{itemize}
+
+
+\end{document}

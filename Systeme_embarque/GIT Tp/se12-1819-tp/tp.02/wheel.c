@@ -20,10 +20,11 @@ enum wheel_direction {
 };
 
 //synthèse de la machine d'état
-static const enum wheel_direction transitions[4][4] = { { WHEEL_STILL,
-		WHEEL_STILL, WHEEL_STILL, WHEEL_STILL }, { WHEEL_LEFT, WHEEL_STILL,
-		WHEEL_STILL, WHEEL_RIGHT }, { WHEEL_RIGHT, WHEEL_STILL, WHEEL_STILL,
-		WHEEL_LEFT }, { WHEEL_STILL, WHEEL_STILL, WHEEL_STILL, WHEEL_STILL } };
+static const enum wheel_direction transitions[4][4] = { 
+{ WHEEL_STILL,WHEEL_STILL, WHEEL_STILL, WHEEL_STILL }, 
+{ WHEEL_LEFT, WHEEL_STILL, WHEEL_STILL, WHEEL_RIGHT }, 
+{ WHEEL_RIGHT,WHEEL_STILL, WHEEL_STILL, WHEEL_LEFT },
+{ WHEEL_STILL,WHEEL_STILL, WHEEL_STILL, WHEEL_STILL } };
 
 static int former_state = 0;
 
