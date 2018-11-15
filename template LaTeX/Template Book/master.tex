@@ -1,0 +1,79 @@
+\documentclass[11pt,b5paper]{book} % generate whole document in color
+\usepackage{style}
+
+% LINE SPACING
+\renewcommand{\baselinestretch}{1.2} % custom spacing
+%\renewcommand{\baselinestretch}{2} % double-line spacing
+
+%%%%%% DOCUMENT BEGIN %%%%%%
+\begin{document}
+
+	\pagenumbering{alph} % for pageslts package to get page numbering correctly
+	
+	
+    \begin{titlepage}
+        \begin{center}
+            \includegraphics[scale=.4]{Img/heia-fr-logo.png}\\[1.3cm]
+            
+            \rule{\linewidth}{0.3mm} \\[0.3cm]
+            {\huge \bfseries TP 2 Capteur et Protocole\\[0.5cm]} 
+           % {\Large Effet photoélectrique}\\[0.2cm]
+            {\Large  Systèmes Numériques }
+            \rule{\linewidth}{0.3mm} \\[0.8cm]
+            \noindent
+            \begin{minipage}[t]{0.4\textwidth}
+                \begin{flushleft} \large
+                    \emph{Auteurs :}\\
+ \textsl{Marc} \textsc{ Roten}\\                     
+                \end{flushleft}
+            \end{minipage}
+            \begin{minipage}[t]{0.4\textwidth} 
+                \begin{flushright} \large
+                    \emph{Professeur:}\\
+                    \textsl{Nicolas} \textsc{ Schroeter}\\ 
+                \end{flushright} 
+                \vfill
+            \end{minipage}\\[1.3cm]
+            \includegraphics[scale=0.85]{Img/1.JPG}\\[1.5cm]
+            \vspace*{1\baselineskip}
+            \today \\[0.7cm]
+        \end{center}
+    \end{titlepage}
+    \tableofcontents
+    \clearpage
+	
+	
+	
+	
+	\null\newpage % latex might neglect \newpage because the page is empty, 
+
+	% blank page
+	\thispagestyle{empty}
+	\null\newpage
+
+	% front matter %
+	\thispagestyle{empty}
+	\begin{textblock*}{60mm}(85mm,90mm)
+	%\textblockcolour{red}
+	\noindent
+	{\sffamily\LARGE\bfseries My template}\\
+	\noindent
+	{\sffamily\small Marc Roten}\\
+	{\color{dark-gray}\rule[5pt]{170pt}{3pt}}
+	\end{textblock*}
+	\null\newpage
+
+	% license page %
+	\thispagestyle{empty}
+	
+	
+\section{Introduction}
+
+\section{Cahier des charges}
+
+\section{Chapitre 1}
+
+\section{Conclusion}
+
+\end{document}
+
