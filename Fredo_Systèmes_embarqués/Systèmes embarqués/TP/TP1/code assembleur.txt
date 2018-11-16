@@ -1,0 +1,145 @@
+/**
+ * Copyright 2016 University of Applied Sciences Western Switzerland / Fribourg
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ * Project:	HEIA-FR / Embedded Systems 1 Laboratory
+ *
+ * Abstract:	Introduction to the development environment
+ *
+ * Purpose:	Simple ARM assembler program to experiment the Embedded System
+ *		Laboratory development environment under Git and Eclipse.
+ *
+ * Author: 	<author(s)>
+ * Date: 	<date>
+ */
+
+// Export public symbols
+	.global main, res, incr, i// symboles utilisés dans le code
+
+// Constants declaration
+	#define LOOPS 8
+
+// Initialized variables declation
+	.data //paramètres qui définit les éléments présents dans la section data
+	.align	8 //aligne sur 8 bits
+	res: 	.long 16 //mots de 32 bits
+	incr:	.short 32 //mots 16bits (half-word)
+
+// Uninitialized variables declation
+	.bss //paramètres qui définit les éléments présents dans la section bss
+	.align 8 //aligne sur 8 bits
+	i:		.space 4 //définit un espace mémoire de 4 octets
+
+// Assembler functions implementation
+	.text //paramètres qui définit les éléments présents dans la section text
+	main:	nop //label qui pointe sur l'instruction nop
+
+//===================== EXERCICES =====================
+//===================== Commentaires =====================
+
+	mov	r0, #LOOPS //va insérer la valeur de la constante LOOP dans r0
+	ldr r1, =incr //charge r1 avec l'adresse de incr
+	ldrh r1,[r1] //charge r1 avec la valeur de r1, il est nécessaire de rajouter le "h" pour les mots 16bits comme le short
+	ldr r3, =res //charge r3 avec l'adresse de res
+	ldr r4, =i //charge r4 avec l'adresse de i
+	mov r5, #0 //va insérer la valeur 0 dans r5
+	str r5, [r4] //enregistre la valeur du registre r5 dans la RAM[r4]
+
+next: ldr r2, [r3] //charge r2 avec la valeur de RAM[r3]
+	add r2,r1 //incrémente r2 de r1, ce qui donne r2+=r1 en java
+	str r2, [r3] //enregistre la valeur du registre r2 dans la RAM[r3]
+	ldr r5, [r4] //charge r5 avec la valeur de RAM[r4]
+	add r5,#1 //incrémente r5 de 1, ce qui donne r5+=1 en java
+	str r5, [r4] //enregistre la valeur du registre r5 dans la RAM[r4]
+	cmp r5, r0 //va comparer les valeurs entre r5 et r0, la commande suivante va réagir en conséquence de ce résultat
+	bne next //"branch if ne" fonctionne comme une boucle for, tant que la commande précédente n'est pas égale, on fait un tour dans la boucle
+
+1: 	nop //label qui fait référence à l'instruction nop
+	b 1b //branche conditionnel
+
+/*===================== EXERCICES =====================
+===================== Optimisation du code =====================
+next: ldr r2, [r3]
+	add r2,r1
+	str r2, [r3]
+	add r5,#1
+	str r5, [r4]
+	cmp r5, r0
+	bne next
+
+	Nous avons supprimé la ligne "ldr r5, [r4]", car le registre a déjà été chargé auparavant,
+	et comme nous ne sortons pas de la boucle, il n'est pas nécessaire de recharger le registre.
+
+===================== Implémentation Java =====================
+	int [] regs = new int[2][16];	// On fait un tableau à 2 dimensions pour représenter
+									//les adresses et le contenu des registres
+	int [] ram = new int[32];
+	int LOOPS = 8;
+
+	long res = 16;
+	int addressRes = 100;
+	short incr = 32;
+	int addressIncr = 101;
+	byte i = 4;
+	int addressI = 102;
+
+	//Equivalents des commandes tapées avant
+	regs[1][0] = LOOPS;			=>		mov	r0, #LOOPS
+	regs[0][1] = addressIncr;	=>		ldr r1, =incr
+	regs[1][1] = incr;			=>		ldrh r1,[r1]
+	regs[0][3] = addressRes;	=>		ldr r3, =res
+	regs[0][4] = addressI;		=>		ldr r4, =i
+	regs[1][5] = 0;				=>		mov r5, #0
+	ram[4] = regs[1][5];		=>		str r5, [r4]
+
+	do{							=>		next:... cmp r5, r0 bne next
+		regs[1][2] = regs[1][3];=>		ldr r2, [r3]
+		regs[1][2] += regs[1][1]=>		add r2,r1
+		ram[3] = regs[1][2];	=>		str r2, [r3]
+		regs[1][5] = ram[4];	=>		ldr r5, [r4]
+		regs[1][5]++;			=>		add r5,#1
+		ram[4] = regs[1][5]; 
+	}
+	while(regs[1][5]!=regs[0][0]);
+
+*/
+
+// Implementation of assembler functions and methods
+	.text
+	.align	8
+
+	// print banner...
+	ldr	r0, =banner
+	bl 	printf
+
+	// start to implement your code here
+
+
+1:	nop
+	b	1b
+
+	bx	lr
+
+
+// Constant variables declation (rom data)	
+	.section .rodata
+
+// String definition used for message outputs (printf)
+banner:	.ascii "\n"
+	.ascii "HEIA-FR - Embedded Systems 1 Laboratory\n"
+	.ascii "An introduction to the development environment\n"
+	.ascii "--> Simple ARM assembler program to experiment the Embedded System\n"
+	.ascii "    Laboratory development environment under Git and Eclipse.\n"
+	.asciz "\n"
+

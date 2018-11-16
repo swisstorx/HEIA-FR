@@ -1,0 +1,184 @@
+Créer le dépôt de groupe pour les tp (1 par groupe de 2 personnes)
+? Avec un browser aller sur le Git de l’école
+(https://gitlab.forge.hefr.ch/)
+? Sélec?onner l’onglet « Projects » et cliquer « + New Project »
+? Nomer le projet « se12-1718-tp » et cliquer « Create project »
+? Noter l’URL du projet
+(https://gitlab.forge.hefr.ch/<username>/se12-1718-tp)
+? Ajouter le professeur comme « Reporter » (au minimum) au projet
+(https://gitlab.forge.hefr.ch/<username>/se12-tp/project_members)
+¦ Ouvrir l’espace de travail (workspace)
+? Ouvrir un terminal (une shell Linux) et entrer dans le workspace
+$ cd ~/workspace/se12/tp
+¦ Configurer Git
+$ git config --global user.name ”<User Name>”
+$ git config --global user.email user.name@edu.hefr.ch
+[Gac/tp.01] T-2/I-2 // 25.08.2017 Systèmes Embarqués 1 & 2 - Introduc?on 18 / 35
+Créa?on et installa?on de l’environnement (II)
+¦ Me?re à jour le dépôt local
+$ git pull upstream master
+¦ Ajouter les « tp » sur le dépôt local et synchroniser avec le dépôt de
+groupe
+$ git remote add -t master -m master origin
+https://gitlab.forge.hefr.ch/<username>/se12-1718-tp.git
+$ git branch -u origin/master
+$ git push origin master
+[Gac/tp.01] T-2/I-2 // 25.08.2017 Systèmes Embarqués 1 & 2 - Introduc?on 19 / 35
+Démarrage de l’IDE
+¦ A par?r de votre sta?on de travail Linux, démarrer l’IDE« Eclipse ».
+¦ Placer le workspace sur le répertoire
+? Op?on 1 : /home/lmi/workspace
+? Op?on 2 : /home/<username>/workspace
+[Gac/tp.01] T-2/I-2 // 25.08.2017 Systèmes Embarqués 1 & 2 - Introduc?on 20 / 35
+Créa?on d’un nouveau projet
+¦ Aller dans le « Project Explorer », cliquer le bu?on droit de la souris
+et choisir « New ? C Project »
+¦ Sélec?onner la loca?on du projet « <.../se12/tp/tp.01> »
+¦ Donner un nom « tp.01 »
+¦ Choisir « Makefile Project ? Empty Project ? Cross ARM GCC »
+¦ Cliquer « Next » ? « Next » ? « Finish »
+[Gac/tp.01] T-2/I-2 // 25.08.2017 Systèmes Embarqués 1 & 2 - Introduc?on 21 / 35
+Généra?on de l’applica?on
+¦ Cliquer sur le marteau ou « CTRL-B »
+A?en?on : il est important de contrôler qu’aucune erreur ne soit survenue
+durant la généra?on de votre applica?on !
+[Gac/tp.01] T-2/I-2 // 25.08.2017 Systèmes Embarqués 1 & 2 - Introduc?on 22 / 35
+Configura?on du débogueur (I – main)
+¦ Cliquer avec la flèche le pe?t insecte
+¦ Choisir « Debug Configura?ons »
+¦ Double-cliquer sur « GDB SEGGER J-Link Debugging »
+¦ Choisir le projet « tp.01 » et l’applica?on « app_a » et nommer
+« tp.01 »
+[Gac/tp.01] T-2/I-2 // 25.08.2017 Systèmes Embarqués 1 & 2 - Introduc?on 23 / 35
+Configura?on du débogueur (II – Debugger)
+¦ Ajouter dans « Device name : » « am3358 »
+¦ Choisir dans « Interface : » « JTAG »
+¦ Choisir dans « Ini?al speed : » « Auto »
+¦ Décocher « Allocate console for the GDB server »
+¦ Décocher « Allocate console for semihos?ng and SWO »
+[Gac/tp.01] T-2/I-2 // 25.08.2017 Systèmes Embarqués 1 & 2 - Introduc?on 24 / 35
+Configura?on du débogueur (III – Startup)
+¦ Décocher
+? Ini?al Reset...
+? Enable flash breakpoints.
+? Enable semihos?ng...
+¦ Choisir dans « JTAG/SWD
+Speed : » « Auto »
+¦ Introduire les commandes
+monitor reset
+monitor go
+monitor sleep 100
+monitor halt
+¦ Décocher
+? Pre-run/Restart reset.
+[Gac/tp.01] T-2/I-2 // 25.08.2017 Systèmes Embarqués 1 & 2 - Introduc?on 25 / 35
+Travail à réaliser
+¦ Editez le code suivant à l’intérieur du fichier « main.S »
+¦ Compilez votre code à l’aide de l’environnement de développement
+¦ Exécutez votre code en mode « pas à pas » en l’ayant chargé
+préalablement sur la cible
+¦ Indiquez dans le code source la significa?on de chaque instruc?on
+¦ Ecrivez dans le code en commentaire, l’algorithme équivalent en
+langage évolué (JAVA ou C)
+¦ Op?misez le code mais sans changer l’algorithme
+¦ Répondez aux ques?ons
+¦ Rédigez votre journal de laboratoire
+¦ Rendez votre code et votre journal au travers de Git
+[Gac/tp.01] T-2/I-2 // 25.08.2017 Systèmes Embarqués 1 & 2 - Introduc?on 26 / 35
+Impéra?fs
+¦ Le travail pra?que doit être exécuté par chaque étudiant
+¦ Le dépôt Git d’un groupe doit contenir le tag de chacun des
+membres du groupe
+¦ A la fin du TP, le workspace sur la machine locale de chacun des
+membres du groupe doit être synchronisé avec le dépôt Git
+commun au groupe
+[Gac/tp.01] T-2/I-2 // 25.08.2017 Systèmes Embarqués 1 & 2 - Introduc?on 27 / 35
+Code…
+/** <copyright & heading...> */
+// Export public symbols
+.global main, res, incr, i
+// Declaration of the constants
+#define LOOPS 8
+// Initialized variables declaration
+.data
+.align 8
+res : .long 16
+incr : .short 32
+// Uninitialized variables declaration
+.bss
+.align 8
+i : .space 4
+// Assembler functions implementation
+.text
+main : nop
+mov r0, #LOOPS
+ldr r1, =incr
+ldrh r1, [r1]
+ldr r3, =res
+ldr r4, =i
+mov r5, #0
+str r5, [r4]
+next : ldr r2, [r3]
+add r2, r1
+str r2, [r3]
+ldr r5, [r4]
+add r5, #1
+str r5, [r4]
+cmp r5, r0
+bne next
+1 : nop
+b 1b
+[Gac/tp.01] T-2/I-2 // 25.08.2017 Systèmes Embarqués 1 & 2 - Introduc?on 28 / 35
+Ques?ons…
+¦ Quelle est la taille de chacune des variables ?
+¦ Quelle est la taille du code ?
+¦ Comment procéder pour obtenir ces tailles ?
+¦ Où se trouve chaque variable en mémoire (adresse absolue) ?
+¦ Où se trouve le code en mémoire ?
+¦ Est-il possible d’améliorer l’algorithme ?
+[Gac/tp.01] T-2/I-2 // 25.08.2017 Systèmes Embarqués 1 & 2 - Introduc?on 29 / 35
+Journal
+¦ Le travail effectué durant le laboratoire devra être résumé et
+synthé?sé dans un journal de laboratoire de 1 à 2 pages
+? En-tête
+? Etablissement : HEIA-FR (logo), ins?tut, …
+? Titre : Systèmes Embarqués I, journal, sujet (TP.01 : Introduc?on)
+? Auteur (nom, email, classe, …)
+? Lieu et date
+? Heures de travail en dehors des heures de classe pour ce TP
+? Synthèse de l’étudiant sur ce qu’il a appris/exercé durant le TP
+? Non acquis
+? Acquis, mais à exercer encore
+? Parfaitement acquis
+? Réponses aux ques?ons
+? Remarques / choses à retenir
+? Feedback sur le TP
+[Gac/tp.01] T-2/I-2 // 25.08.2017 Systèmes Embarqués 1 & 2 - Introduc?on 30 / 35
+Journal (II)
+¦ Remarque
+? Le journal doit être rendu sous le format PDF.
+? Il peut être rédigé en français, allemand ou anglais.
+? Il doit être stocké dans le dépôt Git avec le code source sous
+? sources : .../tp/tp.01
+? journal : .../tp/tp.01/doc/report.pdf
+¦ Délai
+? Le journal et le code doivent être rendus le soir même du TP au plus
+tard à 23h59
+[Gac/tp.01] T-2/I-2 // 25.08.2017 Systèmes Embarqués 1 & 2 - Introduc?on 31 / 35
+Sauvegarde des sources dans le dépôt Git
+¦ Sauvegarder les modifica?ons dans le dépôt local
+? Ouvrir un terminal (une shell Linux)
+? Consulter l’état du dépôt
+$ git status
+? Ajouter éventuellement les nouveaux fichiers
+$ git add *
+? Commiter les modifica?ons
+$ git commit -a -m ”un commentaire…”
+¦ Synchroniser le dépôt local avec les dépôts centralisés (serveurs)
+? Synchroniser avec le dépôt du cours
+$ git pull upstream master
+? Synchroniser avec le dépôt personnel
+$ git pull origin master
+¦ Sauvegarder le résultat du travail dans le dépôt centralisé (serveur)
+? Pousser la branche sur le dépôt
+$ git push origin master

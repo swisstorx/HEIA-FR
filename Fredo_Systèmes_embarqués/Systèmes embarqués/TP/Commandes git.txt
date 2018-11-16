@@ -1,0 +1,21 @@
+Sauvegarder les modifica?ons dans le dépôt local
+? Ouvrir un terminal (une shell Linux)
+? Consulter l’état du dépôt
+$ git status
+? Ajouter éventuellement les nouveaux fichiers
+$ git add *
+? Commiter les modifica?ons
+$ git commit -a -m ”un commentaire…”
+¦ Synchroniser le dépôt local avec les dépôts centralisés (serveurs)
+? Synchroniser avec le dépôt du cours
+$ git pull upstream master
+? Synchroniser avec le dépôt personnel
+$ git pull origin master
+¦ Sauvegarder le résultat du travail dans le dépôt centralisé (serveur)
+? Pousser la branche sur le dépôt
+$ git push origin master
+
+
+git merge tools
+
+git status
