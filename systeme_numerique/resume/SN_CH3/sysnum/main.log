@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.25)  20 NOV 2018 13:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.25)  20 NOV 2018 16:25
 entering extended mode
 **./main.tex
 (main.tex
@@ -1595,127 +1595,100 @@ s
 \f@nch@O@orf=\skip81
 )) (main.aux
 
-LaTeX Warning: Label `' multiply defined.
+LaTeX Warning: Label `myImg' multiply defined.
 
 
-LaTeX Warning: Label `' multiply defined.
+LaTeX Warning: Label `myImg' multiply defined.
 
 
-LaTeX Warning: Label `' multiply defined.
+LaTeX Warning: Label `myImg' multiply defined.
 
 
-LaTeX Warning: Label `' multiply defined.
+LaTeX Warning: Label `myImg' multiply defined.
 
 
-LaTeX Warning: Label `' multiply defined.
+LaTeX Warning: Label `myImg' multiply defined.
 
 
-LaTeX Warning: Label `1' multiply defined.
+LaTeX Warning: Label `myImg' multiply defined.
 
 
-LaTeX Warning: Label `1' multiply defined.
+LaTeX Warning: Label `myImg' multiply defined.
 
 
-LaTeX Warning: Label `1' multiply defined.
+LaTeX Warning: Label `myImg' multiply defined.
 
 
-LaTeX Warning: Label `1' multiply defined.
+LaTeX Warning: Label `myImg' multiply defined.
 
 
-LaTeX Warning: Label `1' multiply defined.
+LaTeX Warning: Label `myImg' multiply defined.
 
 
-LaTeX Warning: Label `1' multiply defined.
+LaTeX Warning: Label `myImg' multiply defined.
 
 
-LaTeX Warning: Label `1' multiply defined.
+LaTeX Warning: Label `myImg' multiply defined.
 
 
-LaTeX Warning: Label `1' multiply defined.
+LaTeX Warning: Label `myImg' multiply defined.
 
 
-LaTeX Warning: Label `1' multiply defined.
+LaTeX Warning: Label `myImg' multiply defined.
 
 
-LaTeX Warning: Label `1' multiply defined.
+LaTeX Warning: Label `myImg' multiply defined.
 
 
-LaTeX Warning: Label `1' multiply defined.
+LaTeX Warning: Label `myImg' multiply defined.
 
 
-LaTeX Warning: Label `1' multiply defined.
+LaTeX Warning: Label `myImg' multiply defined.
 
 
-LaTeX Warning: Label `1' multiply defined.
+LaTeX Warning: Label `myImg' multiply defined.
 
 
-LaTeX Warning: Label `1' multiply defined.
+LaTeX Warning: Label `myImg' multiply defined.
 
 
-LaTeX Warning: Label `1' multiply defined.
+LaTeX Warning: Label `myImg' multiply defined.
 
 
-LaTeX Warning: Label `1' multiply defined.
+LaTeX Warning: Label `myImg' multiply defined.
 
 
-LaTeX Warning: Label `1' multiply defined.
-
-
-LaTeX Warning: Label `1' multiply defined.
-
-
-LaTeX Warning: Label `1' multiply defined.
-
-
-LaTeX Warning: Label `1' multiply defined.
-
-
-LaTeX Warning: Label `1' multiply defined.
-
-
-LaTeX Warning: Label `1' multiply defined.
-
-
-LaTeX Warning: Label `1' multiply defined.
-
-
-LaTeX Warning: Label `1' multiply defined.
-
-
-LaTeX Warning: Label `1' multiply defined.
-
-
-LaTeX Warning: Label `1' multiply defined.
+LaTeX Warning: Label `myImg' multiply defined.
 
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 6.
  ("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 7.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 6.
 
 ("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Info: Redefining \degres on input line 7.
-LaTeX Info: Redefining \dots on input line 7.
-LaTeX Info: Redefining \up on input line 7.
+LaTeX Info: Redefining \degres on input line 6.
+LaTeX Info: Redefining \dots on input line 6.
+LaTeX Info: Redefining \up on input line 6.
 
 ("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mki
 i"
@@ -1814,21 +1787,21 @@ Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 7.
+(lastpage)             ! on input line 6.
 ABD: EveryShipout initializing macros
 \c@lstlisting=\count326
 <Img/heia-fr-logo.png, id=40, 972.63374pt x 124.465pt>
 File: Img/heia-fr-logo.png Graphic file (type png)
 <use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 10.
+Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 9.
 (pdftex.def)             Requested size: 389.0466pt x 49.78511pt.
 <Img/title.jpg, id=42, 702.625pt x 311.1625pt>
 File: Img/title.jpg Graphic file (type jpg)
 <use Img/title.jpg>
-Package pdftex.def Info: Img/title.jpg  used on input line 31.
+Package pdftex.def Info: Img/title.jpg  used on input line 30.
 (pdftex.def)             Requested size: 491.83414pt x 217.81226pt.
 
-Overfull \hbox (19.8029pt too wide) in paragraph at lines 31--31
+Overfull \hbox (19.8029pt too wide) in paragraph at lines 30--30
  [][] 
  []
 
@@ -1836,35 +1809,39 @@ Overfull \hbox (19.8029pt too wide) in paragraph at lines 31--31
 
 {C:/Users/Marc/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Img/heia-f
 r-logo.png> <./Img/title.jpg>] (main.toc
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 3.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 4.
 
 ("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 3.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 4.
 
 ("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 3.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 4.
 
 ("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 3.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 4.
 
 ("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 3.
+(Font)              <12> on input line 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 3.
+(Font)              <8> on input line 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 3.
+(Font)              <6> on input line 4.
+)
+\tf@toc=\write6
+\openout6 = `main.toc'.
+
 File: Img/heia-fr-logo.png Graphic file (type png)
 <use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 30.
+Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 36.
 (pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
 
 
@@ -1873,416 +1850,210 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[1])
-\tf@toc=\write6
-\openout6 = `main.toc'.
-
-File: Img/heia-fr-logo.png Graphic file (type png)
-<use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 37.
-(pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
- [2]
-<Img/0.JPG, id=60, 418.56375pt x 273.27094pt>
-File: Img/0.JPG Graphic file (type jpg)
-<use Img/0.JPG>
-Package pdftex.def Info: Img/0.JPG  used on input line 66.
-(pdftex.def)             Requested size: 251.14018pt x 163.9638pt.
-<Img/1.JPG, id=61, 638.385pt x 381.67593pt>
+[1]
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 66.
+ ("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ts1lmr.fd"
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+<Img/1.JPG, id=57, 559.33969pt x 103.13531pt>
 File: Img/1.JPG Graphic file (type jpg)
 <use Img/1.JPG>
-Package pdftex.def Info: Img/1.JPG  used on input line 69.
-(pdftex.def)             Requested size: 510.70868pt x 305.34116pt.
-
-Overfull \hbox (38.67744pt too wide) in paragraph at lines 69--69
- [] 
- []
-
-File: Img/heia-fr-logo.png Graphic file (type png)
-<use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 69.
-(pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
-[3
-
- <./Img/0.JPG> <./Img/1.JPG>]
-<Img/2.JPG, id=65, 526.21594pt x 212.29312pt>
+Package pdftex.def Info: Img/1.JPG  used on input line 75.
+(pdftex.def)             Requested size: 335.6064pt x 61.88165pt.
+<Img/2.JPG, id=58, 623.32875pt x 113.67468pt>
 File: Img/2.JPG Graphic file (type jpg)
 <use Img/2.JPG>
-Package pdftex.def Info: Img/2.JPG  used on input line 73.
-(pdftex.def)             Requested size: 420.97333pt x 169.83472pt.
-<Img/4.JPG, id=66, 377.91188pt x 194.22563pt>
+Package pdftex.def Info: Img/2.JPG  used on input line 76.
+(pdftex.def)             Requested size: 374.00014pt x 68.20532pt.
+<Img/3.JPG, id=59, 402.75468pt x 158.09062pt>
+File: Img/3.JPG Graphic file (type jpg)
+<use Img/3.JPG>
+Package pdftex.def Info: Img/3.JPG  used on input line 79.
+(pdftex.def)             Requested size: 241.65466pt x 94.85509pt.
+File: Img/heia-fr-logo.png Graphic file (type png)
+<use Img/heia-fr-logo.png>
+Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 84.
+(pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
+
+[2
+
+ <./Img/1.JPG> <./Img/2.JPG> <./Img/3.JPG>]
+<Img/4.JPG, id=64, 569.87906pt x 206.27063pt>
 File: Img/4.JPG Graphic file (type jpg)
 <use Img/4.JPG>
-Package pdftex.def Info: Img/4.JPG  used on input line 84.
-(pdftex.def)             Requested size: 226.74887pt x 116.53627pt.
+Package pdftex.def Info: Img/4.JPG  used on input line 87.
+(pdftex.def)             Requested size: 284.93883pt x 103.13506pt.
+<Img/rtl.JPG, id=65, 622.57594pt x 196.48407pt>
+File: Img/rtl.JPG Graphic file (type jpg)
+<use Img/rtl.JPG>
+Package pdftex.def Info: Img/rtl.JPG  used on input line 89.
+(pdftex.def)             Requested size: 311.2872pt x 98.24179pt.
+<Img/code.JPG, id=66, 373.395pt x 603.75563pt>
+File: Img/code.JPG Graphic file (type jpg)
+<use Img/code.JPG>
+Package pdftex.def Info: Img/code.JPG  used on input line 91.
+(pdftex.def)             Requested size: 186.69704pt x 301.87708pt.
+<Img/muxrtl.JPG, id=67, 490.83376pt x 169.38281pt>
+File: Img/muxrtl.JPG Graphic file (type jpg)
+<use Img/muxrtl.JPG>
+Package pdftex.def Info: Img/muxrtl.JPG  used on input line 94.
+(pdftex.def)             Requested size: 294.50252pt x 101.63046pt.
 File: Img/heia-fr-logo.png Graphic file (type png)
 <use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 85.
+Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 94.
 (pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
- [4 <./Img/2.JPG> <./Img/4.JPG>]
-<Img/5.JPG, id=70, 459.21562pt x 458.46281pt>
+ [3 <./Img/4.JPG> <./Img/rtl.JPG> <./Img/code.JPG>]
+<Img/muxcode.JPG, id=71, 462.22687pt x 340.27126pt>
+File: Img/muxcode.JPG Graphic file (type jpg)
+<use Img/muxcode.JPG>
+Package pdftex.def Info: Img/muxcode.JPG  used on input line 96.
+(pdftex.def)             Requested size: 277.33826pt x 204.16432pt.
+<Img/comprtl.JPG, id=72, 491.58656pt x 143.03438pt>
+File: Img/comprtl.JPG Graphic file (type jpg)
+<use Img/comprtl.JPG>
+Package pdftex.def Info: Img/comprtl.JPG  used on input line 99.
+(pdftex.def)             Requested size: 294.95421pt x 85.82127pt.
+<Img/compcode.JPG, id=73, 492.33937pt x 314.67563pt>
+File: Img/compcode.JPG Graphic file (type jpg)
+<use Img/compcode.JPG>
+Package pdftex.def Info: Img/compcode.JPG  used on input line 100.
+(pdftex.def)             Requested size: 295.40588pt x 188.80682pt.
+File: Img/heia-fr-logo.png Graphic file (type png)
+<use Img/heia-fr-logo.png>
+Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 100.
+(pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
+ [4 <./Img/muxrtl.JPG> <./Img/muxcode.JPG> <./Img/comprtl.JPG>]
+<Img/5.JPG, id=77, 529.22719pt x 297.36093pt>
 File: Img/5.JPG Graphic file (type jpg)
 <use Img/5.JPG>
-Package pdftex.def Info: Img/5.JPG  used on input line 94.
-(pdftex.def)             Requested size: 275.5315pt x 275.0798pt.
-<Img/6.JPG, id=71, 587.94656pt x 332.74312pt>
+Package pdftex.def Info: Img/5.JPG  used on input line 106.
+(pdftex.def)             Requested size: 317.53876pt x 178.41792pt.
+<Img/6.JPG, id=78, 458.46281pt x 358.33875pt>
 File: Img/6.JPG Graphic file (type jpg)
 <use Img/6.JPG>
-Package pdftex.def Info: Img/6.JPG  used on input line 97.
-(pdftex.def)             Requested size: 352.77066pt x 199.6474pt.
+Package pdftex.def Info: Img/6.JPG  used on input line 107.
+(pdftex.def)             Requested size: 275.0798pt x 215.0049pt.
 File: Img/heia-fr-logo.png Graphic file (type png)
 <use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 97.
+Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 107.
 (pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
- [5 <./Img/5.JPG>]
-<Img/7.JPG, id=78, 563.85657pt x 319.94531pt>
-File: Img/7.JPG Graphic file (type jpg)
-<use Img/7.JPG>
-Package pdftex.def Info: Img/7.JPG  used on input line 100.
-(pdftex.def)             Requested size: 338.31654pt x 191.96866pt.
-<Img/8.JPG, id=79, 596.98032pt x 378.66469pt>
-File: Img/8.JPG Graphic file (type jpg)
-<use Img/8.JPG>
-Package pdftex.def Info: Img/8.JPG  used on input line 103.
-(pdftex.def)             Requested size: 358.19095pt x 227.20056pt.
-File: Img/heia-fr-logo.png Graphic file (type png)
-<use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 103.
-(pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
- [6 <./Img/6.JPG> <./Img/7.JPG>]
-<Img/9.JPG, id=84, 550.30594pt x 354.57469pt>
-File: Img/9.JPG Graphic file (type jpg)
-<use Img/9.JPG>
-Package pdftex.def Info: Img/9.JPG  used on input line 106.
-(pdftex.def)             Requested size: 330.18611pt x 212.74644pt.
-File: Img/heia-fr-logo.png Graphic file (type png)
-<use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 109.
-(pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
- [7 <./Img/8.JPG> <./Img/9.JPG>]
-<Img/10.JPG, id=88, 581.92406pt x 320.69812pt>
-File: Img/10.JPG Graphic file (type jpg)
-<use Img/10.JPG>
-Package pdftex.def Info: Img/10.JPG  used on input line 130.
-(pdftex.def)             Requested size: 349.15712pt x 192.42035pt.
-<Img/11.JPG, id=89, 417.81094pt x 376.40625pt>
-File: Img/11.JPG Graphic file (type jpg)
-<use Img/11.JPG>
-Package pdftex.def Info: Img/11.JPG  used on input line 134.
-(pdftex.def)             Requested size: 250.68849pt x 225.84547pt.
-File: Img/heia-fr-logo.png Graphic file (type png)
-<use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 134.
-(pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
- [8 <./Img/10.JPG>]
-<Img/12.JPG, id=93, 584.1825pt x 359.09157pt>
-File: Img/12.JPG Graphic file (type jpg)
-<use Img/12.JPG>
-Package pdftex.def Info: Img/12.JPG  used on input line 138.
-(pdftex.def)             Requested size: 350.51219pt x 215.45659pt.
-File: Img/heia-fr-logo.png Graphic file (type png)
-<use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 146.
-(pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
- [9 <./Img/11.JPG> <./Img/12.JPG>]
-<Img/13.JPG, id=97, 551.81157pt x 397.485pt>
-File: Img/13.JPG Graphic file (type jpg)
-<use Img/13.JPG>
-Package pdftex.def Info: Img/13.JPG  used on input line 146.
-(pdftex.def)             Requested size: 331.0895pt x 238.49283pt.
-<Img/14.JPG, id=98, 581.92406pt x 369.63094pt>
-File: Img/14.JPG Graphic file (type jpg)
-<use Img/14.JPG>
-Package pdftex.def Info: Img/14.JPG  used on input line 150.
-(pdftex.def)             Requested size: 349.15712pt x 221.78026pt.
-<Img/15.JPG, id=99, 551.05875pt x 357.58594pt>
-File: Img/15.JPG Graphic file (type jpg)
-<use Img/15.JPG>
-Package pdftex.def Info: Img/15.JPG  used on input line 154.
-(pdftex.def)             Requested size: 330.63779pt x 214.5532pt.
-File: Img/heia-fr-logo.png Graphic file (type png)
-<use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 154.
-(pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
- [10 <./Img/13.JPG> <./Img/14.JPG>]
-<Img/16.JPG, id=103, 513.41812pt x 338.76563pt>
-File: Img/16.JPG Graphic file (type jpg)
-<use Img/16.JPG>
-Package pdftex.def Info: Img/16.JPG  used on input line 155.
-(pdftex.def)             Requested size: 308.05324pt x 203.26093pt.
-<Img/17.JPG, id=104, 575.14874pt x 191.9672pt>
-File: Img/17.JPG Graphic file (type jpg)
-<use Img/17.JPG>
-Package pdftex.def Info: Img/17.JPG  used on input line 159.
-(pdftex.def)             Requested size: 345.0919pt x 115.1812pt.
-File: Img/heia-fr-logo.png Graphic file (type png)
-<use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 159.
-(pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
+ [5 <./Img/compcode.JPG> <./Img/5.JPG>]
+<Img/vueRTL.JPG, id=82, 1191.7022pt x 386.19281pt>
+File: Img/vueRTL.JPG Graphic file (type jpg)
+<use Img/vueRTL.JPG>
+Package pdftex.def Info: Img/vueRTL.JPG  used on input line 108.
+(pdftex.def)             Requested size: 595.84964pt x 193.09592pt.
 
-[11 <./Img/15.JPG> <./Img/16.JPG>]
-<Img/18.JPG, id=108, 563.85657pt x 357.58594pt>
-File: Img/18.JPG Graphic file (type jpg)
-<use Img/18.JPG>
-Package pdftex.def Info: Img/18.JPG  used on input line 164.
-(pdftex.def)             Requested size: 338.31654pt x 214.5532pt.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 168.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 169.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 169.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 169.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 169.
-
-
-Overfull \hbox (9.2849pt too wide) detected at line 169
-\OML/lmm/m/it/12 serendortlorsquetouteslesinstructionss\OT1/lmr/m/n/12 י\OML/lm
-m/m/it/12 quentielles\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 avantleendprocess=wait\O
-T1/lmr/m/n/12 )\OML/lmm/m/it/12 ont\OT1/lmr/m/n/12 י\OML/lmm/m/it/12 t\OT1/lmr/
-m/n/12 יי\OML/lmm/m/it/12 valu\OT1/lmr/m/n/12 י\OML/lmm/m/it/12 es:
- []
-
-<Img/19.JPG, id=109, 508.90125pt x 362.85562pt>
-File: Img/19.JPG Graphic file (type jpg)
-<use Img/19.JPG>
-Package pdftex.def Info: Img/19.JPG  used on input line 175.
-(pdftex.def)             Requested size: 305.34311pt x 217.71504pt.
-File: Img/heia-fr-logo.png Graphic file (type png)
-<use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 175.
-(pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
-[12 <./Img/17.JPG> <./Img/18.JPG>]
-<Img/20.JPG, id=115, 444.91219pt x 345.54094pt>
-File: Img/20.JPG Graphic file (type jpg)
-<use Img/20.JPG>
-Package pdftex.def Info: Img/20.JPG  used on input line 180.
-(pdftex.def)             Requested size: 266.94936pt x 207.32616pt.
-<Img/21.JPG, id=116, 507.39563pt x 355.3275pt>
-File: Img/21.JPG Graphic file (type jpg)
-<use Img/21.JPG>
-Package pdftex.def Info: Img/21.JPG  used on input line 186.
-(pdftex.def)             Requested size: 304.43973pt x 213.19814pt.
-File: Img/heia-fr-logo.png Graphic file (type png)
-<use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 186.
-(pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
- [13 <./Img/19.JPG> <./Img/20.JPG>]
-<Img/22.JPG, id=120, 566.115pt x 354.57469pt>
-File: Img/22.JPG Graphic file (type jpg)
-<use Img/22.JPG>
-Package pdftex.def Info: Img/22.JPG  used on input line 191.
-(pdftex.def)             Requested size: 339.67162pt x 212.74644pt.
-<Img/23.JPG, id=121, 584.1825pt x 381.67593pt>
-File: Img/23.JPG Graphic file (type jpg)
-<use Img/23.JPG>
-Package pdftex.def Info: Img/23.JPG  used on input line 195.
-(pdftex.def)             Requested size: 350.51219pt x 229.00732pt.
-File: Img/heia-fr-logo.png Graphic file (type png)
-<use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 195.
-(pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
- [14 <./Img/21.JPG> <./Img/22.JPG>]
-<Img/24.JPG, id=125, 552.56438pt x 222.8325pt>
-File: Img/24.JPG Graphic file (type jpg)
-<use Img/24.JPG>
-Package pdftex.def Info: Img/24.JPG  used on input line 197.
-(pdftex.def)             Requested size: 331.54118pt x 133.70053pt.
-<Img/25.JPG, id=126, 517.18219pt x 180.675pt>
-File: Img/25.JPG Graphic file (type jpg)
-<use Img/25.JPG>
-Package pdftex.def Info: Img/25.JPG  used on input line 200.
-(pdftex.def)             Requested size: 310.3117pt x 108.40582pt.
-File: Img/heia-fr-logo.png Graphic file (type png)
-<use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 200.
-(pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
- [15 <./Img/23.JPG> <./Img/24.JPG>]
-<Img/26.JPG, id=130, 610.53094pt x 347.04657pt>
-File: Img/26.JPG Graphic file (type jpg)
-<use Img/26.JPG>
-Package pdftex.def Info: Img/26.JPG  used on input line 203.
-(pdftex.def)             Requested size: 366.3214pt x 208.22954pt.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 207.
-
-File: Img/heia-fr-logo.png Graphic file (type png)
-<use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 212.
-(pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
-[16 <./Img/25.JPG> <./Img/26.JPG>]
-<Img/27.JPG, id=134, 556.32843pt x 399.74344pt>
-File: Img/27.JPG Graphic file (type jpg)
-<use Img/27.JPG>
-Package pdftex.def Info: Img/27.JPG  used on input line 256.
-(pdftex.def)             Requested size: 333.79964pt x 239.8479pt.
-File: Img/heia-fr-logo.png Graphic file (type png)
-<use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 256.
-(pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
- [17]
-<Img/28.JPG, id=138, 579.66562pt x 296.60812pt>
-File: Img/28.JPG Graphic file (type jpg)
-<use Img/28.JPG>
-Package pdftex.def Info: Img/28.JPG  used on input line 257.
-(pdftex.def)             Requested size: 463.73312pt x 237.2868pt.
-<Img/29.JPG, id=139, 605.26125pt x 404.26031pt>
-File: Img/29.JPG Graphic file (type jpg)
-<use Img/29.JPG>
-Package pdftex.def Info: Img/29.JPG  used on input line 258.
-(pdftex.def)             Requested size: 363.15953pt x 242.55806pt.
-File: Img/heia-fr-logo.png Graphic file (type png)
-<use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 258.
-(pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
- [18 <./Img/27.JPG> <./Img/28.JPG>]
-File: Img/heia-fr-logo.png Graphic file (type png)
-<use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 263.
-(pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
-
-[19 <./Img/29.JPG>]
-\openout4 = `main.listing'.
-
-
-("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstlang1.s
-ty"
-File: lstlang1.sty 2015/06/04 1.6 listings language file
-)
-("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstlang2.s
-ty"
-File: lstlang2.sty 2015/06/04 1.6 listings language file
-)
-("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstlang3.s
-ty"
-File: lstlang3.sty 2015/06/04 1.6 listings language file
-)
-("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstlang1.s
-ty"
-File: lstlang1.sty 2015/06/04 1.6 listings language file
-)
-("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstlang2.s
-ty"
-File: lstlang2.sty 2015/06/04 1.6 listings language file
-)
-("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstlang3.s
-ty"
-File: lstlang3.sty 2015/06/04 1.6 listings language file
-)
-("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstlang1.s
-ty"
-File: lstlang1.sty 2015/06/04 1.6 listings language file
-)
-("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstlang2.s
-ty"
-File: lstlang2.sty 2015/06/04 1.6 listings language file
-)
-("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstlang3.s
-ty"
-File: lstlang3.sty 2015/06/04 1.6 listings language file
-)
-("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstmisc.st
-y"
-File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-)
-("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstlang1.s
-ty"
-File: lstlang1.sty 2015/06/04 1.6 listings language file
-)
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 274.
-
- ("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) ("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latin1.def"
-File: latin1.def 2015/03/17 v1.2c Input encoding file
-)
-("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\se-utf8.
-def"
-File: se-utf8.def 2016/05/16 v1.11 stringenc: UTF-8
-)
-("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\se-iso-8
-859-1.def"
-File: se-iso-8859-1.def 2016/05/16 v1.11 stringenc: ISO-8859-1
-)
-<Img/30.JPG, id=147, 623.32875pt x 361.35pt>
-File: Img/30.JPG Graphic file (type jpg)
-<use Img/30.JPG>
-Package pdftex.def Info: Img/30.JPG  used on input line 277.
-(pdftex.def)             Requested size: 498.66368pt x 289.0804pt.
-
-Overfull \hbox (26.63245pt too wide) in paragraph at lines 277--277
+Overfull \hbox (123.8184pt too wide) in paragraph at lines 108--108
  [] 
  []
 
-<Img/31.JPG, id=148, 547.2947pt x 307.1475pt>
-File: Img/31.JPG Graphic file (type jpg)
-<use Img/31.JPG>
-Package pdftex.def Info: Img/31.JPG  used on input line 280.
-(pdftex.def)             Requested size: 437.83635pt x 245.71832pt.
 File: Img/heia-fr-logo.png Graphic file (type png)
 <use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 280.
+Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 110.
 (pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
-[20 <./Img/30.JPG>]
+[6 <./Img/6.JPG> <./Img/vueRTL.JPG>]
+<Img/10.JPG, id=87, 526.96875pt x 184.43906pt>
+File: Img/10.JPG Graphic file (type jpg)
+<use Img/10.JPG>
+Package pdftex.def Info: Img/10.JPG  used on input line 114.
+(pdftex.def)             Requested size: 316.18369pt x 110.66428pt.
+<Img/7.JPG, id=88, 530.73282pt x 311.66437pt>
+File: Img/7.JPG Graphic file (type jpg)
+<use Img/7.JPG>
+Package pdftex.def Info: Img/7.JPG  used on input line 116.
+(pdftex.def)             Requested size: 318.44214pt x 187.00006pt.
+<Img/8.JPG, id=89, 493.845pt x 213.04594pt>
+File: Img/8.JPG Graphic file (type jpg)
+<use Img/8.JPG>
+Package pdftex.def Info: Img/8.JPG  used on input line 117.
+(pdftex.def)             Requested size: 296.30928pt x 127.82854pt.
+<Img/ex1.JPG, id=90, 572.89032pt x 409.53pt>
+File: Img/ex1.JPG Graphic file (type jpg)
+<use Img/ex1.JPG>
+Package pdftex.def Info: Img/ex1.JPG  used on input line 120.
+(pdftex.def)             Requested size: 257.79826pt x 184.28679pt.
 File: Img/heia-fr-logo.png Graphic file (type png)
 <use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 294.
+Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 120.
 (pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
- [21 <./Img/31.JPG>]
-<Img/32.JPG, id=156, 538.26094pt x 217.5628pt>
-File: Img/32.JPG Graphic file (type jpg)
-<use Img/32.JPG>
-Package pdftex.def Info: Img/32.JPG  used on input line 302.
-(pdftex.def)             Requested size: 430.60934pt x 174.05048pt.
-<Img/33.JPG, id=157, 569.87906pt x 336.50719pt>
-File: Img/33.JPG Graphic file (type jpg)
-<use Img/33.JPG>
-Package pdftex.def Info: Img/33.JPG  used on input line 311.
-(pdftex.def)             Requested size: 455.90385pt x 269.2061pt.
- 
+ [7 <./Img/10.JPG> <./Img/7.JPG> <./Img/8.JPG>]
+<Img/9.JPG, id=94, 568.37344pt x 295.85532pt>
+File: Img/9.JPG Graphic file (type jpg)
+<use Img/9.JPG>
+Package pdftex.def Info: Img/9.JPG  used on input line 123.
+(pdftex.def)             Requested size: 341.02669pt x 177.51454pt.
+<Img/ex2.JPG, id=95, 930.47626pt x 534.49687pt>
+File: Img/ex2.JPG Graphic file (type jpg)
+<use Img/ex2.JPG>
+Package pdftex.def Info: Img/ex2.JPG  used on input line 127.
+(pdftex.def)             Requested size: 418.71045pt x 240.52136pt.
+File: Img/heia-fr-logo.png Graphic file (type png)
+<use Img/heia-fr-logo.png>
+Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 127.
+(pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
+ [8 <./Img/ex1.JPG> <./Img/9.JPG>]
+<Img/ex3.JPG, id=99, 972.63374pt x 590.95781pt>
+File: Img/ex3.JPG Graphic file (type jpg)
+<use Img/ex3.JPG>
+Package pdftex.def Info: Img/ex3.JPG  used on input line 131.
+(pdftex.def)             Requested size: 437.68114pt x 265.92856pt.
+<Img/11.JPG, id=100, 709.14937pt x 282.30469pt>
+File: Img/11.JPG Graphic file (type jpg)
+<use Img/11.JPG>
+Package pdftex.def Info: Img/11.JPG  used on input line 135.
+(pdftex.def)             Requested size: 425.4929pt x 169.38411pt.
+File: Img/heia-fr-logo.png Graphic file (type png)
+<use Img/heia-fr-logo.png>
+Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 135.
+(pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
+ [9 <./Img/ex2.JPG> <./Img/ex3.JPG>]
+<Img/12.JPG, id=104, 587.94656pt x 257.46187pt>
+File: Img/12.JPG Graphic file (type jpg)
+<use Img/12.JPG>
+Package pdftex.def Info: Img/12.JPG  used on input line 152.
+(pdftex.def)             Requested size: 352.77066pt x 154.4783pt.
+<Img/13.JPG, id=105, 520.19344pt x 338.01282pt>
+File: Img/13.JPG Graphic file (type jpg)
+<use Img/13.JPG>
+Package pdftex.def Info: Img/13.JPG  used on input line 156.
+(pdftex.def)             Requested size: 312.11845pt x 202.80925pt.
+File: Img/heia-fr-logo.png Graphic file (type png)
+<use Img/heia-fr-logo.png>
+Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 156.
+(pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
+
+[10 <./Img/11.JPG> <./Img/12.JPG>] 
 AED: lastpage setting LastPage
 File: Img/heia-fr-logo.png Graphic file (type png)
 <use Img/heia-fr-logo.png>
-Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 341.
+Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 166.
 (pdftex.def)             Requested size: 194.5233pt x 24.89255pt.
-[22 <./Img/32.JPG> <./Img/33.JPG>] (main.aux)
+[11 <./Img/13.JPG>] (main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 32570 strings out of 492976
- 666592 string characters out of 3127194
- 771764 words of memory out of 3000000
- 35846 multiletter control sequences out of 15000+200000
- 584345 words of font info for 54 fonts, out of 3000000 for 9000
+ 31996 strings out of 492976
+ 659140 string characters out of 3127194
+ 723412 words of memory out of 3000000
+ 35318 multiletter control sequences out of 15000+200000
+ 584081 words of font info for 53 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,17n,101p,10403b,1955s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc
-}{C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.
-enc}{C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.e
-nc}{C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathi
-t.enc}<C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lm
-bx12.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm
-/lmcsc10.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/lm/lmmi12.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/lm/lmr12.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/lm/lmr17.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/lm/lmri12.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/lm/lmro12.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/lm/lmsy10.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/lm/lmsy8.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/lm/lmtt8.pfb>
-Output written on main.pdf (23 pages, 2614459 bytes).
+ 65i,17n,101p,10403b,510s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.en
+c}{C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc
+}<C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.
+pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmcs
+c10.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/
+lmr12.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/l
+m/lmr17.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/lm/lmri12.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/lm/lmro12.pfb>
+Output written on main.pdf (12 pages, 1637499 bytes).
 PDF statistics:
- 198 PDF objects out of 1000 (max. 8388607)
+ 135 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 332 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 282 words of extra memory for PDF output out of 10000 (max. 10000000)
 
