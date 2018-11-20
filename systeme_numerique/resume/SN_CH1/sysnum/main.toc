@@ -36,9 +36,3 @@
 \contentsline {subsubsection}{\numberline {1.17.4}Longue m\IeC {\'e}moire}{17}
 \contentsline {subsubsection}{\numberline {1.17.5}RTL}{17}
 \contentsline {subsection}{\numberline {1.18}Exercices}{18}
-\contentsline {section}{\numberline {2}Chapter 2 Conception hi\IeC {\'e}rarchique}{20}
-\contentsline {subsection}{\numberline {2.1}Concept de d\IeC {\'e}coupage hi\IeC {\'e}rarchique}{20}
-\contentsline {subsection}{\numberline {2.2}Communication}{21}
-\contentsline {subsection}{\numberline {2.3}A COMPLETER}{21}
-\contentsline {section}{\numberline {3}Types, Op\IeC {\'e}rateurs et Conversions}{22}
-\contentsline {subsection}{\numberline {3.1}types scalaires entiers}{22}
