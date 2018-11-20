@@ -13,7 +13,7 @@
 	
     \begin{titlepage}
         \begin{center}
-            \includegraphics[scale=.4]{Img/heia-fr-logo.png}\\[1.3cm]
+            \includegraphics[scale=.3]{Img/heia-fr-logo.png}\\[1cm]
             
             \rule{\linewidth}{0.3mm} \\[0.3cm]
             {\huge \bfseries TP 2 Capteur et Protocole\\[0.5cm]} 
@@ -33,13 +33,15 @@
                     \textsl{Nicolas} \textsc{ Schroeter}\\ 
                 \end{flushright} 
                 \vfill
-            \end{minipage}\\[1.3cm]
-            \includegraphics[scale=0.85]{Img/1.JPG}\\[1.5cm]
+            \end{minipage}\\[1cm]
+            \includegraphics[scale=0.7]{Img/1.JPG}\\[0.6cm]
             \vspace*{1\baselineskip}
-            \today \\[0.7cm]
+            \today 
         \end{center}
     \end{titlepage}
-    \tableofcontents
+    	\renewcommand\contentsname{Table of Contents} % rename title
+	\pagenumbering{alpha}
+	\tableofcontents
     \clearpage
 	
 	
@@ -68,6 +70,35 @@
 	
 	
 \section{Introduction}
+
+\begin{lstlisting}[label=exe_14, caption=Solution to Example~14.]
+-----------------------------------
+-- Model of a simple D Flip-Flop --
+-----------------------------------
+-- library declaration
+library IEEE;
+use IEEE.std_logic_1164.all;
+-- entity
+entity d_ff is 
+	port ( D, CLK : in  std_logic; 
+		   Q :      out std_logic); 
+end d_ff; 
+-- architecture
+architecture my_d_ff of d_ff is 
+begin
+	dff:  process(CLK)
+	begin
+		if (rising_edge(CLK))      then
+--or    if (CLK'event and CLK='1') then
+			Q <= D; 
+		end if; 
+	end process dff; 
+end my_d_ff; 
+\end{lstlisting}
+\newpage
+
+
+
 
 \section{Cahier des charges}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.25)  14 NOV 2018 21:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.25)  16 NOV 2018 14:06
 entering extended mode
 **./master.tex
 (master.tex
@@ -1245,6 +1245,7 @@ Package hyperref Info: Option `pdfnewwindow' set `true' on input line 264.
 Package hyperref Info: Option `colorlinks' set `true' on input line 264.
 ) (master.aux
 \c@pagesLTS.alph.1.local.cnt=\count149
+\c@pagesLTS.roman.1.local.cnt=\count150
 )
 \openout1 = `master.aux'.
 
@@ -1266,16 +1267,16 @@ LaTeX Font Info:    ... okay on input line 9.
 ("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mki
 i"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count150
+\scratchcounter=\count151
 \scratchdimen=\dimen261
 \scratchbox=\box44
-\nofMPsegments=\count151
-\nofMParguments=\count152
+\nofMPsegments=\count152
+\nofMParguments=\count153
 \everyMPshowfont=\toks38
-\MPscratchCnt=\count153
+\MPscratchCnt=\count154
 \MPscratchDim=\dimen262
-\MPnumerator=\count154
-\makeMPintoPDFobject=\count155
+\MPnumerator=\count155
+\makeMPintoPDFobject=\count156
 \everyMPtoPDFconversion=\toks39
 )
 ("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-b
@@ -1484,7 +1485,7 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
-\c@lstlisting=\count156
+\c@lstlisting=\count157
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -1515,7 +1516,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 string.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count157
+\c@section@level=\count158
 )
 LaTeX Info: Redefining \ref on input line 9.
 LaTeX Info: Redefining \pageref on input line 9.
@@ -1524,41 +1525,53 @@ LaTeX Info: Redefining \nameref on input line 9.
 \@outlinefile=\write4
 \openout4 = `master.out'.
 
-\c@pagesLTS.pnc.alph=\count158
-\c@pagesLTS.double.alph=\count159
-\c@pagesLTS.current.local.alph=\count160
+\c@pagesLTS.pnc.alph=\count159
+\c@pagesLTS.double.alph=\count160
+\c@pagesLTS.current.local.alph=\count161
 <Img/heia-fr-logo.png, id=22, 972.63374pt x 124.465pt>
 File: Img/heia-fr-logo.png Graphic file (type png)
 <use Img/heia-fr-logo.png>
 Package pdftex.def Info: Img/heia-fr-logo.png  used on input line 16.
-(pdftex.def)             Requested size: 389.0466pt x 49.78511pt.
-
-Overfull \hbox (39.07762pt too wide) in paragraph at lines 16--16
- [] 
- []
-
+(pdftex.def)             Requested size: 291.79237pt x 37.33978pt.
 <Img/1.JPG, id=24, 451.6875pt x 331.2375pt>
 File: Img/1.JPG Graphic file (type jpg)
 <use Img/1.JPG>
 Package pdftex.def Info: Img/1.JPG  used on input line 37.
-(pdftex.def)             Requested size: 383.93617pt x 281.55319pt.
-
-Overfull \hbox (33.9672pt too wide) in paragraph at lines 37--37
- [][] 
- []
-
-[1
+(pdftex.def)             Requested size: 316.17908pt x 231.86465pt.
+ [1
 Non-PDF special ignored!
 <special> papersize=455.24408pt,682.86613pt
 
 
 {C:/Users/Marc/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Img/heia-f
-r-logo.png>]
+r-logo.png> <./Img/1.JPG>]
+\c@pagesLTS.alph.1.local.count=\count162
+
+
+! Package pageslts Error: unknown page numbering scheme.
+
+See the pageslts package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.43 	\pagenumbering{alpha}
+                           
+The pageslts package encountered the unknown
+page numbering scheme
+`alpha'. 
+If this is no typing mistake, it might work
+- or it might not work.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\c@pagesLTS.pnc.alpha=\count163
+\c@pagesLTS.double.alpha=\count164
+\c@pagesLTS.current.local.alpha=\count165
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [2 <./Img/1.JPG>] (master.toc
+(master.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 2.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -1569,58 +1582,263 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \tf@toc=\write5
 \openout5 = `master.toc'.
 
- [3
-
-] [4
-
-] [5] [6]
-
-Package caption Warning: Unused \captionsetup[lstlisting] on input line 181.
-See the caption package documentation for explanation.
 
 
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@alpha' on input line 45.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\c@page' on input line 45.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@alpha' on input line 45.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\c@page' on input line 45.
+
+[1
+
+]
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.50 	\null\newpage
+                    % latex might neglect \newpage because the page is empty,
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@alpha' on input line 50.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\c@page' on input line 50.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@alpha' on input line 50.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\c@page' on input line 50.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.50 	\null\newpage
+                    % latex might neglect \newpage because the page is empty,
+[2
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@alpha' on input line 54.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\c@page' on input line 54.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@alpha' on input line 54.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\c@page' on input line 54.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.54 	\null\newpage
+                    [3]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@alpha' on input line 66.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\c@page' on input line 66.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@alpha' on input line 66.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\c@page' on input line 66.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.66 	\null\newpage
+                    [4]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 74.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 74.
+
+("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `pcr' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <8> not available
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 80.
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 92.
+
+("C:\Users\Marc\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ts1pcr.fd"
+File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `pcr' (encoding: TS1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@alpha' on input line 98.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\c@page' on input line 98.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@alpha' on input line 98.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\c@page' on input line 98.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.98 \newpage
+              [5] 
 AED: pageslts setting LastPage 
-[7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 78.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 78.
-\c@pagesLTS.alph.1.local.count=\count161
- 
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.109 \end{document}
+                    
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@alpha' on input line 109.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\c@page' on input line 109.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@alpha' on input line 109.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\c@page' on input line 109.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.109 \end{document}
+                     [6]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@alpha' on input line 109.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\c@page' on input line 109.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 109.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 109.
+\c@pagesLTS.alpha.1.local.count=\count166
+
 AED: pageslts setting VeryLastPage via AfterLastShipout 
 
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\c@page' on input line 109.
+
+
 AED: pageslts setting LastPages via AfterLastShipout 
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\c@page' on input line 109.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\c@page' on input line 109.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\c@page' on input line 109.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\c@page' on input line 109.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\c@page' on input line 109.
+
 
 
 Package pageslts Info: Total number of pages is odd.
 
 
-(master.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 78.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 78.
+(master.aux
+\c@pagesLTS.alpha.1.local.cnt=\count167
+)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 109.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 109.
 Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: 750B115977ABDF1D58381B516CB2539F;202.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 78.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 109.
  ) 
 Here is how much of TeX's memory you used:
- 22697 strings out of 492976
- 429837 string characters out of 3127194
- 545958 words of memory out of 3000000
- 26050 multiletter control sequences out of 15000+200000
- 12833 words of font info for 56 fonts, out of 3000000 for 9000
+ 23220 strings out of 492976
+ 435559 string characters out of 3127194
+ 589160 words of memory out of 3000000
+ 26541 multiletter control sequences out of 15000+200000
+ 14773 words of font info for 63 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,11n,58p,454b,418s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmbx12.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmcsc10.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marc/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Marc/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Users/Marc/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Us
-ers/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssb
-x10.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmti12.pfb>
-Output written on master.pdf (7 pages, 126232 bytes).
+ 62i,11n,58p,454b,1473s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}
+<C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmbx12.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmbx8.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marc/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Marc/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Users
+/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.p
+fb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmssbx10.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmti12.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/urw/courier/ucrb8a.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on master.pdf (7 pages, 163534 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 13 named destinations out of 1000 (max. 500000)
- 21559 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 135 PDF objects out of 1000 (max. 8388607)
+ 31 named destinations out of 1000 (max. 500000)
+ 24631 words of extra memory for PDF output out of 24883 (max. 10000000)
 

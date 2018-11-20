@@ -1,0 +1,7 @@
+1) Pour répondre à la complexité qui augmente,on applique une technique de travail universelle:
+
+Diviser pour rêgner = réduire la complexité en plusieurs sous-problèmes
+
+2) Un système numérique sera découpé en plusieurs composants qui interagissent/communiquent.
+
+Forme de découpage la plus fréquente: HIERARCHIQUE
