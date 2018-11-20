@@ -1,0 +1,363 @@
+\input{../Commands.tex}
+
+\title{Résumé système numérique} 
+\author{\textsl{Marc} \textsc{Roten}}
+\date{}
+
+\begin{document}
+    \begin{titlepage}
+        \begin{center}
+            \includegraphics[scale=.4]{Img/heia-fr-logo.png}\\[1.3cm]
+            
+            \rule{\linewidth}{0.3mm} \\[0.3cm]
+            {\huge \bfseries Operating Systems\\[0.5cm]} 
+           % {\Large Effet photoélectrique}\\[0.2cm]
+            {\Large  Résumé TE01 }
+            \rule{\linewidth}{0.3mm} \\[0.8cm]
+            \noindent{}
+            \begin{minipage}[t]{0.4\textwidth}
+                \begin{flushleft} \large
+                    \emph{Auteurs :}\\
+                    \theauthor
+                \end{flushleft}
+            \end{minipage}
+            \begin{minipage}[t]{0.4\textwidth} 
+                \begin{flushright} \large
+                    \emph{Professeur:}\\
+                    \textsl{Nicolas} \textsc{ Schroeter}\\ 
+                \end{flushright} 
+                \vfill
+            \end{minipage}\\[1.3cm]
+            \includegraphics[scale=0.4]{Img/title.jpg}\\[1.5cm]
+            \vspace*{1\baselineskip}
+            \today \\[0.7cm]
+        \end{center}
+    \end{titlepage}
+    \tableofcontents
+    \clearpage
+% \insertImage{Img/photo.PNG}{0.8}{Schéma explicatif}{}
+
+% \section{voici comment faire un chapitre}
+
+%     \subsection{Voici comment faire un sous chapitre}
+
+% \section{des commandes}
+%     \subsection{commande cisco}
+    
+%     \begin{cisco}[une commande sympa type cisco]
+%       un texte lambda
+%     \end{cisco}
+    
+%     \subsection{commande cisco allégée}
+    
+%     \begin{cisco}
+%       un texte lambda
+%     \end{cisco}
+    
+    
+%     \subsection{commande pour mettre une image}
+    
+%     % \insertImage{Img/1.PNG}{echelle pour l'image (source = 1)}{texte dessous l'image}{référence vers l'objet
+%     \insertImage{Img/1.JPG}{0.6}{voici une image}{myImg}
+%       \insertImage{Img/27.JPG}{0.6}{}{}
+
+\section{THCHAP1 Introduction}%done
+Dans ce cours, nous allons nous intéresser à ce qui se passe dans les «entrailles» de la machine. Un système d’exploitation sert à gérer les ressources d’un
+
+\section{THCHAP2 Concept de base}%done
+    Avec un niveau d'abstraction, on peut considérer le graphique suivant 
+    \insertImage{Img/1.JPG}{0.6}{Niveau d'abstraction}{}
+
+    Quand un processus crée un autre processus, on peut le représenter sous forme d'arbre comme suit: 
+
+    \insertImage{Img/2.JPG}{0.6}{Arbre de processus}{}
+
+    \subsection{Les appels systemes}
+
+    \insertImage{Img/3.JPG}{0.6}{appels systèmes simplifiés}{}
+
+    \subsubsection{Gestion des processus}
+    \insertImage{Img/4.JPG}{0.6}{les différenta appels systemes}{}
+
+    \subsubsection{Gestion de fichier}
+    \insertImage{Img/5.JPG}{0.6}{les différenta appels systemes}{}
+
+    \subsubsection{Gestion répertoires}
+
+    \insertImage{Img/6.JPG}{0.6}{les différenta appels systemes}{}
+\subsection{Structure d'un OS}
+    \subsubsection{Système monolithiques}
+        Systèmes tels que linux
+    \subsubsection{MicroNoyaux}
+    \insertImage{Img/7.JPG}{0.6}{MicroNoyaux}{}
+    \subsubsection{Modèle client serveur}
+    \insertImage{Img/8.JPG}{0.6}{client-serveur}{}
+    \subsubsection{Machines virtuelles}
+    \insertImage{Img/9.JPG}{0.6}{VM}{}
+
+
+
+
+\newpage
+\section{THCHAP3 Processus et threads}%done
+
+Les processus sont:
+
+\begin{itemize}
+    \item le concept central d'un OS
+    \item Abstraction d'un programme en cours d'execution
+    \item Concurrence même avec un seul processeur
+\end{itemize}
+
+\subsection{Définitions simplifiées}
+\begin{itemize}
+    \item \textbf{Le programme} est la recette de cuisine (algorithme)
+    \item \textbf{Le processeur} est le cuisinier qui suit la recette
+    \item \textbf{le processus} est l’action de cuisiner (activité)
+    \item \textbf{Si le cuisiner se brûle, il remplace le livre de cuisine par celui des premiers secours et se soigne}
+\end{itemize}
+
+\subsection{Naissance d'un processus}
+
+Les evénements qui induisent la création de processus sont:
+\begin{itemize}
+    \item initialisation du systeme
+    \item Execution d'un appel système de création de processus en cours d'execution (Fork)
+    \item Requête utilisateur sollicitant éa création de nouveaux processus.
+    \item Lancement d'un travail en traitement par lots (batch)
+\end{itemize}
+
+\subsection{Mort d'un processus}
+\begin{itemize}
+    \item Arrêt normal, volontaire
+    \item arrêt pour erreur, volontaire
+    \item Fatal error, involontaire
+    \item autre process qui arrête notre processus
+\end{itemize}
+
+\subsection{Machine d'état processus}
+\insertImage{Img/10.JPG}{0.6}{FSM Processus}{}
+Le Scheduler s'occuppe de dire quel process travaille et quand le process travaille. C'est en quelque sorte le chef d'orchestre dans tout ce bordel.
+
+\subsection{Utilisation Processus / process en mémoire}
+\insertImage{Img/11.JPG}{0.6}{FSM Processus}{}
+\subsection{Les threads}
+
+\subsubsection{Schéma conceptuel Threads}
+\insertImage{Img/12.JPG}{0.6}{Concept threads}{}
+
+\subsubsection{Code Threads}
+\insertImage{Img/13.JPG}{0.6}{Exemple de threads}{}
+
+\subsubsection{Manière de créer un serveur }
+\insertImage{Img/14.JPG}{0.6}{How to build a server and get a life}{}
+
+\subsubsection{MultiThread}
+\insertImage{Img/15.JPG}{0.6}{le fameux multi srède}{}
+
+\subsection{Conditions pour eviter les conditions de concurrence}
+\begin{itemize}
+    \item deux process ne doivent pas se trouver dans leurs sections critiques.
+    \item Il ne daut pas faire de supposition quant à la vitesse ou au nombre de processeur mis en oeuvre
+    \item Aucun processus s'executant à l'intérieur de la section critique ne doit bloquer d'autres processus.
+    \item Aucun processeur ne doit attendre indéfiniment pour pouvoir entrer dans sa section critique.
+\end{itemize}
+\insertImage{Img/16.JPG}{0.6}{La Zone critique, et si on connait pas, on trikite pas}{}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section{THCHAP4 L'ordonnancement des processus}
+
+C'est quand qu'on ordonnance Jamie? 
+
+Et bien c'est très simple, on le fait: 
+
+\begin{itemize}
+    \item Lors de la création d'un process, parent ou enfant qui prend le contrôle?
+    \item Lorsqu'un process se termine
+    \item Lorsqu'un process se met en attente d'un event sur une I/O 
+    \item Lors d'une interruption faite par un periphérique
+    \item Lors d'une interruption par l'horloge pour des processus préemptif
+\end{itemize}
+
+\subsection{Système d'exploitation préemptif}
+C'est la capacité qu'a un systême d'exploitation multiTache à executer ou stopper des tâches planifiées en cours.
+\subsection{Catégories d'ordonnancement d'algorithmes}
+
+\begin{itemize}
+    \item \textbf{Non préemptifs: }traitement par lot (batch) non-préemptif, ou alors avec une très grande période.
+    \item \textbf{Interactifs: }interactifs. préemptif avec courte période
+    \item \textbf{Collaboratifs: }temps réel. Préemption non nécessaires. les processus sont connus et collaborent. 
+\end{itemize}
+
+\subsection{Objectifs: ordonnancement des process}
+\begin{itemize}
+    \item \textbf{Equité: }attribuer à chaque processus un temps processeur équitable
+    \item \textbf{Application de la politique: }faire en sorte que la politique soit bien appliquée, \textbf{MAKE SCHEDULER GREAT AGAIN}
+    \item \textbf{Equilibre: }faire en sorte que toutes les parties du systême soient occupées.
+\end{itemize}
+
+\subsubsection{traitement par lots (batch)}
+\begin{itemize}
+    \item \textbf{Capacité de traitement: }Optimiser le nombre de jobs à l'heure
+    \item \textbf{Délai de rotation: }réduire le délai entre soumission et achèvement
+    \item \textbf{Utilisation du CPU: }Faire en sorte que le processeur soit occupé en permanence.
+\end{itemize}
+
+\subsubsection{systêmes interactifs}
+\begin{itemize}
+    \item \textbf{Temps de réponse: }répondre rapidement aux requêtes
+    \item \textbf{Proportionnalité: }satisfaire aux attentes des utilisateurs
+\end{itemize}
+
+\subsubsection{Systême en temps réel}
+\begin{itemize}
+    \item \textbf{Respecter les délais: }Eviter de perdre des données
+    \item \textbf{Prévisibilité: }Eviter la dégradation de la qualités dans les systémes multimédias
+\end{itemize}
+\subsubsection{Mashup ALL}
+    \insertImage{Img/17.JPG}{0.8}{Mashup all}{}
+\subsection{Traitement par lots}
+\begin{itemize}
+    \item FIFO, premier arrivé, premier servi \textbf{NO PREEMPTION}
+    \item Shortest job first
+    \item Shortest remaining time next
+\end{itemize}
+
+\subsubsection{Pourquoi les plus courts en premiers}
+Dans ce cas ci
+\begin{itemize}
+    \item on admet que le temps de traitement des processus est connu à l'avance par l'ordonnanceur.
+    \item Le but est d'optimiser le délai de rotation so tous les jobs sont soumis en même temps
+\end{itemize}
+
+\subsection{Les systêmes interactifs}
+\begin{itemize}
+    \item L'ordonnancement est de type \textbf{Round Robin Scheduling}
+    \item Ordonnancement par priorités \textbf{Priority Scheduling}
+    \item Files d'attentes multiples
+    \item Processus le plus court apres\textbf{Shortest process next}
+    \item ordonnancement garanti
+    \item ordonnancement par tirage au sorte
+    \item ordonnancement équitable
+\end{itemize}
+
+\subsection{Round Robin}
+\insertImage{Img/18.JPG}{0.8}{Round robin}{}
+\insertImage{Img/19.JPG}{0.8}{Round robin,explication}{}
+
+\subsection{Ordonnancement par priorité}
+\insertImage{Img/20.JPG}{0.8}{Par priorité}{}
+
+\subsection{File d'attentes multiples}
+\insertImage{Img/21.JPG}{0.8}{files d'attentes multiples}{}
+
+\subsection{Shortest process next}
+\insertImage{Img/22.JPG}{0.8}{Shortest process next}{}
+
+\subsection{Ordonnement Garanti}
+\insertImage{Img/23.JPG}{0.8}{Shortest process next}{}
+
+\subsection{Par tirage au sort}
+\insertImage{Img/24.JPG}{0.8}{Shortest process next}{}
+
+\subsection{Ordonnancement équitable}
+\insertImage{Img/25.JPG}{0.8}{Shortest process next}{}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section{THCHAP6 Gestion de la mémoire}
+Solution pour les programmes plus gros que la taille de la mémoire
+\subsection{Le Swapping}
+L’allocation mémoire change au gré des processus qui viennent en mémoire et qui la quittent. Les zones grisées indiquent que la mémoire est inutilisée. Comme illustré ci dessous.
+
+\insertImage{Img/26.JPG}{0.6}{Swapping}{}
+\subsubsection{Problème induits}
+\insertImage{Img/27.JPG}{0.6}{problèmes}{}
+
+\newpage
+\subsection{Bitmap}
+\insertImage{Img/28.JPG}{0.6}{Bitmap}{}
+\insertImage{Img/29.JPG}{0.6}{Bitmap specs}{}
+
+\subsection{Linked List} 
+
+\insertImage{Img/30.JPG}{0.6}{Linked List specs}{}
+
+Avec les listes chaînées  on peut implémenter différents algorithmes:
+\begin{itemize}
+    \item \textbf{First Fit: }on itère depuis le début de la liste et on prend le premier qui passe
+    \item \textbf{Next Fit: } On itère depuis l'endroit pointé actuellement et on prend le premier qui vient
+    \item \textbf{Best Fit: } On itère dans toute la liste et on prend le meilleur
+    \item \textbf{Worst Fit: }On recherche le bloc le plus grand parmis toute la liste
+\end{itemize}
+
+\subsection{Best and WorstFit}
+Si on doit utiliser ces types d'algorithmes, il est judicieux de trier la liste par taille de blocs
+
+
+\subsection{Concept de mémoire virtuelle}
+\begin{itemize}
+    \item La mémoire virtuelle permet la multiprogrammation.
+    \item La memoire virtuelle permet d'avoir \textbf{Plus de mémoire physique que virtuelle}
+    \item L'espace d'adressage est découpé en pages (suites d'addresses contigues)
+    \item chaque programme a son espace d'adressage (de 0 à n)
+\end{itemize}
+\subsection{La pagination}
+C'est la MMU (memory management unit) qui s'en charge. 
+\insertImage{Img/31.JPG}{0.6}{MMU}{}
+Ci-dessous Exemple trivial de mapping entre physique et virtuel.
+\insertImage{Img/32.JPG}{0.6}{Mapping virtuel <---> physique}{}
+\begin{itemize}
+    \item Les pages de la mémoire virtuelle sont mappées sur la mémoire physique.
+    \item Il n'est pas nécessaire d'avoir toutes les pages mappées pour executer un processus.
+    \item La multiprogrammation profite des I/O générées par le Swapping pour attribuer les ressources CPU à d'autres processus.
+\end{itemize}
+
+\subsubsection{CPU essaie acceder à page virtuelle occupée}
+\insertImage{Img/33.JPG}{0.6}{}{}
+
+\subsection{Speedup the pagination}
+Tout système de pagination doit considérer ces deux éléments :
+\begin{itemize}
+    \item La correspondance de l’adresse virtuelle vers l’adresse physique doit être rapide, car elle est utilisée à chaque accès mémoire (donc très souvent).
+    \item Si l’espace d’adressage est grand, la table des pages sera grande.Pour un espace d’adressage sur 32 bit et des pages de 4 kiByte, il y a 1M de pages.
+    \item De plus, chaque processus à besoin de sa propre table de pages !
+\end{itemize}
+
+\subsection{La TLB, translation lookaside buffer}
+Les références dans la table sont groupées et seule une petite partie de la table est réelement utilisée.
+
+\insertImage{Img/34.JPG}{0.9}{With an empty TLB}{}
+\insertImage{Img/35.JPG}{0.5}{TLB Hit}{}
+\insertImage{Img/36.JPG}{0.6}{TLB Miss}{}
+
+\section{Conclusion}
+Si vous avez aimé mon résumé, faites un git clone de mon Git. Suivez moi sur gitlab.forge.heia-fr.ch github and iLoveFreeSoftware.com.
+
+
+\end{document}
