@@ -1,7 +1,0 @@
-\babel@toc {french}{}
-\contentsline {section}{\numberline {1}Principe}{2}
-\contentsline {subsection}{\numberline {1.1}Principe de d\IeC {\'e}coupage hi\IeC {\'e}rarchique}{2}
-\contentsline {section}{\numberline {2}Diff\IeC {\'e}rents moyens de communication}{2}
-\contentsline {subsection}{\numberline {2.1}startx et endx}{3}
-\contentsline {section}{\numberline {3}D\IeC {\'e}coupage en plusieurs niveaux}{3}
-\contentsline {section}{\numberline {4}Traitements en parall\IeC {\`e}le}{3}
