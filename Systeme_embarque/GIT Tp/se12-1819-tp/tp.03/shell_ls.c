@@ -1,5 +1,4 @@
-#pragma once
-/**
+/*
  * Copyright 2018 University of Applied Sciences Western Switzerland / Fribourg
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,26 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Project:		HEIA-FR / Embedded Systems TODO Laboratory
+ * Project:		HEIA-FR / Embedded Systems
  *
- * Abstract:	TODO
  *
  * Author: 		Marc Roten / Sven Rouvinez
  * Date: 		Nov 5, 2018
  */
-#ifndef THERMO_H_
-#define THERMO_H_
 
-#endif
-#include <stdio.h>
 
-void thermo_init();
+void shell_ls_init(){
 
-/*
- * read temparature from thermometer
- * @param data array of data, data[0] is the temperature
- *
- *
- * @return int status, 0=success, -1=error
- */
-int read_thermo(uint8_t data[2]);
+}

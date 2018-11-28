@@ -1,5 +1,6 @@
 #pragma once
-
+#ifndef DISPLAY_H
+#define DISPLAY_H
 
 /**
  * Copyright 2018 University of Applied Sciences Western Switzerland / Fribourg
@@ -22,13 +23,10 @@
  *
  * Purpose:
  *
- * Author: Sven Rouvinez/ Marc Roten
+ * Author: Tobias Moullet
  * Date:  5.11.18
  */
 
-
-#ifndef DISPLAY_H_
-#define DISPLAY_H_
 #include <stdbool.h>
 
 struct display_point {
@@ -36,11 +34,25 @@ struct display_point {
 	uint32_t y_coor;
 };
 
+<<<<<<< HEAD
+struct display_caract {
+	struct display_point pos;
+	char caract;
+	bool isUptodate;
+=======
+#ifndef DISPLAY_H_
+#define DISPLAY_H_
+
+struct display_point {
+   uint32_t  x_coor;
+   uint32_t y_coor;
+};
 
 struct display_caract {
  struct display_point pos;
  char caract;
  bool isUptodate;
+>>>>>>> 0d5e1cbb22f856a2b85f46ba8c419f0c767697e7
 };
 
 /**
@@ -63,11 +75,12 @@ void display_clear();
  *Bottom_left point
  *The color is for all pixel in the rectangle
  */
-
+<<<<<<< HEAD
 extern void display_rectangle(struct display_point bottom_left,
 		struct display_point top_right, uint32_t color);
-
-
+=======
+extern void display_init();
+>>>>>>> 0d5e1cbb22f856a2b85f46ba8c419f0c767697e7
 
 /**
  * With this method, you can draw a cercle where you want on the screen and with the color you want
@@ -81,7 +94,7 @@ extern void display_rectangle(struct display_point bottom_left,
  *  A display_point (*) is needed for the center.
  *  A radius and a color.
  */
-
+<<<<<<< HEAD
 extern void display_circle(struct display_point center, int32_t radius,
 		uint32_t color);
 
@@ -114,9 +127,31 @@ extern void display_caractere(struct display_point position, uint8_t caract,
 
 extern void display_line(struct display_point start, int size,
 		bool isHorizontal, uint32_t color);
-
+=======
 extern void  display_clear();
 
+/*
+ * Draw a circle
+ * @param x0 where on x to draw
+ * @param y0 where on y to draw
+ * @param r define the radius of circle
+ * @param color color of circle in hexa
+ */
+//extern void display_circle(uint32_t x0, uint32_t y0, uint32_t r, uint32_t color);
 
+//extern void display_bar(uint32_t x0, uint32_t y0, uint32_t r, uint32_t color);
+
+//extern void display_rectangle(uint32_t x1, uint32_t x2, uint32_t y1, uint32_t y2,uint32_t color);
+
+extern void display_thermo_basic_form(struct display_point center_bottom, struct display_point center_top,int32_t ray, uint32_t color);
+
+extern void display_caract(struct display_point position, uint8_t caract, uint32_t color, bool isHorizontal);
+
+extern void display_line(struct display_point start, int size, bool isHorizontal, uint32_t color);
+
+extern void display_circle(struct display_point center,int32_t ray, uint32_t color);
+
+extern void display_rect(struct display_point bottom_left, struct display_point top_right, uint32_t color);
+>>>>>>> 0d5e1cbb22f856a2b85f46ba8c419f0c767697e7
 
 #endif

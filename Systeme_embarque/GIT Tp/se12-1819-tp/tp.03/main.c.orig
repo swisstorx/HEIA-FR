@@ -21,6 +21,7 @@
  */
 #include <stdio.h>
 #include <stdbool.h>
+
 #include "display.h"//
 #include "font_8x8.h"//
 #include "oled.h"//
@@ -60,6 +61,7 @@ int main() {
 
 	printf("START\n");
 
+<<<<<<< HEAD
 	 struct display_point start_point={
 			 .x_coor=55,
 			 .y_coor=20
@@ -79,7 +81,9 @@ int main() {
 	 display_clear();
 		thermo_init();
 
-
+/*rotate(&start_point);
+rotate(&end_point);
+rotate(&value_temperature);*/
 
 	 display_thermo_basic_form(start_point, end_point,5, 0xffff);
 
@@ -93,6 +97,25 @@ int main() {
 
 		 display_rectangle(start_point,value_temperature,0xf567);
 	 }
+=======
+// 	thermo_init();
+// 	uint8_t data[2];
+// 	read_thermo(data);
+// 	printf("%d\n",data[0]);
+
+// display_init();
+
+// 	init();
+
+// display_circle(10,10,10,0xf800);
+// display_circle(10,10,5,0x58ff);
+// display_rectangle(5,20,0,80,0xffff);
+// display_rectangle(5,10,0,data[0],0xf800);
+
+// return 0;
+ struct display_point start_point;
+ struct display_point end_point;
+>>>>>>> 0d5e1cbb22f856a2b85f46ba8c419f0c767697e7
 
 
  start_point.x_coor = 55;

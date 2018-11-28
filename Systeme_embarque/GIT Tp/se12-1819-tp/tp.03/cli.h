@@ -7,8 +7,9 @@
 #pragma once
 #ifndef CLI_H_
 
-static void tokenize (char* s, int* argc, char** argv);
-
+extern void tokenize (char* s, int* argc, char** argv);
+extern void cli_init();
+extern void cli_probe();
 
 
 #endif /* DISPLAY_H_ */

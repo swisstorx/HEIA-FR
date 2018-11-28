@@ -1,4 +1,6 @@
 #pragma once
+#ifndef _SHELL_LS_H
+#define _SHELL_LS_H
 /**
  * Copyright 2018 University of Applied Sciences Western Switzerland / Fribourg
  *
@@ -14,26 +16,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Project:		HEIA-FR / Embedded Systems TODO Laboratory
+ * Project:		HEIA-FR / Embedded Systems
  *
- * Abstract:	TODO
  *
  * Author: 		Marc Roten / Sven Rouvinez
  * Date: 		Nov 5, 2018
  */
-#ifndef THERMO_H_
-#define THERMO_H_
+
+/**
+ * init fonction ls
+ */
+extern void shell_ls_init();
 
 #endif
-#include <stdio.h>
-
-void thermo_init();
-
-/*
- * read temparature from thermometer
- * @param data array of data, data[0] is the temperature
- *
- *
- * @return int status, 0=success, -1=error
- */
-int read_thermo(uint8_t data[2]);

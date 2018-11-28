@@ -12,9 +12,9 @@ A la fin du laboratoire, les étudiant-e-s seront capables de
   (étude préliminaire des signaux et du protocole)
 * Décrire les principes du bus série SPI 
   (étude préliminaire des signaux et du protocole)
-* Concevoir une ligne de commande sur interface série UART
-* Mettre en oeuvre d'un thermomètre sur bus I2C
-* Mettre en oeuvre d'un écran LCD sur bus SPI
+* Concevoir une ligne de commande sur l'interface série UART
+* Mettre en oeuvre d'un thermomètre sur le bus I2C
+* Mettre en oeuvre d'un écran LCD sur le bus SPI
 * Etudier le datasheet d'un composant électronique simple
 
 Durée du travail pratique
@@ -37,10 +37,10 @@ bus I2C ainsi que l'écran LCD OLED-C connecté sur le bus SPI. Ces périphériq
 sont à insérer sur la carte d'extension dans le slot 1 (CAPE1) pour l'écran et
 le slot 2 (CAPE2) pour le thermomètre.
 
-L'application consistera à réaliser un thermomètre numérique avec affichage
-de la température actuelle ainsi que les valeurs minimales et maximales
-mesurées par le thermomètre (voir figure ci-dessous). La ligne de commande
-permettra d'interagir avec l'application.
+L'application fournira un thermomètre numérique avec affichage de la
+température actuelle ainsi que les valeurs minimales et maximales mesurées
+par le thermomètre (voir figure ci-dessous). La ligne de commande permettra
+d'interagir avec l'application.
 
 ![application](img/bbb.jpg)
 
@@ -48,9 +48,9 @@ Voici les spécifications de l'application:
 
 * Thermomètre
   * La température lue sur le thermomètre I2C sera convertie et affichée
-    en degré Celcius.
+    en degré Celsius.
   * Les températures minimales et maximales seront calculées en temps
-    réels et affichées en degré Celcius.
+    réels et affichées en degré Celsius.
 
 * Affichage LCD
   * L'affichage LCD sera divisé en 2 parties

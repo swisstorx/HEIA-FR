@@ -1,8 +1,52 @@
-/*
- * shell.c
+/**
+ * Copyright 2018 University of Applied Sciences Western Switzerland / Fribourg
  *
- *  Created on: Nov 6, 2018
- *      Author: lmi
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * Project:		HEIA-FR / Embedded Systems
+ *
+ *
+ * Author: 		Marc Roten / Sven Rouvinez
+ * Date: 		Nov 5, 2018
  */
 
 
+/*
+ * on initialise le shell avant de laisser l'utilisateur commencer
+ * à taper ses commandes
+ */
+
+#include <stdbool.h>
+#include "shell_ls.h"
+
+extern void shell_init(){
+    static bool isInit = false;
+    if (isInit) return;
+    shell_ls_init();
+    isInit = true;
+
+}
+/*
+ * l'utilisateur va taper sa commande (on parse sa commande)
+ */
+extern void shell_prompt(){
+
+}
+
+/*
+ * validation de la commande tapée dans le shell prompt et vérification
+ * de la commande à interpréter
+ */
+extern void shell_probe(){
+
+}

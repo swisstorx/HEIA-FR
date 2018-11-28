@@ -29,6 +29,9 @@ static const enum wheel_direction transitions[4][4] = {
 static int former_state = 0;
 
 static inline int get_encoder_state() {
+
+
+
 	int state = 0;
 	if (am335x_gpio_get_state(GPIO2, CHA))
 		state += 1;

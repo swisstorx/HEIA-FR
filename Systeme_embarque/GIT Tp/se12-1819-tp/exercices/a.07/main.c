@@ -25,56 +25,8 @@
 
 #define ARRAY_SIZE(x) sizeof(x)/sizeof(x[0])
 
-struct element {
-	int key;
-	int value;
-	struct element* next;
-};
-
-struct list {
-	struct element first;
-};
-
-void t_add(struct list* l, struct element node) {
 
 
-	l->first = node;
-
-
-
-}
-
-void t_show(struct list* l) {
-
-
-
-	while(l->next != NULL){
-
-		printf("key: %d / value: %d\n", l->key, l->value);
-
-	}
-
-}
-
-void t_delete(struct element circ[], int key, int len) {
-	for (int i = 0; i < len; ++i) {
-		if (circ[i].value == key)
-			circ[i].value = 0;
-
-	}
-}
-
-int t_find(struct element circ[], int key, int len) {
-
-	return circ[key].value;
-}
 int main() {
 
-	struct element node = {1,3,NULL};
-	struct list l;
-
-
-	t_add(&l,node);
-
-	return 0;
 }

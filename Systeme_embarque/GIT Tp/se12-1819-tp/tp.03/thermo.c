@@ -1,32 +1,3 @@
-<<<<<<< HEAD
-/*
- * thermo.c
- *
- *  Created on: Nov 5, 2018
- *      Author: lmi
- */
-
-#include <stdio.h>
-#include <stdbool.h>
-#include <stdint.h>
-#include <am335x_gpio.h>
-#include <am335x_i2c.h>
-#include "thermo.h"
-
-
-
-extern void thermo_init() {
-	am335x_i2c_init(AM335X_I2C2, 400000);
-}
-
-extern int thermo_get_temp() {
-
-	uint8_t data[2];
-	int status = am335x_i2c_read(AM335X_I2C2, 72, 0, data, 2);
-	if (status == 0) return (int8_t)data[0];
-	else return -50;
-}
-=======
 /**
  * Copyright 2018 University of Applied Sciences Western Switzerland / Fribourg
  *
@@ -51,25 +22,17 @@ extern int thermo_get_temp() {
  */
 #include <am335x_i2c.h>
 
-
 #define  I2C2  AM335X_I2C2
 #define  CLK   400000
 #define  ID    0x48
 
+void thermo_init() {
 
-void thermo_init(){
-
-	am335x_i2c_init(I2C2,CLK);
+	am335x_i2c_init(I2C2, CLK);
 
 }
 
-
-int read_thermo(uint8_t data[2]){
-
-	return am335x_i2c_read(AM335X_I2C2,ID,0,data,2) ? 0:-128;
+int read_thermo(uint8_t data[2]) {
+	return am335x_i2c_read(AM335X_I2C2, ID, 0, data, 2) ? 0 : -128;
 }
 
-
-
-
->>>>>>> 48e57dca9bc9d3a42e0766d1d0aacaa2665bddf9

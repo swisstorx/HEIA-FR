@@ -25,10 +25,12 @@
  *			Black in cape 1.
  *
  * Author: 	Daniel Gachet
- * Date: 	24.10.2018
+ * Date: 	05.11.2018
  */
 
 #include <stdint.h>
+
+enum oled_versions {OLED_V100, OLED_V101};
 
 /**
  * each pixel is described with two uin32t_t words in big endian format, i.e.
@@ -42,8 +44,9 @@ struct pixel {
 
 /**
  * method to initialize the 96x96 OLED color module
+ * @param version version number of the oled device
  */
-void oled_init();
+extern void oled_init(enum oled_versions version);
 
 /**
  * method to define a memory area(address) to write a display data
@@ -57,14 +60,14 @@ void oled_init();
  * @param y1 coordinate
  * @param y2 coordinate 
  */
-void oled_memory_size(uint32_t x1, uint32_t x2, uint32_t y1, uint32_t y2);
+extern void oled_memory_size(uint32_t x1, uint32_t x2, uint32_t y1, uint32_t y2);
 
 
 /**
  * method to send color for 1 pixel within previously defined memory area
  * @param color rgb565 pixel color
  */
-void oled_color(uint32_t color);
+extern void oled_color(uint32_t color);
 
 
 /**
@@ -72,11 +75,6 @@ void oled_color(uint32_t color);
  * @param image image described in rgb565 pixels. 
  * @param nb_pixels number of pixels of the image
  */
-void oled_send_image (struct pixel* image, uint32_t nb_pixels);
-
-/**
- * oled test function...
- */
-void oled_test (int(*delay)(unsigned));
+extern void oled_send_image (struct pixel* image, uint32_t nb_pixels);
 
 #endif
