@@ -106,7 +106,7 @@ int main() {
  display_init();
  display_clear();
 
- display_thermo_basic_form(start_point, end_point, 5, WHITE);
+ display_thermo_basic_form(start_point, end_point, 5, WHITE);c3
 	while(1) {
 		cli_probe();
 	}

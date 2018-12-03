@@ -1,6 +1,6 @@
-%Labo 1 - Signaux & Systèmes
-%3.1 Signal entré point à point
-%Déclaration des variables
+%Labo 1 - Signaux & Systï¿½mes
+%3.1 Signal entrï¿½ point ï¿½ point
+%Dï¿½claration des variables
 t = (-2:1e-6:9);
 f = 1000;
 tau = 1e-3;
@@ -35,8 +35,8 @@ ylabel(['\fontsize{16}', 'x_{3}(t)']);
 xlabel(['\fontsize{10}', 't[ms]']);
 
 %%
-%3.2 Série
-%Déclaration des variables
+%3.2 Sï¿½rie
+%Dï¿½claration des variables
 t = (-1:1e-6:1);
 f = 2;
 
@@ -52,9 +52,9 @@ hold on;
 xlabel(['\fontsize{10}', 't[s]']);
 
 %%
-%3.3 Représentation fréquentielle
+%3.3 Reprï¿½sentation frï¿½quentielle
 
-%Déclaration des variables
+%Dï¿½claration des variables
 t = (-1:10e-6:1);
 f = 2;
 fe = 1/10e-6;
@@ -95,18 +95,18 @@ xlabel(['\fontsize{10}', 'f[Hz]']);
 ylabel(['\fontsize{10}', 'Phase [rad]']);
 
 %%
-%3.4 Analyse fréquentielle
+%3.4 Analyse frï¿½quentielle
 
 guitare = load('guitare.mat');
 piano = load('piano.mat');
 
-sound(guitare.music, guitare.Fs); %correspond à un LA (440 Hz)
-sound(piano.music, piano.Fs); %correspond à un LA (440 Hz)
+sound(guitare.music, guitare.Fs); %correspond ï¿½ un LA (440 Hz)
+sound(piano.music, piano.Fs); %correspond ï¿½ un LA (440 Hz)
 
 %%
 %3.5 Optionnel (Partie 1)
 
-%Déclaration des variables
+%Dï¿½claration des variables
 t = (-1:1e-5:1);
 
 %Fonction Fourier(n)
