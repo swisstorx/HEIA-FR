@@ -13,31 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Project:		HEIA-FR / Embedded Systems
+ * Project:	HEIA-FR / Embedded Systems 2 Laboratory
  *
+ * Abstract: shell
  *
- * Author: 		Marc Roten / Sven Rouvinez
- * Date: 		Nov 5, 2018
+ * Purpose:
+ *
+ * Origin:
+ *
+ * Author: 	Sven Rouvinez / Marc Roten
+ * Date: 	09.12.2018
  */
 #pragma once
-#ifndef _SHELL_H
-#define _SHELL_H
+#ifndef SHELL_H_
+#define SHELL_H_
 
-/*
- * on initialise le shell avant de laisser l'utilisateur commencer
- * à taper ses commandes
- */
 extern void shell_init();
-/*
- * l'utilisateur va taper sa commande (on parse sa commande)
- */
-extern void shell_prompt();
-
-/*
- * validation de la commande tapée dans le shell prompt et vérification
- * de la commande à interpréter
- */
 extern void shell_probe();
 
-
-#endif
+#endif /* SHELL_H_ */

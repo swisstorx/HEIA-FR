@@ -1,0 +1,2 @@
+reste à faire:
+	error case pas pris en compte

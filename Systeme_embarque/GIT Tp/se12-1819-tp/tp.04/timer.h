@@ -22,30 +22,34 @@
 
 #include <stdint.h>
 
-enum dmtimer_set{
-	DMTIMER_2,
-	DMTIMER_3,
-	DMTIMER_4,
-	DMTIMER_5,
-	DMTIMER_6,
-	DMTIMER_7,
+
+enum dmtimer_timers{
+	DMTIMER2,
+	DMTIMER3,
+	DMTIMER4,
+	DMTIMER5,
+	DMTIMER6,
+	DMTIMER7
 };
+
+
 /**
  * we init our timer to zero
  */
-extern void dmtimer1_init();
+extern void dmtimer1_init(enum dmtimer_timers timer);
 
 
 /**
  * we get the value of our counter
  */
-extern uint32_t dmtimer1_get_counter();
+extern uint32_t dmtimer1_get_counter(enum dmtimer_timers timer);
 
 
 /**
  * get the frequency
  */
 extern uint32_t dmtimer1_get_frequency();
+
 
 
 #endif

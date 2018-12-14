@@ -20,33 +20,39 @@
  * Date: 		3 Dec 2018
  */
 
+
+
+#include "buttons.h"
 #include <am335x_gpio.h>
 
-#define GPIO1	    AM335X_GPIO1
-#define S1			(15)
-#define S2			(16)
-#define S3		    (17)
+// pin definition for buttons access
+#define BTN_GPIO	AM335X_GPIO1
+#define S1_PIN (15)
+#define S2_PIN (16)
+#define S3_PIN (17)
 
-// macro to compute number of elements of an array
-#define ARRAY_SIZE(x) (sizeof(x) / sizeof(x[0]))
-
-static const struct gpio_init_in {
-	uint32_t pin_nr;
-} gpio_init_in[] = { { S1 }, { S2 }, { S3 } };
-
-void buttons_init() {
-	am335x_gpio_init(GPIO1);
-
-	//set buttons in
-	for (uint32_t i = 0; i < ARRAY_SIZE(gpio_init_in); ++i) {
-		am335x_gpio_setup_pin_in(GPIO1, gpio_init_in[i].pin_nr,
-				AM335X_GPIO_PULL_NONE, false);
-		am335x_gpio_change_state(GPIO1, gpio_init_in[i].pin_nr, 1);
-	}
+void button_init() {
+	//init of GPIO
+	am335x_gpio_init(BTN_GPIO);
+	//init of the buttons as Input
+	am335x_gpio_setup_pin_in(BTN_GPIO, S1_PIN, AM335X_GPIO_PULL_NONE, 0);
+	am335x_gpio_change_state(BTN_GPIO, S1_PIN, 1);
+	am335x_gpio_setup_pin_in(BTN_GPIO, S2_PIN, AM335X_GPIO_PULL_NONE, 0);
+	am335x_gpio_change_state(BTN_GPIO, S2_PIN, 1);
+	am335x_gpio_setup_pin_in(BTN_GPIO, S3_PIN, AM335X_GPIO_PULL_NONE, 0);
+	am335x_gpio_change_state(BTN_GPIO, S2_PIN, 1);
 }
 
-uint32_t get_states_buttons() {
 
-	return am335x_gpio_get_states(GPIO1);
+bool button_s1_is_pressed() {
+	return !am335x_gpio_get_state(BTN_GPIO, S1_PIN);
 }
+
+bool button_s2_is_pressed() {
+	return !am335x_gpio_get_state(BTN_GPIO, S2_PIN);
+}
+bool button_s3_is_pressed() {
+	return !am335x_gpio_get_state(BTN_GPIO, S3_PIN);
+}
+
 

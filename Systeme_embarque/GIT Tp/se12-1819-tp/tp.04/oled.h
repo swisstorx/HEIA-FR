@@ -30,7 +30,7 @@
 
 #include <stdint.h>
 
-extern enum oled_versions {OLED_V100, OLED_V101};
+enum oled_versions {OLED_V100, OLED_V101};
 
 /**
  * each pixel is described with two uin32t_t words in big endian format, i.e.

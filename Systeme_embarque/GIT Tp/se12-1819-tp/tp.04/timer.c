@@ -20,10 +20,15 @@
  * Date: 		Dec 3, 2018
  */
 
+#include <stdio.h>
+#include <stdint.h>
+#include <stdbool.h>
 #include <am335x_clock.h>
+#include "timer.h"
+
 
 // DMTimer TIOCP_CFG register bit definition
-#define TIOCP_CFG_SOFTRESET 	(1<<1)
+#define TIOCP_CFG_SOFTRESET 	(1<<0)
 
 // DMTimer TISTAT register bit definition
 #define TISTAT_RESETDONE	(1<<0)
@@ -34,65 +39,102 @@
 
 
 
-static const enum am335x_clock_enable_timer_module timer2clock[]={
-	AM335X_CLOCK_TIMER2,
-	AM335X_CLOCK_TIMER3,
-	AM335X_CLOCK_TIMER4,
-	AM335X_CLOCK_TIMER5,
-	AM335X_CLOCK_TIMER6,
-	AM335X_CLOCK_TIMER7,
-}
 
-struct registre{
-	uint32_t TIDR;		//00
-	uint32_t res1[3];	//04--0f
-	uint32_t TIOCP_CFG;	//10
-	uint32_t res2[3];	 //14--1F
-	uint32_t IRQ_EOI;
-	uint32_t IRQSTATUS_RAW;
-	uint32_t IRQSTATUS;
-	uint32_t IRQENABLE_SET;
-	uint32_t IRQENABLE_CLR;
-	uint32_t IRQWAKEEN;
-	uint32_t TCLR;
-	uint32_t TCRR;
-	uint32_t TLDR;
-	uint32_t TTGR;
-	uint32_t TWPS;
-	uint32_t TMAR;
-	uint32_t TCAR1;
-	uint32_t TSICR;
-	uint32_t TCAR1;
-	uint32_t TSICR;
-	uint32_t TCAR2;
+
+struct timer_reg {
+	uint32_t tidr;    //00
+	uint32_t res1[3];  //04--0f
+	uint32_t tiocp_cfg;  //10
+	uint32_t res2[3];   //14--1F
+	uint32_t irq_eoi;
+	uint32_t irqstatus_raw;
+	uint32_t irqstatus;
+	uint32_t irqenable_set;
+	uint32_t irqenable_clr;
+	uint32_t irqwakeen;
+	uint32_t tclr;
+	uint32_t tcrr;
+	uint32_t tldr;
+	uint32_t ttgr;
+	uint32_t twps;
+	uint32_t tmar;
+	uint32_t tcar1;
+	uint32_t tsicr;
+	uint32_t tcar2;
 };
 
-static volatile struct timer_ctrl* timer_ctrl[]={
-	(volatile struct timer_ctrl*) 0x48040000,
-	(volatile struct timer_ctrl*) 0x48042000,
-	(volatile struct timer_ctrl*) 0x48044000,
-	(volatile struct timer_ctrl*) 0x48046000,
-	(volatile struct timer_ctrl*) 0x48048000,
-	(volatile struct timer_ctrl*) 0x4804a000,
-
-}
-
-
-
-static volatile struct dmtimer* dmtimer[]={
-		[TIMER_2] =(struct dmtimer*) 0x48040000,
-		[TIMER_3] =(struct dmtimer*) 0x48042000,
-		[TIMER_4] =(struct dmtimer*) 0x48044000,
-		[TIMER_5] =(struct dmtimer*) 0x48046000,
-		[TIMER_6] =(struct dmtimer*) 0x48048000,
-		[TIMER_7] =(struct dmtimer*) 0x4804a000,
+static volatile struct timer_reg* dmtimer[] = {
+		(volatile struct timer_reg*) 0x48040000,
+		(volatile struct timer_reg*) 0x48042000,
+		(volatile struct timer_reg*) 0x48044000,
+		(volatile struct timer_reg*) 0x48046000,
+		(volatile struct timer_reg*) 0x48048000,
+		(volatile struct timer_reg*) 0x4804A000 
 };
 
-void timer_init(enum timer2clock timer){
-	static bool is_initialized = false;
-	if(is_initialized)return;
-	am335x_clock_enable_timer_module (timer2clock[timer]);
-	volatile struct timer_ctrl pointer = timer_ctrl[timer];
+static const enum am335x_clock_timer_modules timer2clock[] = {
+		AM335X_CLOCK_TIMER2, AM335X_CLOCK_TIMER3, AM335X_CLOCK_TIMER4,
+		AM335X_CLOCK_TIMER5, AM335X_CLOCK_TIMER6, AM335X_CLOCK_TIMER7
+};
+
+
+void dmtimer1_init(enum dmtimer_timers timer){
+	am335x_clock_enable_timer_module(timer2clock[timer]);
+
+	volatile struct timer_reg* ctrl = dmtimer[timer];
 	ctrl->tiocp_cfg = TIOCP_CFG_SOFTRESET;
-	
+	while ((ctrl->tiocp_cfg & TIOCP_CFG_SOFTRESET) != 0)
+		;
+
+	ctrl->tldr = 0;
+	ctrl->tcrr = 0;
+	ctrl->ttgr = 0;
+	ctrl->tclr = TCLR_AR | TCLR_ST;
 }
+
+
+
+ uint32_t dmtimer1_get_counter(enum dmtimer_timers timer){
+		volatile struct timer_reg* ctrl = dmtimer[timer];
+		return ctrl->tcrr;
+ }
+ uint32_t dmtimer1_get_frequency(){
+	 return 24000000;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,6 +1,3 @@
-#pragma once
-
-
 /**
  * Copyright 2018 University of Applied Sciences Western Switzerland / Fribourg
  *
@@ -16,24 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Project: HEIA-FR / Embedded Systems 1+2 Laboratory
+ * Project:	HEIA-FR / Embedded Systems 2 Laboratory
  *
- * Abstract:  Declaration of dislpay.c
+ * Abstract: display
  *
  * Purpose:
  *
- * Author: Sven Rouvinez/ Marc Roten
- * Date:  5.11.18
+ * Origin:
+ *
+ * Author: 	Sven Rouvinez / Marc Roten
+ * Date: 	09.12.2018
  */
 
-
-#ifndef DISPLAY_H_
-#define DISPLAY_H_
-#include <stdbool.h>
+#pragma once
+#ifndef DISPLAY_H
+#define DISPLAY_H
 
 struct display_point {
-	uint32_t x_coor;
-	uint32_t y_coor;
+   uint32_t  x_coor;
+   uint32_t y_coor;
+};
+
+struct display_circle {
+   uint32_t x_coor;
+   uint32_t y_coor;
+   uint32_t radius;
+   uint32_t color;
 };
 
 
@@ -44,79 +49,51 @@ struct display_caract {
 };
 
 /**
- * This method is used to initialize the display
+ * initialize the display
  */
 extern void display_init();
 
 /**
- * With this method, you can clear all the pixels of the screen. You put all of them with the color black
+ * Set all pixel to BLACK
  */
 void display_clear();
 
 /**
- * With this method, you can draw a rectangle where you want on the screen and with color you want
  *
- *     ---------------* top_rignt point
- *     -              -
- *     -              -
- *     *---------------
- *Bottom_left point
- *The color is for all pixel in the rectangle
+ *Display rectangle
  */
-
-extern void display_rectangle(struct display_point bottom_left,
-		struct display_point top_right, uint32_t color);
-
-
+extern void display_rect(struct display_point bottom_left, struct display_point top_right, uint32_t color);
 
 /**
- * With this method, you can draw a cercle where you want on the screen and with the color you want
- *
- *                 ---
- *              -       -
- *              -   *   -
- *              -       -
- *                 ---
- *
- *  A display_point (*) is needed for the center.
- *  A radius and a color.
+ * Display circle
  */
-
-extern void display_circle(struct display_point center, int32_t radius,
-		uint32_t color);
+extern void display_circle(struct display_circle);
 
 /**
- * This method draw a thermo form with several parameter
- *
- *                     ---
- *                   -     -
- *                   -  *  -
- *                   -     -
- *                   -     -
- *                   -     -
- *                   -     -
- *                   -     -
- *                 -         -
- *                 -    *    -
- *                  -       -
- *                    -----
- *
- *  For this method, it needed 2 point for each cercle
- *  A ray for the top_cercle is needed too
- *  And a color for the whole form.
- *  The bottom_cercle's ray is automaticly set 2 time bigger than the top_cercle's ray
+ * Display basic thermo
  */
-extern void display_thermo_basic_form(struct display_point center_bottom,
-		struct display_point center_top, int32_t radius, uint32_t color);
+extern void display_thermo_basic_form();
 
-extern void display_caractere(struct display_point position, uint8_t caract,
-		uint32_t color, bool isHorizontal);
+/**
+ * Write a caractere at a position set
+ */
+extern void display_caract(struct display_point position, uint8_t caract, uint32_t color, bool isHorizontal);
 
-extern void display_line(struct display_point start, int size,
-		bool isHorizontal, uint32_t color);
+/**
+ * Display a line
+ */
+extern void display_line(struct display_point start, int size, bool isHorizontal, uint32_t color);
 
-extern void  display_clear();
+/**
+ * Reset values of the temp
+ */
+extern void display_thermo_info(int temp);
 
+/**
+ * Reset registered temperature
+ */
+extern int thermo_info_init();
 
+extern int thermo_change_color(int argc, char* argv[]);
 
 #endif

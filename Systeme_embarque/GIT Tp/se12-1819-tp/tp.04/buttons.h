@@ -23,29 +23,37 @@
 #ifndef BUTTONS_H_
 #define BUTTONS_H_
 
-/*
-* états possibles
+#include <stdbool.h>
+
+/**
+* method to initialize the resoures of the buttons
+* this method shall be called prior any other.
 */
-enum buttons_etats{
-    open,
-    closed,
-    pressed,
-    released
-};
-
-enum buttons_set{
-    BUTTON_1,
-    BUTTON_2,
-    BUTTON_3,  
-}
-void buttons_init();
+extern void button_init();
 
 
-//return if button pressed
-//to get 1 button, for example s3: (1<<17) & get_states_buttons
-//uint32_t get_states_buttons();
+/**
+* method to know if the button S1 is pressed
+*/
+extern bool button_s1_is_pressed();
 
-extern enum buttons_etats buttons_get_state(enum buttons_set bouton);
+
+/**
+* method to know if the button S2 is pressed
+*/
+extern bool button_s2_is_pressed();
 
 
-#endif /* BUTTONS_H_ */
+/**
+* method to know if the button S3 is pressed
+*/
+extern bool button_s3_is_pressed();
+
+
+#endif /* BUTTON_H */
+
+
+
+
+
+

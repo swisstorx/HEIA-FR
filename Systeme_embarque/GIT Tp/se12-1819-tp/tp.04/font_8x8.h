@@ -2839,3 +2839,4 @@ static const unsigned char fontdata_8x8[256][8] =
 	0x00, /* 00000000 */
 	}
 };
+

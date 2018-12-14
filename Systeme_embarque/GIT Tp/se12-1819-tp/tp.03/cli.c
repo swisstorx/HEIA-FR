@@ -1,107 +1,45 @@
-/*
- * cli.c
+/**
+ * Copyright 2018 University of Applied Sciences Western Switzerland / Fribourg
  *
- *  Created on: Nov 5, 2018
- *      Author: lmi
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * Project:	HEIA-FR / Embedded Systems 2 Laboratory
+ *
+ * Abstract: Thermo CLI
+ *
+ * Purpose:
+ *
+ * Origin:
+ *
+ * Author: 	Sven Rouvinez / Marc Roten
+ * Date: 	10.12.2018
  */
+#include "cli.h";
+#include "shell.h";
 
-#include <stdio.h>
-#include <stddef.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdint.h>
-#include <stdbool.h>
-#include <getopt.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-
-#include "cli.h"
-#include "am335x_console.h"
-#define CR   '\r'
-int numb = 0;
-char buffer[50];
-static struct command* cmd_list = 0;
-struct command {
-	const char* name;
-	const char* brief;
-	const char* help;
-	int (*cmd)(int argc, char* argv[]);
-	struct command* next;
-};
-
-static int handle_command(const char* str) {
-	char s[strlen(str) + 1];
-	char* argv[20] = { "" };
-	int argc = 0;
-
-	strcpy(s, str);
-
-	tokenize(s, &argc, &argv[0]);
-
-	struct command *cmd = cmd_list;
-	while ((cmd != 0) && (strcmp(argv[0], cmd->name) != 0)) {
-		cmd = cmd->next;
-	}
-	if (cmd != 0) {
-		cmd->cmd(argc, argv);
-	} else if (argc > 0) {
-		printf("error: command not found: \"%s\"\n", argv[0]);
-	}
-	return argc > 0 ? 0 : -1;
+int thermoInfoInit(int argc, char* argv[]) {
+	thermo_info_init(argc, argv);
+	return 0;
 }
 
-/*
- * methode de parsing issu de la série d'exercice sur les pointeurs
- */
-extern void tokenize(char* s, int* argc, char** argv) {
-	*argc = 0;
-	while (1) {
-		while ((*s <= ' ') && (*s != '\0'))
-			s++;
-		if (*s == '\0')
-			break;
-
-		char quote = *s;
-		if ((quote == '"') || (quote == '\'')) {
-			s++;
-			argv[(*argc)++] = s++;
-			while ((*s != quote) && (*s != '\0'))
-				s++;
-
-		} else {
-			argv[(*argc)++] = s++;
-			while (*s > ' ')
-				s++;
-		}
-
-		if (*s == '\0')
-			break;
-
-		*s++ = '\0';
-	}
+int thermoChangeColor(int argc, char* argv[]) {
+	thermo_change_color(argc, argv);
+	return 0;
 }
 
-extern void cli_init() {
-	am335x_console_init();
-	numb = 0;
-}
-//static void append(){
-//
-//}
-extern void cli_probe() {
-	if (am335x_console_tstc()) {
-		char c = am335x_console_getc();
+extern struct command cmd1 = { .name = "command1", .brief = "b3", .help = "c3",
+		.cmd = thermoInfoInit, };
 
-		if (c == 13) { //13 = code pour le retour à la ligne
-			am335x_console_putc(c);
-			handle_command(&c);
+extern struct command cmd2 = { .name = "command2", .brief = "b3", .help = "c3",
+		.cmd = thermoChangeColor, };
 
-		} else {
-			am335x_console_putc(c);
-			buffer[numb] = am335x_console_getc();
-			numb++;
-		}
-
-	}
-}

@@ -1,4 +1,3 @@
-#pragma once
 /**
  * Copyright 2018 University of Applied Sciences Western Switzerland / Fribourg
  *
@@ -14,26 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Project:		HEIA-FR / Embedded Systems TODO Laboratory
+ * Project:	HEIA-FR / Embedded Systems 2 Laboratory
  *
- * Abstract:	TODO
+ * Abstract: Thermo
  *
- * Author: 		Marc Roten / Sven Rouvinez
- * Date: 		Nov 5, 2018
- */
+ * Purpose:
+ *
+ * Origin:
+ *
+ * Author: 	Sven Rouvinez / Marc Roten
+ * Date: 	09.12.2018
+ *  */
+
 #ifndef THERMO_H_
 #define THERMO_H_
 
-#endif
-#include <stdio.h>
-
+/*
+ * Init the thermo
+ */
 void thermo_init();
 
 /*
- * read temparature from thermometer
- * @param data array of data, data[0] is the temperature
- *
- *
- * @return int status, 0=success, -1=error
+ * Return the current temperature
  */
-int read_thermo(uint8_t data[2]);
+int thermo_read();
+
+#endif /* THERMO_H_ */

@@ -13,26 +13,42 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Project:		HEIA-FR / Embedded Systems TODO Laboratory
+ * Project:	HEIA-FR / Embedded Systems 2 Laboratory
  *
- * Abstract:	TODO
+ * Abstract: Thermo
  *
- * Author: 		Marc Roten / Sven Rouvinez
- * Date: 		Nov 5, 2018
+ * Purpose:
+ *
+ * Origin:
+ *
+ * Author: 	Sven Rouvinez / Marc Roten
+ * Date: 	09.12.2018
  */
+
+#include <am335x_gpio.h>
+#include "am335x_spi.h"
 #include <am335x_i2c.h>
 
-#define  I2C2  AM335X_I2C2
-#define  CLK   400000
-#define  ID    0x48
+#define	THERMO		0x48
+#define TEMP		0
+#define CONFIG		1
+#define T_LOW		2
+#define T_HIGH		3
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <stdbool.h>
+#include "thermo.h"
 
 void thermo_init() {
-
-	am335x_i2c_init(I2C2, CLK);
-
+	am335x_i2c_init(AM335X_I2C2, 400000);
 }
 
-int read_thermo(uint8_t data[2]) {
-	return am335x_i2c_read(AM335X_I2C2, ID, 0, data, 2) ? 0 : -128;
+int thermo_read() {
+	uint8_t data[2] = { 0x80, 0 };
+	int status = am335x_i2c_read(AM335X_I2C2, THERMO, TEMP, data, 2);
+	int temp = (status == 0) ? (int8_t) data[0] : -128;
+	return temp;
 }
 
