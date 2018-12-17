@@ -1,0 +1,22 @@
+\babel@toc {french}{}
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {section}{\numberline {2}Chapitre\_6 La Gestion de la M\IeC {\'e}moire}{3}
+\contentsline {section}{\numberline {3}Chapitre\_7 Syst\IeC {\`e}mes de fichiers}{4}
+\contentsline {subsection}{\numberline {3.1}Exigences stockage long terme}{4}
+\contentsline {subsection}{\numberline {3.2}Le disque magn\IeC {\'e}tique HDD}{4}
+\contentsline {subsection}{\numberline {3.3}Abstraction suppl\IeC {\'e}mentaire: le FICHIER}{4}
+\contentsline {subsubsection}{\numberline {3.3.1}syst\IeC {\'e}me FAT}{5}
+\contentsline {subsubsection}{\numberline {3.3.2}NTFS-EXT}{5}
+\contentsline {subsection}{\numberline {3.4}Les extensions}{5}
+\contentsline {subsection}{\numberline {3.5}La structure des fichiers}{6}
+\contentsline {subsection}{\numberline {3.6}Commandes sp\IeC {\'e}ciales}{6}
+\contentsline {subsection}{\numberline {3.7}Fichiers Ordinaires}{7}
+\contentsline {subsubsection}{\numberline {3.7.1}Texte}{7}
+\contentsline {subsubsection}{\numberline {3.7.2}Binaire}{7}
+\contentsline {subsection}{\numberline {3.8}Les nombres magiques}{8}
+\contentsline {subsection}{\numberline {3.9}L'acc\IeC {\`e}s aux fichiers sequantial/random}{8}
+\contentsline {subsection}{\numberline {3.10}Attributs suppl\IeC {\'e}mentaires}{8}
+\contentsline {subsection}{\numberline {3.11}Appels syst\IeC {\`e}mes: Op\IeC {\'e}rations sur les fichiers}{9}
+\contentsline {section}{\numberline {4}Chapitre\_8 Syst\IeC {\`e}mes de Fichiers / R\IeC {\'e}pertoires}{10}
+\contentsline {section}{\numberline {5}Chapitre\_9 Disques / Syst\IeC {\`e}mes de Fichiers}{11}
+\contentsline {section}{\numberline {6}Conclusion}{12}
