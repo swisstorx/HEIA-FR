@@ -1,7 +1,7 @@
-PWD c:/Users/Marc/Desktop/GIT/GITHUB_MAIN/OS/Résumé/TE02/OS_TE02
+PWD c:/Users/Marc/Desktop/GIT/GITHUB_MAIN/OS/Résumé/TE02 Master/OS_TE02
 INPUT C:/Users/Marc/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt
-INPUT c:/Users/Marc/Desktop/GIT/GITHUB_MAIN/OS/Résumé/TE02/OS_TE02/OS_TE01_Resume.tex
-OUTPUT OS_TE01_Resume.log
+INPUT c:/Users/Marc/Desktop/GIT/GITHUB_MAIN/OS/Résumé/TE02 Master/OS_TE02/OS_TE02_Resume.tex
+OUTPUT OS_TE02_Resume.log
 INPUT ../Commands.tex
 INPUT ../Commands.tex
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/article.cls
@@ -281,13 +281,13 @@ INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/tex/generic/pgf/frontendla
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
-OUTPUT OS_TE01_Resume.pdf
+OUTPUT OS_TE02_Resume.pdf
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/tex/latex/tcolorbox/tcbposter.code.tex
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/tex/latex/fancyhdr/fancyhdr.sty
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/tex/latex/fancyhdr/fancyhdr.sty
-INPUT OS_TE01_Resume.aux
-INPUT OS_TE01_Resume.aux
-OUTPUT OS_TE01_Resume.aux
+INPUT OS_TE02_Resume.aux
+INPUT OS_TE02_Resume.aux
+OUTPUT OS_TE02_Resume.aux
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/ts1cmr.fd
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/ts1cmr.fd
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/t1lmr.fd
@@ -326,8 +326,8 @@ INPUT ./Img/title.jpg
 INPUT ./Img/title.jpg
 INPUT C:/Users/Marc/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmbx12.tfm
-INPUT OS_TE01_Resume.toc
-INPUT OS_TE01_Resume.toc
+INPUT OS_TE02_Resume.toc
+INPUT OS_TE02_Resume.toc
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/ot1lmr.fd
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/ot1lmr.fd
@@ -352,11 +352,13 @@ INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/euler/eurm6.tfm
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/euler/eurm10.tfm
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/euler/eurm7.tfm
-OUTPUT OS_TE01_Resume.toc
 INPUT Img/heia-fr-logo.png
 INPUT ./Img/heia-fr-logo.png
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmro12.tfm
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmcsc10.tfm
+OUTPUT OS_TE02_Resume.toc
+INPUT Img/heia-fr-logo.png
+INPUT ./Img/heia-fr-logo.png
 INPUT Img/0.PNG
 INPUT ./Img/0.PNG
 INPUT ./Img/0.PNG
@@ -364,24 +366,67 @@ INPUT ./Img/0.PNG
 INPUT ./Img/0.PNG
 INPUT Img/heia-fr-logo.png
 INPUT ./Img/heia-fr-logo.png
+INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT Img/heia-fr-logo.png
 INPUT ./Img/heia-fr-logo.png
-INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmbx12.tfm
-INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/ts1lmr.fd
-INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/ts1lmr.fd
-INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ts1-lmr12.tfm
 INPUT Img/1.PNG
 INPUT ./Img/1.PNG
 INPUT ./Img/1.PNG
 INPUT ./Img/1.PNG
 INPUT ./Img/1.PNG
-INPUT Img/heia-fr-logo.png
-INPUT ./Img/heia-fr-logo.png
 INPUT Img/2.PNG
 INPUT ./Img/2.PNG
 INPUT ./Img/2.PNG
 INPUT ./Img/2.PNG
 INPUT ./Img/2.PNG
+INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/ts1lmr.fd
+INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/ts1lmr.fd
+INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ts1-lmr12.tfm
+INPUT Img/heia-fr-logo.png
+INPUT ./Img/heia-fr-logo.png
+INPUT Img/5.PNG
+INPUT ./Img/5.PNG
+INPUT ./Img/5.PNG
+INPUT ./Img/5.PNG
+INPUT ./Img/5.PNG
+INPUT Img/heia-fr-logo.png
+INPUT ./Img/heia-fr-logo.png
+INPUT Img/4.PNG
+INPUT ./Img/4.PNG
+INPUT ./Img/4.PNG
+INPUT ./Img/4.PNG
+INPUT ./Img/4.PNG
+INPUT Img/struct.PNG
+INPUT ./Img/struct.PNG
+INPUT ./Img/struct.PNG
+INPUT ./Img/struct.PNG
+INPUT ./Img/struct.PNG
+INPUT Img/heia-fr-logo.png
+INPUT ./Img/heia-fr-logo.png
+INPUT Img/6.PNG
+INPUT ./Img/6.PNG
+INPUT ./Img/6.PNG
+INPUT ./Img/6.PNG
+INPUT ./Img/6.PNG
+INPUT Img/7.PNG
+INPUT ./Img/7.PNG
+INPUT ./Img/7.PNG
+INPUT ./Img/7.PNG
+INPUT ./Img/7.PNG
+INPUT Img/8.PNG
+INPUT ./Img/8.PNG
+INPUT ./Img/8.PNG
+INPUT ./Img/8.PNG
+INPUT ./Img/8.PNG
+INPUT Img/heia-fr-logo.png
+INPUT ./Img/heia-fr-logo.png
+INPUT Img/9.PNG
+INPUT ./Img/9.PNG
+INPUT ./Img/9.PNG
+INPUT ./Img/9.PNG
+INPUT ./Img/9.PNG
+INPUT Img/heia-fr-logo.png
+INPUT ./Img/heia-fr-logo.png
 INPUT Img/heia-fr-logo.png
 INPUT ./Img/heia-fr-logo.png
 INPUT Img/3.PNG
@@ -391,60 +436,68 @@ INPUT ./Img/3.PNG
 INPUT ./Img/3.PNG
 INPUT Img/heia-fr-logo.png
 INPUT ./Img/heia-fr-logo.png
-INPUT Img/4.PNG
-INPUT ./Img/4.PNG
-INPUT ./Img/4.PNG
-INPUT ./Img/4.PNG
-INPUT ./Img/4.PNG
-INPUT Img/5.PNG
-INPUT ./Img/5.PNG
-INPUT ./Img/5.PNG
-INPUT ./Img/5.PNG
-INPUT ./Img/5.PNG
+INPUT Img/10.PNG
+INPUT ./Img/10.PNG
+INPUT ./Img/10.PNG
+INPUT ./Img/10.PNG
+INPUT ./Img/10.PNG
 INPUT Img/heia-fr-logo.png
 INPUT ./Img/heia-fr-logo.png
-INPUT Img/6.PNG
-INPUT ./Img/6.PNG
-INPUT ./Img/6.PNG
-INPUT ./Img/6.PNG
-INPUT ./Img/6.PNG
-INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ec-lmbxi10.tfm
-INPUT Img/7.PNG
-INPUT ./Img/7.PNG
-INPUT ./Img/7.PNG
-INPUT ./Img/7.PNG
-INPUT ./Img/7.PNG
+INPUT Img/tg.PNG
+INPUT ./Img/tg.PNG
+INPUT ./Img/tg.PNG
+INPUT ./Img/tg.PNG
+INPUT ./Img/tg.PNG
 INPUT Img/heia-fr-logo.png
 INPUT ./Img/heia-fr-logo.png
 INPUT Img/heia-fr-logo.png
 INPUT ./Img/heia-fr-logo.png
-INPUT Img/8.PNG
-INPUT ./Img/8.PNG
-INPUT ./Img/8.PNG
-INPUT ./Img/8.PNG
-INPUT ./Img/8.PNG
+INPUT Img/11.PNG
+INPUT ./Img/11.PNG
+INPUT ./Img/11.PNG
+INPUT ./Img/11.PNG
+INPUT ./Img/11.PNG
+INPUT Img/12.PNG
+INPUT ./Img/12.PNG
+INPUT ./Img/12.PNG
+INPUT ./Img/12.PNG
+INPUT ./Img/12.PNG
+INPUT Img/13.PNG
+INPUT ./Img/13.PNG
+INPUT ./Img/13.PNG
+INPUT ./Img/13.PNG
+INPUT ./Img/13.PNG
+INPUT Img/heia-fr-logo.png
+INPUT ./Img/heia-fr-logo.png
+INPUT Img/14.PNG
+INPUT ./Img/14.PNG
+INPUT ./Img/14.PNG
+INPUT ./Img/14.PNG
+INPUT ./Img/14.PNG
+INPUT Img/heia-fr-logo.png
+INPUT ./Img/heia-fr-logo.png
+INPUT Img/15.PNG
+INPUT ./Img/15.PNG
+INPUT ./Img/15.PNG
+INPUT ./Img/15.PNG
+INPUT ./Img/15.PNG
+INPUT Img/heia-fr-logo.png
+INPUT ./Img/heia-fr-logo.png
+INPUT Img/15.PNG
+INPUT ./Img/15.PNG
 INPUT Img/heia-fr-logo.png
 INPUT ./Img/heia-fr-logo.png
 INPUT Img/heia-fr-logo.png
 INPUT ./Img/heia-fr-logo.png
 INPUT Img/heia-fr-logo.png
 INPUT ./Img/heia-fr-logo.png
-INPUT Img/heia-fr-logo.png
-INPUT ./Img/heia-fr-logo.png
-INPUT OS_TE01_Resume.aux
-INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc
-INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc
-INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc
-INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc
+INPUT OS_TE02_Resume.aux
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.enc
+INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb
-INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbxi10.pfb
-INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbxi10.pfb
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb
-INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi12.pfb
-INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi12.pfb
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb
@@ -453,5 +506,3 @@ INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmro12.pfb
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmro12.pfb
-INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb
-INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb

@@ -201,7 +201,7 @@ systems Calls
     \item \textbf{rename}
 
 \end{itemize}
-Toutefois, on constate qu'il n'y a pas de COPY. La fonction copy n'est pas présente parceque:................................... Ci dessous voici l'implémentation de la fonction copy.\\[.5cm]
+Toutefois, on constate qu'il n'y a pas de COPY. La fonction copy n'est pas présente parcequ'il est possible de créer cette fonction copy à partir des autres system Calls. Ci dessous voici l'implémentation de la fonction copy.\\[.5cm]
 
 \begin{lstlisting}
     copy ( source , destination )
@@ -219,9 +219,11 @@ close ( sf )
 close ( df )
 \end{lstlisting}
 
+\subsection{Les descripteurs de fichiers}
+\textbf{Définition: }un descripteurs de fichier est une clé abstraite pour accéder à un fichier (un INT) on utilise généralement ce terme our les systèmes d'exploitation POSIX.
+\insertImage{Img/8.PNG}{0.65}{File descriptor}{FD}
 
-
-
+Rajouter du MERDIER sur les slides 27/28?
 
 
 

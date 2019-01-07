@@ -17,6 +17,7 @@
 \contentsline {subsection}{\numberline {3.9}L'acc\IeC {\`e}s aux fichiers sequantial/random}{8}
 \contentsline {subsection}{\numberline {3.10}Attributs suppl\IeC {\'e}mentaires}{8}
 \contentsline {subsection}{\numberline {3.11}Appels syst\IeC {\`e}mes: Op\IeC {\'e}rations sur les fichiers}{9}
-\contentsline {section}{\numberline {4}Chapitre\_8 Syst\IeC {\`e}mes de Fichiers / R\IeC {\'e}pertoires}{10}
-\contentsline {section}{\numberline {5}Chapitre\_9 Disques / Syst\IeC {\`e}mes de Fichiers}{11}
-\contentsline {section}{\numberline {6}Conclusion}{12}
+\contentsline {subsection}{\numberline {3.12}Les descripteurs de fichiers}{10}
+\contentsline {section}{\numberline {4}Chapitre\_8 Syst\IeC {\`e}mes de Fichiers / R\IeC {\'e}pertoires}{11}
+\contentsline {section}{\numberline {5}Chapitre\_9 Disques / Syst\IeC {\`e}mes de Fichiers}{12}
+\contentsline {section}{\numberline {6}Conclusion}{13}
