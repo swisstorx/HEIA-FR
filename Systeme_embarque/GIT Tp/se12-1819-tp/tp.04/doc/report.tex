@@ -43,8 +43,10 @@ Dans ce travail-ci, nous devrons utiliser un nouveau composant, le DMTIMER, et d
 \section{Synthèse}
 
 \paragraph{Sven}
+\textbf{\textit{Acquis}}
 \begin{itemize}
-   \item TODO
+   \item Déclaration de struct pour travailler avec un timer
+   \item Initialisation et écriture sur l'écran OLED
 \end{itemize}
 
 \paragraph{Marc}
@@ -92,8 +94,6 @@ En utilisant des struct
 
 \section{Comment peut-on accéder ces registres ?}
 En affectant une variable static volatile\\
-Exemple: \texttt{volatile struct timer_reg* ctrl = dmtimer[timer];}
-
 
 \begin{lstlisting}
     static volatile struct timer_reg* dmtimer[] = {
@@ -123,6 +123,9 @@ return random() % ((MAX_VALUE_TIMER + MIN_VALUE_TIMER) + 1)
 \end{lstlisting}
 
 \section{A la fréquence maximale (24MHz), le compteur du timer ne permet de compter le temps que sur un intervalle de 3 minutes environ. Décrivez l'algorithme à mettre en place si l'on souhaite compter sur plusieurs années avec la même granularité}
+Pour calculer le temps écoulé, on calcul le delta entre le moment où le timer à été démarré et le moment où l'on veut qu'il s'arrête.\\
+Dans notre cas, la fréquence étant de 24Mhz, un timer peut compter jusqu'à environ 3 minutes donc pour aller plus loin il faut faire un pointage maximum jusqu'à 3 minutes afin d'éviter de louper une interruption, et donc d'incrémenter une variable qui garde le nombre de fois que l'on a contrôler notre timer.
+Pour calculer le delta, il faut utiliser: $$\Delta = sp - st$$, où $sp$ est le stop time et $st$ le start time
 
 \section{Conclusion}
 

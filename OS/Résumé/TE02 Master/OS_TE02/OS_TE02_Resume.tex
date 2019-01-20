@@ -39,7 +39,7 @@
 % \insertImage{Img/photo.PNG}{0.8}{Schéma explicatif}{}
 
 % \section{voici comment faire un chapitre}
-
+ 
 %     \subsection{Voici comment faire un sous chapitre}
 
 % \section{des commandes}
@@ -59,7 +59,7 @@
 %     \subsection{commande pour mettre une image}
     
 %     % \insertImage{Img/1.PNG}{echelle pour l'image (source = 1)}{texte dessous l'image}{référence vers l'objet
-%     \insertImage{Img/1.JPG}{0.6}{voici une image}{myImg}
+%     \insertImage{Img/1.JPG}{0.6}{voici une image}{}
 %       \insertImage{Img/27.JPG}{0.6}{}{}
 
 \section{Introduction}
@@ -70,10 +70,10 @@ Résumé pour la deuxième inter d'OS. Spécial dédicace à ma mère, pour la f
 \subsection{TLB toussa toussa}
 TODO
 \subsection{Page Replacement Algorythm}
+TODO
 \newpage
 \section{Chapitre\_7 Systèmes de fichiers}%DONE
-\insertImage{Img/1.PNG}{0.6}{Problèmes avec la RAM}{myImg}
-\insertImage{Img/2.PNG}{0.6}{Exigences pour un stockage à long terme}{myImg}
+\insertImage{Img/1.PNG}{0.6}{Problèmes avec la RAM}{}
 
 All computer applications need to store and retrieve information. While a process is running, it can store a limited amount of information within its own address space. However, the storage capacity is restricted to the size of the virtual address space. For some applications this size is adequate, but for others, such as airline reservations, banking, or corporate record keeping, it is far too small. A second problem with keeping information within a process’ address space is that when the process terminates, the information is lost. For many applications (e.g., for databases), the information must be retained for weeks, months, or even forever. Having it vanish when the process using it terminates is unacceptable. Furthermore, it must not go away when a computer crash kills the process. A third problem is that it is frequently necessary for multiple processes to access (parts of) the information at the same time. If we have an online telephone directory stored inside the address space of a single process, only that process can access it. The way to solve this problem is to make the information itself independent of any one process. Thus, we have three essential requirements for long-term information storage:
 \begin{itemize}
@@ -94,20 +94,20 @@ Questions who pops out at this point in this chapter:
     \item How do we know if a block is free?
 \end{itemize}
 
-\subsection{New Abstraction: the File}%DONEDONEDONEDONEDONEDONE
+\subsection{New Abstraction: the File}
 The system file used to take care of the files is names \textbf{File System}.A file is an abstraction mechanism. It provides a way to store information on the disk and read it back later. This must be done in such a way as to shield the user from the details of how and where the information is stored, and how the disks actually work.
 
 Windows 95 and Windows 98 both used the MS-DOS file system, called FAT-16, and thus inherit many of its properties, such as how file names are constructed. Windows 98 introduced some extensions to FAT -16, leading to FAT-32, but these two are quite similar. In addition,Windows NT, Windows 2000, Windows XP, Windows Vista, Windows 7, and Windows 8 all still support both FAT file systems, which are really obsolete now.
-\subsubsection{File Name}                                                %DONEDONEDONEDONEDONEDONE
+\subsubsection{File Name}                                                
 
 Many operating systems support two-part file names, with the two parts separated by a period, as in prog.c. The part following the period is called the file extension and usually indicates something about the file. In MS-DOS, for example, file names are 1 to 8 characters, plus an optional extension of 1 to 3 characters. In UNIX, the size of the extension, if any, is up to the user, and a file may ev en hav e two or more extensions, as in homepage.html.zip, where .html indicates a Web page in HTML and .zip indicates that the file (homepage.html) has been compressed using the zip program.
 
 
-\subsubsection{File system Examples}                                                %DONEDONEDONEDONEDONEDONE
-\insertImage{Img/5.PNG}{0.6}{File systems examples}{myImg}
+\subsubsection{File system Examples}                                                
+\insertImage{Img/5.PNG}{0.6}{File systems examples}{}
 
 \subsubsection{File extensions}
-\insertImage{Img/4.PNG}{0.6}{Most common extensions}{myImg}
+\insertImage{Img/4.PNG}{0.6}{Most common extensions}{}
 
 \subsubsection{File Structure}
 \insertImage{Img/struct.PNG}{0.6}{File structure}{stru}
@@ -118,11 +118,11 @@ The figure \ref{stru}b, In this model, a file is a sequence of fixed-length reco
 
 The figure \ref{stru}c, The third kind of file structure is shown in Fig. 4-2(c). In this organization, a file consists of a tree of records, not necessarily all the same length, each containing a key field in a fixed position in the record. The tree is sorted on the key field, to allow rapid searching for a particular key. The basic operation here is not to get the ‘‘next’’ record, although that is also possible, but to get the record with a specific key.
 
-\subsubsection{File type}%DONEDONEDONEDONEDONEDONE
-\insertImage{Img/6.PNG}{0.6}{FileName}{myImg}
-\insertImage{Img/7.PNG}{0.6}{FileName}{myImg}
-\insertImage{Img/8.PNG}{0.6}{FileName}{myImg}
-\insertImage{Img/9.PNG}{0.6}{FileName}{myImg}
+\subsubsection{File type}
+\insertImage{Img/6.PNG}{0.6}{FileName}{}
+\insertImage{Img/7.PNG}{0.6}{FileName}{}
+\insertImage{Img/8.PNG}{0.6}{FileName}{}
+\insertImage{Img/9.PNG}{0.6}{FileName}{}
 
 
 
@@ -138,7 +138,7 @@ Random access files are essential for many applications, for example, database s
 
 Two methods can be used for specifying where to start reading. In the first one, every read operation gives the position in the file to start reading at. In the second one, a special operation, seek, is provided to set the current position. After a seek, the file can be read sequentially from the now-current position. The latter method is used in UNIX and Windows.
 
-\subsection{File Operations}%DONEDONEDONEDONEDONEDONE
+\subsection{File Operations}
 \begin{itemize}
     \item \textbf{Create.} The file is created with no data. The purpose of the call is to announce that the file is coming and to set some of the attributes.
     \item Delete. When the file is no longer needed, it has to be deleted to free up disk space. There is always a system call for this purpose.
@@ -153,9 +153,9 @@ Two methods can be used for specifying where to start reading. In the first one,
     \item Rename. It frequently happens that a user needs to change the name of an existing file. This system call makes that possible. It is not always strictly necessary, because the file can usually be copied to a new file with the new name, and the old file then deleted.
 \end{itemize}
 
-\insertImage{Img/3.PNG}{0.6}{A simple program to copy a file}{myImg}
+\insertImage{Img/3.PNG}{0.6}{A simple program to copy a file}{}
 
-\subsection{File attributes}%DONEDONEDONEDONEDONEDONE
+\subsection{File attributes}
 
 Every file has a name and its data. In addition, all operating systems associate
 other information with each file, for example, the date and time the file was last
@@ -177,7 +177,7 @@ program clears it, and the operating system sets it whenever a file is changed.
 In this way, the backup program can tell which files need backing up. The temporary
 flag allows a file to be marked for automatic deletion when the process that
 created it terminates.
-\insertImage{Img/10.PNG}{0.6}{Non exhaustive list of file attributes}{myImg}
+\insertImage{Img/10.PNG}{0.6}{Non exhaustive list of file attributes}{}
 
 \subsection{To go further}
 
@@ -261,7 +261,7 @@ The single level is adequate for very simple dedicated applications (and was
 ev en used on the first personal computers), but for modern users with thousands of
 files, it would be impossible to find anything if all files were in a single directory.
 
-\insertImage{Img/11.PNG}{0.6}{A single-level directory system containing four files.}{myImg}
+\insertImage{Img/11.PNG}{0.6}{A single-level directory system containing four files.}{}
 
 Consequently, a way is needed to group related files together. A professor, for example,
 might have a collection of files that together form a book that he is writing,
@@ -277,12 +277,12 @@ hierarchy. This approach is shown in Fig. 4-7. Here, the directories A, B, and C
 contained in the root directory each belong to a different user, two of whom have
 created subdirectories for projects they are working on.
 
-\insertImage{Img/12.PNG}{0.6}{A hierarchical directory system.}{myImg}
+\insertImage{Img/12.PNG}{0.6}{A hierarchical directory system.}{}
 
 \subsection{PathName}
 
-\insertImage{Img/13.PNG}{0.6}{Les chemins d’accès(pathnames)}{myImg}
-\insertImage{Img/14.PNG}{0.6}{Les chemins d’accès(pathnames)}{myImg}
+\insertImage{Img/13.PNG}{0.6}{Les chemins d’accès(pathnames)}{}
+\insertImage{Img/14.PNG}{0.6}{Les chemins d’accès(pathnames)}{}
 
 
 \subsection{Directories Operations}
@@ -347,7 +347,7 @@ and other key administrative information.
 \newpage
 \subsubsection{Contiguous allocation}
 
-\insertImage{Img/15.PNG}{0.6}{(a) Contiguous allocation of disk space for seven files. (b) The state of the disk after files D and F have been removed.}{frag}
+\insertImage{Img/16.PNG}{0.6}{(a) Contiguous allocation of disk space for seven files. (b) The state of the disk after files D and F have been removed.}{frag}
 
 Avantages are:
 \begin{itemize}
@@ -371,12 +371,167 @@ Bad points:
 
 \subsubsection{Linked List}
 
-\subsubsection{Linked list with RAM table}
+The second method for storing files is to keep each one as a linked list of disk
+blocks, as shown in Fig \ref{rvhj}. The first word of each block is used as a pointer to
+the next one. The rest of the block is for data.
+\insertImage{Img/17.PNG}{0.6}{Storing a file as a linked list of disk blocks}{rvhj}
+Unlike contiguous allocation, every disk block can be used in this method. No
+space is lost to disk fragmentation (except for internal fragmentation in the last
+block). Also, it is sufficient for the directory entry to merely store the disk address
+of the first block. The rest can be found starting there.
+On the other hand, although reading a file sequentially is straightforward, random
+access is extremely slow. To get to block n, the operating system has to start
+at the beginning and read the n-1 blocks prior to it, one at a time. Clearly, doing
+so many reads will be painfully slow.
+Also, the amount of data storage in a block is no longer a power of two because
+the pointer takes up a few bytes. While not fatal, having a peculiar size is
+less efficient because many programs read and write in blocks whose size is a power
+of two. With the first few bytes of each block occupied by a pointer to the next
+block, reads of the full block size require acquiring and concatenating information
+from two disk blocks, which generates extra overhead due to the copying.
 
+\insertImage{Img/+-.PNG}{0.5}{Avantages and inconvenients}{+-}
+
+
+\newpage
+\subsubsection{Linked list with RAM table}
+Let's consider a linked list as explained previously, but to counter the inconvenients, we 
+will add a little detail. See Fig \ref{QAY}.
+\insertImage{Img/18.PNG}{0.8}{Linked list with RAM table}{QAY}
+Both disadvantages of the linked-list allocation can be eliminated by taking the
+pointer word from each disk block and putting it in a table in memory. Figure \ref{AVANTAGESMAGGLE}
+shows what the table looks like for the example of Fig. \ref{rvhj}. In both figures, we
+have two files. File A uses disk blocks 4, 7, 2, 10, and 12, in that order, and file B
+uses disk blocks 6, 3, 11, and 14, in that order. Using the table of Fig. \ref{AVANTAGESMAGGLE}, we can
+start with block 4 and follow the chain all the way to the end. The same can be
+done starting with block 6. Both chains are terminated with a special marker.
+Such a table in main memory is called a FAT(File Allocation Table).
+
+Using this organization, the entire block is available for data. Furthermore, random
+access is much easier. Although the chain must still be followed to find a
+given offset within the file, the chain is entirely in memory, so it can be followed
+without making any disk references. Like the previous method, it is sufficient for
+the directory entry to keep a single integer (the starting block number) and still be
+able to locate all the blocks, no matter how large the file is.
+The primary disadvantage of this method is that the entire table must be in
+memory all the time to make it work. With a 1-TB disk and a 1-KB block size, the
+table needs 1 billion entries, one for each of the 1 billion disk blocks. Each entry
+has to be a minimum of 3 bytes. For speed in lookup, they should be 4 bytes. Thus
+the table will take up 3 GB or 2.4 GB of main memory all the time, depending on
+whether the system is optimized for space or time. Not wildly practical. Clearly the
+FAT idea does not scale well to large disks. It was the original MS-DOS file system
+and is still fully supported by all versions of Windows though.
+\insertImage{Img/avant.PNG}{0.5}{Avantages and inconvenients}{AVANTAGESMAGGLE}
+
+\newpage
 \subsubsection{I-nodes}
+--------------notes de cours---------------
+pour accéder aux niveaux 2-3, celà prend plus de temps. les blocs ne sont pasforcément stockés
+de manière contigue.
+
+les blocs directs sont stockés en RAM
+
+les blocs indirects, double indirects sont chargé en ram au moment ou il devient utile.
+
+petit exercice:
+
+\textbf{architecture avec 12 poiinteurs direct et a indirect double et triple indirect Avec des blocs de 2 kByte et des pointeurs sur 32 bit on a une taille maximum pour les Fichiers de :}
+
+512 car :\textbf{combien de blocs 4Byte dans 2kByte}.
+
+
+$(12+512+512^{2}+512^{13})*2048 = +-256GByte$
+
+
+\insertImage{Img/inode.PNG}{0.5}{Avantages}{inode}
+
+\newpage
+\subsection{Directory implementation}
+Things to stock on each directories's entries.
+\begin{itemize}
+    \item FileName
+    \item Adress (on contiguous allocation), or adress of the first inode
+    \item acces restriction, creation date, owner
+\end{itemize}
+
+Before a file can be read, it must be opened. When a file is opened, the operating
+system uses the path name supplied by the user to locate the directory entry on
+the disk. The directory entry provides the information needed to find the disk
+blocks. Depending on the system, this information may be the disk address of the
+entire file (with contiguous allocation), the number of the first block (both linked-
+list schemes), or the number of the i-node. In all cases, the main function of the
+directory system is to map the ASCII name of the file onto the information needed
+to locate the data.
+A closely related issue is where the attributes should be stored. Every file system
+maintains various file attributes, such as each file’s owner and creation time,
+and they must be stored somewhere. One obvious possibility is to store them directly
+in the directory entry. Some systems do precisely that. This option is shown
+in Fig. \ref{wkjezrh}. In this simple design, a directory consists of a list of fixed-size entries,
+one per file, containing a (fixed-length) file name, a structure of the file attributes,
+and one or more disk addresses (up to some maximum) telling where the
+disk blocks are.
+
+\insertImage{Img/impl.PNG}{0.55}{(a) A simple directory containing fixed-size entries with the disk addresses and attributes in the directory entry. (b) A directory in which each entry just refers to an i-node.}{wkjezrh}
+
+One alternative is to giv e up the idea that all directory entries are the same size.
+With this method, each directory entry contains a fixed portion, typically starting
+with the length of the entry, and then followed by data with a fixed format, usually
+including the owner, creation time, protection information, and other attributes.
+This fixed-length header is followed by the actual file name, however long it may
+be, as shown in Fig. 4-15(a) in big-endian format (e.g., SPARC). In this example
+we have three files, project-budget, personnel, and foo. Each file name is terminated
+by a special character (usually 0), which is represented in the figure by a box
+with a cross in it. To allow each directory entry to begin on a word boundary, each
+file name is filled out to an integral number of words, shown by shaded boxes in
+the figure.
+
+\insertImage{Img/skibidibop.PNG}{0.65}{Two ways of handling long file names in a directory. (a) In-line.(b) In a heap.}{wkjezrh}
+A disadvantage of this method is that when a file is removed, a variable-sized
+gap is introduced into the directory into which the next file to be entered may not
+fit. This problem is essentially the same one we saw with contiguous disk files,
+only now compacting the directory is feasible because it is entirely in memory. Another
+problem is that a single directory entry may span multiple pages, so a page
+fault may occur while reading a file name.
+Another way to handle variable-length names is to make the directory entries
+themselves all fixed length and keep the file names together in a heap at the end of
+the directory, as shown in Fig. \ref{wkjezrh}(b). This method has the advantage that when
+an entry is removed, the next file entered will always fit there. Of course, the heap
+must be managed and page faults can still occur while processing file names. One
+minor win here is that there is no longer any real need for file names to begin at
+word boundaries, so no filler characters are needed after file names in Fig. \ref{wkjezrh}(b)
+as they are in Fig. \ref{wkjezrh}(a).
+In all of the designs so far, directories are searched linearly from beginning to
+end when a file name has to be looked up. For extremely long directories, linear
+searching can be slow. One way to speed up the search is to use a hash table in
+each directory. Call the size of the table n. To enter a file name, the name is hashed
+onto a value between 0 and n - 1, for example, by dividing it by n and taking the
+remainder. Alternatively, the words comprising the file name can be added up and
+this quantity divided by n, or something similar.
+Either way, the table entry corresponding to the hash code is inspected. If it is
+unused, a pointer is placed there to the file entry. File entries follow the hash table.
+If that slot is already in use, a linked list is constructed, headed at the table entry
+and threading through all entries with the same hash value.
+Looking up a file follows the same procedure. The file name is hashed to select
+a hash-table entry. All the entries on the chain headed at that slot are checked to
+see if the file name is present. If the name is not on the chain, the file is not present
+in the directory.
+Using a hash table has the advantage of much faster lookup, but the disadvantage
+of more complex administration. It is only really a serious candidate in systems
+where it is expected that directories will routinely contain hundreds or thousands
+of files.
+A different way to speed up searching large directories is to cache the results
+of searches. Before starting a search, a check is first made to see if the file name is
+in the cache. If so, it can be located immediately. Of course, caching only works
+if a relatively small number of files comprise the majority of the lookups.
+
+\insertImage{Img/kljfe.PNG}{0.55}{Longueur des noms de fichiers de variables}{kljfe}
+
 
 \newpage
 \section{Chapitre\_9 Disques / Systèmes de Fichiers}
+-------------------------------notes de cours-------------------------------
+
+
 
 \newpage
 \section{Conclusion}

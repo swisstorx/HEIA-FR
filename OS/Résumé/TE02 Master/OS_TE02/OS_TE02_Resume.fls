@@ -374,11 +374,6 @@ INPUT ./Img/1.PNG
 INPUT ./Img/1.PNG
 INPUT ./Img/1.PNG
 INPUT ./Img/1.PNG
-INPUT Img/2.PNG
-INPUT ./Img/2.PNG
-INPUT ./Img/2.PNG
-INPUT ./Img/2.PNG
-INPUT ./Img/2.PNG
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/ts1lmr.fd
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/ts1lmr.fd
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/ts1-lmr12.tfm
@@ -483,8 +478,65 @@ INPUT ./Img/15.PNG
 INPUT ./Img/15.PNG
 INPUT Img/heia-fr-logo.png
 INPUT ./Img/heia-fr-logo.png
-INPUT Img/15.PNG
-INPUT ./Img/15.PNG
+INPUT Img/16.PNG
+INPUT ./Img/16.PNG
+INPUT ./Img/16.PNG
+INPUT ./Img/16.PNG
+INPUT ./Img/16.PNG
+INPUT Img/heia-fr-logo.png
+INPUT ./Img/heia-fr-logo.png
+INPUT Img/17.PNG
+INPUT ./Img/17.PNG
+INPUT ./Img/17.PNG
+INPUT ./Img/17.PNG
+INPUT ./Img/17.PNG
+INPUT Img/+-.PNG
+INPUT ./Img/+-.PNG
+INPUT ./Img/+-.PNG
+INPUT ./Img/+-.PNG
+INPUT ./Img/+-.PNG
+INPUT Img/heia-fr-logo.png
+INPUT ./Img/heia-fr-logo.png
+INPUT Img/18.PNG
+INPUT ./Img/18.PNG
+INPUT ./Img/18.PNG
+INPUT ./Img/18.PNG
+INPUT ./Img/18.PNG
+INPUT Img/avant.PNG
+INPUT ./Img/avant.PNG
+INPUT ./Img/avant.PNG
+INPUT ./Img/avant.PNG
+INPUT ./Img/avant.PNG
+INPUT Img/heia-fr-logo.png
+INPUT ./Img/heia-fr-logo.png
+INPUT Img/heia-fr-logo.png
+INPUT ./Img/heia-fr-logo.png
+INPUT Img/inode.PNG
+INPUT ./Img/inode.PNG
+INPUT ./Img/inode.PNG
+INPUT ./Img/inode.PNG
+INPUT ./Img/inode.PNG
+INPUT Img/heia-fr-logo.png
+INPUT ./Img/heia-fr-logo.png
+INPUT Img/impl.PNG
+INPUT ./Img/impl.PNG
+INPUT ./Img/impl.PNG
+INPUT ./Img/impl.PNG
+INPUT ./Img/impl.PNG
+INPUT Img/heia-fr-logo.png
+INPUT ./Img/heia-fr-logo.png
+INPUT Img/skibidibop.PNG
+INPUT ./Img/skibidibop.PNG
+INPUT ./Img/skibidibop.PNG
+INPUT ./Img/skibidibop.PNG
+INPUT ./Img/skibidibop.PNG
+INPUT Img/heia-fr-logo.png
+INPUT ./Img/heia-fr-logo.png
+INPUT Img/kljfe.PNG
+INPUT ./Img/kljfe.PNG
+INPUT ./Img/kljfe.PNG
+INPUT ./Img/kljfe.PNG
+INPUT ./Img/kljfe.PNG
 INPUT Img/heia-fr-logo.png
 INPUT ./Img/heia-fr-logo.png
 INPUT Img/heia-fr-logo.png
@@ -492,17 +544,26 @@ INPUT ./Img/heia-fr-logo.png
 INPUT Img/heia-fr-logo.png
 INPUT ./Img/heia-fr-logo.png
 INPUT OS_TE02_Resume.aux
+INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc
+INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc
+INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb
+INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi12.pfb
+INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi12.pfb
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb
+INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb
+INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmro12.pfb
 INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmro12.pfb
+INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb
+INPUT C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb

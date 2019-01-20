@@ -120,7 +120,7 @@ Ces registres sont placés dans l'espace adressable du µP aux adresses suivante
  * DMTimer3 : `0x4804_2000 - 0x4804_2FFF`
  * DMTimer4 : `0x4804_4000 - 0x4804_4FFF`
  * DMTimer5 : `0x4804_6000 - 0x4804_6FFF`
- * DMTimer6 : `0x4804_6000 - 0x4804_6FFF`
+ * DMTimer6 : `0x4804_8000 - 0x4804_8FFF`
  * DMTimer7 : `0x4804_A000 - 0x4804_AFFF`
 
 ![registers](img/regs.png)

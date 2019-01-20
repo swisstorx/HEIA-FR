@@ -378,13 +378,12 @@ extern int thermo_change_color(int argc, char* argv[]){
 
 
 extern void display_caract(struct display_point position, uint8_t caract, uint32_t color, bool isHorizontal) {
-	char test = 0;
-	if (isHorizontal) {
+	 char test = 0;
+	 if (isHorizontal) {
 		for (int i = 0; i < 8; i++) {
 			oled_memory_size(position.x_coor-i, position.x_coor-i,position.y_coor-8, position.y_coor);
 			test = fontdata_8x8[caract][i];
-			test = ((test * 0x0802LU & 0x22110LU) | (test * 0x8020LU & 0x88440LU)) * 0x10101LU >> 16;
-
+			//c & j<<1 !=0
 			for (int j = 0; j < 8; j++) {
 				if (test >= 128) {
 					oled_color(color);
@@ -398,10 +397,8 @@ extern void display_caract(struct display_point position, uint8_t caract, uint32
 		for (int i = 0; i < 8; i++) {
 			oled_memory_size(position.x_coor, position.x_coor + 8,
 					position.y_coor - i, position.y_coor - i);
-			test = fontdata_8x8[caract][i];
-			test = ((test * 0x0802LU & 0x22110LU) | (test * 0x8020LU & 0x88440LU)) * 0x10101LU >> 16;
-			for (int j = 0; j < 8; j++) {
-				if (test >= 128) {
+			test = fontdata_8x8[caract][i];			for (int j = 0; j < 8; j++) {
+				if ((test & (1<<j))) {
 					oled_color(color);
 				} else {
 					oled_color(0);

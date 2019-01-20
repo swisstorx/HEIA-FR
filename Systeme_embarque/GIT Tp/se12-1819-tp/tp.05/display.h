@@ -33,13 +33,13 @@
  * some basic colors
  */
 enum display_colors {
-    DISPLAY_BLACK   = 0x0000,
-    DISPLAY_BLUE    = 0x001f,
-    DISPLAY_GREEN   = 0x07e0,
-    DISPLAY_GREY    = 0xa534, //0xce79,
-    DISPLAY_RED     = 0xf800,
-    DISPLAY_YELLOW  = 0xf7a0,
-    DISPLAY_WHITE   = 0xffff,
+	DISPLAY_BLACK = 0x0000,
+	DISPLAY_BLUE = 0x001f,
+	DISPLAY_GREEN = 0x07e0,
+	DISPLAY_GREY = 0xa534, //0xce79,
+	DISPLAY_RED = 0xf800,
+	DISPLAY_YELLOW = 0xf7a0,
+	DISPLAY_WHITE = 0xffff,
 };
 
 /**
@@ -79,9 +79,8 @@ extern void display_text(int col, int row, const char* txt, int color);
  * @param h height of the rectangle
  * @param color display color in rgb565
  */
-extern void display_rect(
-    uint32_t x0, uint32_t y0, 
-    uint32_t w,  uint32_t h, uint32_t color);
+extern void display_rect(uint32_t x0, uint32_t y0, uint32_t w, uint32_t h,
+		uint32_t color);
 
 /**
  * method to display a circle on the display
@@ -90,10 +89,7 @@ extern void display_rect(
  * @param r radius 
  * @param color display color in rgb565
  */
-extern void display_circle(
-    uint32_t x0, uint32_t y0, 
-    uint32_t r,  uint32_t color);
-
+extern void display_circle(uint32_t x0, uint32_t y0, uint32_t r, uint32_t color);
 
 /**
  * method to change the rotation of the display

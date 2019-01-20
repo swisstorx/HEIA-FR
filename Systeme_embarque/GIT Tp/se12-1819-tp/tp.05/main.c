@@ -37,9 +37,12 @@ int main()
 	// initialization 
 	buttons_init();
 
+
 	int from = 0;
 	int to = 0;
 	tower_of_hanoi_init(from);
+
+
 	while(1) {
 		if (buttons_get_state(BUTTONS_1)==BUTTONS_PRESSED) to = 0; 
 		if (buttons_get_state(BUTTONS_2)==BUTTONS_PRESSED) to = 1; 

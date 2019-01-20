@@ -48,4 +48,13 @@ extern void tower_of_hanoi_move(int from, int to, int by, int height);
  */
 extern int tower_of_hanoi_disks();
 
+
+/**
+ *
+ * method to draw a peg
+ *
+ * */
+extern void draw_peg(int peg);
+
+
 #endif
