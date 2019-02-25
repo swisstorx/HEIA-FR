@@ -31,9 +31,8 @@ callback_init:
         mov     r1, r1, lsr #2
         mov	r2, #0
 fill:   str	r2,[r0],#4
-		subs	r1, #1
-		bne	fill
-		
+	subs	r1, #1
+	bne	fill
         bx 	lr
 
 

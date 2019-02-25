@@ -70,3 +70,4 @@ Mkfile.old
 dkms.conf
 
 /.metadata/
+*.synctex(busy)

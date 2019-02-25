@@ -16,4 +16,4 @@ Professor: Jacques Supcik / C10.05<br/>
 ## Exams
 
 * November 23, 2018 (A9), 8h15
-* January 18, 2019 (A15), 8h15
+* January 25, 2019 (A16), 8h15
