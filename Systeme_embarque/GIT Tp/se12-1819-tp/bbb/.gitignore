@@ -1,9 +1,0 @@
-.DS_Store
-.cproject
-.project
-.settings
-*.[oad]
-.obj
-app_*
-*~
-*.xpm

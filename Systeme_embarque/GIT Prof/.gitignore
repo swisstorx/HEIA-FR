@@ -2,6 +2,7 @@
 .cproject
 .project
 .settings
+.vscode
 *.[oad]
 .obj
 app_*
